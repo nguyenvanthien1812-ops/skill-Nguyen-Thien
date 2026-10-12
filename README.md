@@ -1,5 +1,5 @@
-# 🎓 SKILL: Soạn Slide Bài Giảng Chuẩn Mực Sư Phạm Từ Giáo Án & SGK
-> **Tác giả:** Thầy Nguyễn Văn Thiện  
+# 🎓 SKILL-NGUYEN-THIEN: Bộ Skill Chuẩn Mực Sư Phạm Của Thầy Nguyễn Văn Thiện
+> **Tác giả:** Thầy Nguyễn Văn Thiện — Trường THCS Ứng Hòe  
 > **Dành cho:** Trợ lý AI Antigravity / Gemini / Claude Code  
 > **Định dạng xuất:** 100% Native DrawingML PowerPoint (`.pptx`) chỉnh sửa trực tiếp, không đè chữ, chuẩn mực sư phạm GDPT 2018.
 
@@ -9,7 +9,7 @@
 
 Kho lưu trữ các Skill chuyên biệt dành cho giáo viên và trợ lý AI Antigravity / Gemini / Claude:
 
-1. **`tao-slide-bai-giang`**: Soạn slide PowerPoint (PPTX) bài giảng chuẩn mực sư phạm từ file Giáo án (Word, PDF) hoặc Sách giáo khoa (SGK). 100% Native DrawingML không đè chữ, chuẩn GDPT 2018.
+1. **`tao-slide-bai-giang`**: Soạn slide PowerPoint (PPTX) bài giảng chuẩn mực sư phạm từ file Giáo án (Word, PDF) hoặc Sách giáo khoa (SGK). 100% Native DrawingML không đè chữ, chuẩn GDPT 2018, bắt buộc duyệt bản phác thảo Storyboard trước khi tạo PPTX, hỗ trợ 3 nguồn hình ảnh.
 2. **`tao-video-khoi-dong-bai-hoc`**: Lên kịch bản và trọn bộ Prompt Veo 3 cho video khởi động bài học (warm-up video) 60–80 giây. Đồng nhất nhân vật thầy/cô giáo, loại bỏ hoàn toàn chữ trong video tránh lỗi font AI, an toàn chính sách kiểm duyệt 100% và không spoil đáp án trước.
 
 ---
@@ -32,7 +32,7 @@ Kho lưu trữ các Skill chuyên biệt dành cho giáo viên và trợ lý AI 
 
 ## 🎓 2. SKILL: SOẠN SLIDE BÀI GIẢNG CHUẨN MỰC SƯ PHẠM (`tao-slide-bai-giang`)
 
-## 💎 6 NGUYÊN TẮC VÀNG CỦA BÀI GIẢNG
+### 💎 8 NGUYÊN TẮC VÀNG CỦA BÀI GIẢNG
 
 1. **Loại bỏ 100% slide hành chính rườm rà**:
    - Tuyệt đối không đưa các phần: *"Mục tiêu bài học", "Năng lực số và AI", "Phẩm chất và năng lực", "Tiến trình dạy học", "Yêu cầu cần đạt"* vào slide.
@@ -62,37 +62,60 @@ Kho lưu trữ các Skill chuyên biệt dành cho giáo viên và trợ lý AI 
    - **Nội dung bài học / thảo luận / ghi nhớ (Body text)**: **18 pt** (học sinh ngồi cuối lớp nhìn rõ mồn một).
    - **Chú thích ảnh, số trang, tag trường (Footer/Tag)**: **14 pt**.
 
----
+7. **Bắt buộc lập Bản phác thảo chi tiết (Storyboard) từng slide duyệt trước khi tạo PPTX**:
+   - Khi có file giáo án, file SGK hoặc tài liệu giảng dạy, trợ lý **bắt buộc** phải lập bản phác thảo chi tiết từng slide (mô tả rõ Kênh hình, Câu hỏi phát vấn, Khung ghi nhớ, Lời giảng GV) để giáo viên duyệt.
+   - Dừng lại chờ giáo viên bấm duyệt (OK / Đồng ý) thì mới khởi tạo và xuất file PPTX.
 
-## 🚀 3 LUỒNG HOẠT ĐỘNG THÔNG MINH
-
-### 📌 Luồng tương tác mở đầu:
-Khi giáo viên gõ: *"Tôi muốn làm pptx"*, *"Tôi muốn tạo slide"*...  
-Trợ lý sẽ tự động gửi lời chào, **4 lưu ý quan trọng** và hỏi giáo viên chọn:
-- **[Phím 1]** Có File Giáo án (Word / PDF)
-- **[Phím 2]** Có File Sách giáo khoa (PDF / ảnh chụp SGK)
-- **[Phím 3]** Đã có kịch bản/nội dung từng slide cụ thể
+8. **Cơ chế linh hoạt tiếp nhận & xử lý 3 nguồn hình ảnh**:
+   - Slide không làm toàn chữ, nhưng không chèn ảnh hoạt hình vô nghĩa.
+   - Hỗ trợ mượt mà 3 nguồn ảnh: (1) Bóc tách trực tiếp từ PDF SGK/ảnh chụp điện thoại; (2) Lấy ảnh từ thư mục riêng trên máy tính; (3) Tự động tìm kiếm ảnh thực tế/hiển vi khoa học chất lượng cao từ Web (Openverse & Wikimedia).
 
 ---
 
-### 🔹 Luồng 1: Từ File Giáo Án (Word / PDF)
-- **Quy trình**: Đọc giáo án $\to$ Tự động lọc bỏ phần hành chính $\to$ Lập **Bảng kế hoạch chi tiết từng slide** gửi giáo viên duyệt $\to$ Giáo viên duyệt **OK** mới tạo slide.
+## 📸 3 NGUỒN HÌNH ẢNH ĐƯỢC HỖ TRỢ VÀ TỐI ƯU
 
-### 🔹 Luồng 2: Từ File Sách Giáo Khoa (SGK)
-- **Quy trình**: Đọc SGK $\to$ Bóc tách ảnh, biểu đồ, thí nghiệm $\to$ Lên kịch bản sư phạm 3 bước $\to$ Lập **Bảng kế hoạch slide** gửi giáo viên duyệt $\to$ Giáo viên duyệt **OK** mới tạo slide.
-
-### 🔹 Luồng 3: Từ Kịch bản Có Sẵn
-- **Quy trình**: Giáo viên gửi kịch bản (chat hoặc file text/Word) $\to$ Trợ lý làm đúng 100% nội dung, tự tìm ảnh nét / vẽ sơ đồ vector và **xuất thẳng file PPTX luôn** (không qua bước duyệt kế hoạch).
+| Nguồn hình ảnh | Cách thức cung cấp | Cách AI xử lý | Ưu điểm |
+|:---|:---|:---|:---|
+| **1. Bóc tách từ SGK (PDF) / Word / Ảnh chụp** | Đính kèm file PDF SGK, Word giáo án hoặc ảnh chụp điện thoại | Dùng `source_to_md.py` trích xuất ảnh gốc, khóa tỉ lệ chống méo | Chuẩn 100% SGK học sinh đang học, quen thuộc |
+| **2. Kho ảnh thư mục máy tính** | Nhắn đường dẫn thư mục ảnh trên máy (ví dụ `D:\anh_tebao\`) | Tự động quét file ảnh, đối chiếu và gán vào slide phù hợp | Tận dụng tối đa ảnh thí nghiệm thực tế của trường |
+| **3. Ảnh thực tế / Hiển vi từ Web** | Nhờ AI tìm ảnh thực tế/hiển vi của đối tượng | Dùng `image_search.py` tải ảnh CC mở từ Openverse/Wikimedia | Ảnh chụp thật siêu nét (2000px–4000px), an toàn bản quyền |
 
 ---
 
-## 📦 CÁCH CÀI ĐẶT SKILL
+## 💬 CẨM NANG MẪU CÂU LỆNH GỢI Ý THẦY CÔ CÓ THỂ DÙNG NGAY
 
-Sao chép thư mục `tao-slide-bai-giang` vào thư mục kỹ năng của Antigravity hoặc Gemini:
+Khi mở đầu với: *"Tôi muốn làm pptx"*, *"Tạo slide cho tôi"*..., trợ lý sẽ gợi ý sẵn các mẫu câu lệnh sau:
+
+### 📌 Mẫu 1: Dùng ảnh bóc tách từ SGK
+```
+Soạn slide bài 17 Cấu tạo tế bào, SGK KHTN 6 Kết nối tri thức từ trang 60 đến 63. Trường THCS Ứng Hoè, GV: Nguyễn Văn Thiện, Tiết 1. Nhớ bóc tách đúng các hình 17.1, 17.2 trong sách vào slide cho tôi nhé!
+```
+
+### 📌 Mẫu 2: Dùng ảnh trong thư mục máy tính
+```
+Soạn slide bài Cấu tạo tế bào KHTN 6 Cánh Diều. Trường THCS Ứng Hoè, GV: Nguyễn Văn Thiện. Ảnh minh hoạ lấy từ thư mục D:\anh_tebao\ đưa vào các slide tương ứng giúp tôi nhé!
+```
+
+### 📌 Mẫu 3: Nhờ AI tìm ảnh thực tế / hiển vi nét cao từ Web
+```
+Soạn slide bài Cấu tạo tế bào KHTN 6. Ở phần thực hành quan sát, tìm giúp tôi ảnh chụp tế bào vảy hành thật và tế bào biểu bì dưới kính hiển vi độ nét cao nhé!
+```
+
+---
+
+## 📦 CÁCH CÀI ĐẶT & SỬ DỤNG BỘ SKILL
+
+### Cách 1: Sử dụng trực tiếp trong Antigravity / Gemini CLI
+Sao chép thư mục `tao-slide-bai-giang` vào thư mục kỹ năng của hệ thống:
 
 ```bash
 # Trên Windows:
-copy tao-slide-bai-giang C:\Users\<Username>\.gemini\config\skills\tao-slide-bai-giang
+xcopy /E /I tao-slide-bai-giang C:\Users\<Username>\.gemini\config\skills\tao-slide-bai-giang
+```
+
+### Cách 2: Đồng bộ tự động qua Git
+```bash
+git clone https://github.com/nguyenvanthien1812-ops/skill-Nguyen-Thien.git
 ```
 
 ---
@@ -103,4 +126,4 @@ copy tao-slide-bai-giang C:\Users\<Username>\.gemini\config\skills\tao-slide-bai
 
 ---
 
-© 2026 Thầy Nguyễn Văn Thiện. All rights reserved.
+© 2026 Thầy Nguyễn Văn Thiện — Trường THCS Ứng Hòe. All rights reserved.
