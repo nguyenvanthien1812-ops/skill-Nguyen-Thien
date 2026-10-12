@@ -7,9 +7,30 @@
 
 ## 🌟 TỔNG QUAN
 
-Skill **`tao-slide-bai-giang`** hỗ trợ thầy cô giáo chuyển đổi nhanh chóng bất kỳ file **Giáo án (Word, PDF)**, **Sách giáo khoa (SGK)** hoặc **Kịch bản tự soạn** thành một bộ slide PowerPoint bài giảng trình chiếu chuyên nghiệp, chuẩn mực sư phạm và tối ưu cho học sinh tiếp thu trên lớp.
+Kho lưu trữ các Skill chuyên biệt dành cho giáo viên và trợ lý AI Antigravity / Gemini / Claude:
+
+1. **`tao-slide-bai-giang`**: Soạn slide PowerPoint (PPTX) bài giảng chuẩn mực sư phạm từ file Giáo án (Word, PDF) hoặc Sách giáo khoa (SGK). 100% Native DrawingML không đè chữ, chuẩn GDPT 2018.
+2. **`tao-video-khoi-dong-bai-hoc`**: Lên kịch bản và trọn bộ Prompt Veo 3 cho video khởi động bài học (warm-up video) 60–80 giây. Đồng nhất nhân vật thầy/cô giáo, loại bỏ hoàn toàn chữ trong video tránh lỗi font AI, an toàn chính sách kiểm duyệt 100% và không spoil đáp án trước.
 
 ---
+
+## 🎬 1. SKILL: TẠO VIDEO KHỞI ĐỘNG BÀI HỌC VỚI VEO 3 (`tao-video-khoi-dong-bai-hoc`)
+
+### 🚀 Tính năng nổi bật:
+- **Tự động kích hoạt khi giáo viên yêu cầu**: Khi thầy cô nói *"tôi muốn làm video"*, *"tôi muốn viết kịch bản video..."*, trợ lý lập tức gửi form mẫu điền thông tin bài học hoặc tiếp nhận ảnh chụp SGK.
+- **Quy trình sư phạm 3 bước**:
+  1. Tiếp nhận bài học $\to$ Gợi ý 3–5 ý tưởng kịch bản độc đáo (thực tế, kịch tính, gamification...).
+  2. Thầy cô chọn ý tưởng $\to$ AI xuất trọn bộ Character Seed + 6–8 Prompt Veo 3 (mỗi clip 10s).
+  3. Lời thoại tiếng Việt chuẩn thời lượng ($\le$ 38 từ/clip) $\to$ Dựng hoàn thiện trên CapCut.
+- **Mẹo vàng Veo 3 tích hợp sẵn**:
+  - *No-Text Prompting*: Loại bỏ toàn bộ chữ trong background video để tránh AI sinh chữ rác/méo mó; chèn chữ chuẩn tiếng Việt qua CapCut.
+  - *Character Consistency*: Khóa ngoại hình nhân vật (Thầy giáo 35 tuổi / Thầy giáo 28 tuổi / Cô giáo 25 tuổi) kèm kỹ thuật Reference Image.
+  - *Safety Policy Bypass*: Tự động thay thế từ nhạy cảm (cắt, dao, kéo, bạo lực) bằng cử chỉ sư phạm an toàn.
+  - *Không Spoil đáp án*: Giữ trọn sự tò mò của học sinh cho đến khi bước vào tiết học.
+
+---
+
+## 🎓 2. SKILL: SOẠN SLIDE BÀI GIẢNG CHUẨN MỰC SƯ PHẠM (`tao-slide-bai-giang`)
 
 ## 💎 6 NGUYÊN TẮC VÀNG CỦA BÀI GIẢNG
 
