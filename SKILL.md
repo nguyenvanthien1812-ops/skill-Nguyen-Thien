@@ -19,7 +19,7 @@ description: >-
 
 Skill này được thiết kế chuyên biệt để hỗ trợ giáo viên chuyển đổi bất kỳ giáo án (Word, PDF), nội dung Sách giáo khoa (SGK) hoặc kịch bản tự soạn thành một bộ slide PowerPoint bài giảng trình chiếu chuyên nghiệp, chuẩn mực sư phạm và tối ưu cho học sinh tiếp thu trên lớp.
 
-### 8 Nguyên tắc vàng:
+### 9 Nguyên tắc vàng:
 1. **Loại bỏ 100% slide hành chính rườm rà**:
    - Tuyệt đối **không** tạo các slide: "Mục tiêu bài học", "Năng lực số và AI", "Phẩm chất và năng lực", "Tiến trình dạy học", "Yêu cầu cần đạt".
    - Bộ slide trình chiếu chỉ phục vụ học sinh trên lớp, đi thẳng từ:
@@ -55,6 +55,9 @@ Skill này được thiết kế chuyên biệt để hỗ trợ giáo viên chu
 8. **Cơ chế linh hoạt tiếp nhận & xử lý 3 nguồn hình ảnh**:
    - Bài giảng không làm bài toàn chữ, nhưng không chèn ảnh trang trí vô nghĩa.
    - Xử lý mượt mà cả 3 nguồn ảnh: (1) Bóc tách trực tiếp từ PDF SGK/ảnh chụp điện thoại; (2) Lấy ảnh từ thư mục riêng trên máy giáo viên; (3) Tự động tìm kiếm ảnh thực tế/hiển vi khoa học chất lượng cao từ web (Openverse & Wikimedia).
+9. **Đa dạng Phong cách chủ đề (5 Theme Styles) & Đa dạng Bố cục (6 Layout Patterns chuẩn STEM_MHHTH_v6)**:
+   - Cho phép giáo viên chọn hoặc trợ lý tự động phối hợp **5 phong cách bảng màu chủ đề** khác nhau (STEM Navy-Gold, Bio-Nature Emerald, Chem-Lab Purple-Cyan, Classic Academic, Warm Terracotta).
+   - Không lặp lại 1 bố cục đơn điệu: Trong một bài giảng (8–12 slide), bắt buộc luân chuyển linh hoạt **6 kiểu bố cục hiện đại** (Split 2 cột, Lưới 2×2 4 màu phân biệt, 3 Dải thẻ ngang đánh số lớn, Sơ đồ quy trình mũi tên ngang `▶`, Bảng dải băng nhãn màu, Bảng đối chiếu & Thẻ số liệu lớn) và sử dụng ký hiệu `▸` cho mọi danh sách.
 
 ---
 
@@ -195,17 +198,20 @@ Trợ lý **bắt buộc** phải lập bản phác thảo chi tiết (Storyboar
 ```markdown
 📋 KẾ HOẠCH & BẢN PHÁC THẢO CHI TIẾT SLIDE (STORYBOARD)
 Bài học: [Tên bài] — Môn: [Môn] [Lớp] — Bộ sách: [Tên bộ sách]
-Tổng dự kiến: XX slide | Thời lượng: 45 phút | Khổ: 16:9 (hoặc 4:3) | Font: Times New Roman
+Tổng dự kiến: XX slide | Thời lượng: 45 phút | Khổ: 16:9 | Font: Times New Roman
+🎨 Phong cách chủ đề: [Style 1: STEM Modern Navy & Gold / hoặc Style 2: Bio-Nature Emerald...] *(Thầy cô có thể yêu cầu đổi sang 1 trong 5 Style)*
 
 ---
-### 1. BẢNG TỔNG QUAN TIẾN TRÌNH:
-| Slide | Tiêu đề slide | Hoạt động / Nội dung | Kênh hình (Ảnh SGK / Thực tế / Thư mục) |
+### 1. BẢNG TỔNG QUAN TIẾN TRÌNH & BỐ CỤC:
+| Slide | Tiêu đề slide | Kiểu Bố Cục (Layout) | Kênh hình (Ảnh SGK / Thực tế / Thư mục) |
 |:-----:|:--------------|:---------------------|:----------------------------------------|
-| 01    | Trang bìa     | Tên bài, trường, lớp, tiết, GV | Họa tiết vector khoa học trang nhã |
-| 02    | Khởi động     | Tình huống thực tế dẫn dắt vào bài | 2–3 ảnh thực tế đời sống / ảnh web |
-| 03    | I. [Tên phần] | Quan sát → Thảo luận → Chốt ghi nhớ | Hình X.X SGK / Sơ đồ / Ảnh thư mục |
-| ...   | ...           | ...                  | ... |
-| XX    | Vận dụng & Dặn dò | Nhiệm vụ thực tế về nhà | Không |
+| 01    | Trang bìa     | Cover Banner Đặc     | Họa tiết vector khoa học / Ảnh chủ đề   |
+| 02    | Khởi động     | Layout 1 (Split 2 cột)| 2–3 ảnh thực tế đời sống / ảnh web      |
+| 03    | I. [Tên phần] | Layout 3 (3 Dải đánh số)| Hình X.X SGK / Sơ đồ / Ảnh thư mục   |
+| 04    | II. [Tên phần]| Layout 2 (Lưới 2×2 4 màu)| 4 ô phân loại màu sắc trực quan     |
+| 05    | III. [Quy trình]| Layout 4 (Mũi tên ngang ▶)| Chuỗi các bước thí nghiệm/quy trình |
+| ...   | ...           | ...                  | ...                                     |
+| XX    | Vận dụng & Dặn dò | Layout 6 (Bảng & Thẻ) | Tình huống thực tế về nhà             |
 
 ---
 ### 2. PHÁC THẢO CHI TIẾT TỪNG SLIDE (KÊNH HÌNH & KÊNH CHỮ):
@@ -213,24 +219,24 @@ Tổng dự kiến: XX slide | Thời lượng: 45 phút | Khổ: 16:9 (hoặc 4
 #### 🔹 Slide 01: TRANG BÌA
 - **Tiêu đề:** [TÊN BÀI HỌC IN HOA]
 - **Thông tin:** Trường [Tên trường] • GV: [Tên thầy cô] • Lớp [Lớp] • Tiết [Tiết]
-- **Kênh hình:** Họa tiết vector khoa học trang nhã.
+- **Kênh hình & Bố cục:** Nền đậm sang trọng kèm viền vàng cam `#E8941A` chuẩn `STEM_v6`.
 
 #### 🔹 Slide 02: HOẠT ĐỘNG KHỞI ĐỘNG
-- **Tiêu đề:** KHỞI ĐỘNG: [TÊN TÌNH HUỐNG/CÂU ĐỐ]
+- **Tiêu đề & Bố cục:** KHỞI ĐỘNG: [TÊN TÌNH HUỐNG] *(Layout 1: Trái Ảnh – Phải Hỏi & Ghi nhớ)*
 - **📸 Kênh hình:** [Mô tả chi tiết 2–3 ảnh: ảnh gì, nguồn từ đâu (Web Openverse/SGK/Thư mục GV)].
 - **❓ Câu hỏi thảo luận:** "[Câu hỏi phát vấn gợi mở học sinh suy nghĩ]?"
-- **💡 Em cần ghi nhớ (Dẫn dắt):** [Ý chốt mở ra bài học mới].
+- **💡 Em cần ghi nhớ (Dẫn dắt):** ▸ [Ý chốt mở ra bài học mới].
 - **🎙️ Ghi chú lời giảng GV:** "[Lời thầy cô dẫn dắt học sinh vào bài học]".
 
 #### 🔹 Slide 03: I. [TÊN MỤC BÀI HỌC]
-- **Tiêu đề:** [I. TÊN NỘI DUNG TRỌNG TÂM]
+- **Tiêu đề & Bố cục:** [I. TÊN NỘI DUNG TRỌNG TÂM] *(Layout 2: Lưới 2×2 4 màu / hoặc Layout 3: 3 Dải thẻ đánh số)*
 - **📸 Kênh hình:** [Chỉ rõ: Hình X.X bóc tách từ SGK trang YY / Ảnh chụp từ thư mục GV / Sơ đồ vẽ].
 - **❓ Câu hỏi thảo luận:**
   1. [Câu hỏi 1 cho học sinh quan sát hình]?
   2. [Câu hỏi 2 phát triển tư duy]?
 - **💡 Em cần ghi nhớ (Chốt ghi vở):**
-  - [Ý 1: Định nghĩa / đặc điểm cốt lõi].
-  - [Ý 2: Vai trò / quy luật].
+  - ▸ [Ý 1: Định nghĩa / đặc điểm cốt lõi].
+  - ▸ [Ý 2: Vai trò / quy luật].
 - **🎙️ Ghi chú lời giảng GV:** "[Lời giải thích, hướng dẫn học sinh phân tích hình ảnh]".
 
 *(... Các slide tiếp theo trình bày chi tiết tương tự ...)*
@@ -238,9 +244,9 @@ Tổng dự kiến: XX slide | Thời lượng: 45 phút | Khổ: 16:9 (hoặc 4
 ---
 💡 Thầy cô xem bản phác thảo chi tiết trên và phản hồi giúp em nhé:
 - "Đồng ý / OK / Làm đi" → Em bắt đầu tạo bộ slide PPTX ngay.
-- "Đổi ảnh slide X thành [mô tả ảnh]" → Em sẽ đổi nguồn ảnh theo ý thầy cô.
-- "Sửa câu hỏi / nội dung slide Y" → Em sẽ cập nhật lại nội dung.
-- "Thêm / Bớt / Gộp slide" → Em sẽ điều chỉnh cấu trúc và gửi lại bảng cập nhật.
+- "Đổi sang phong cách [Style 1: STEM Navy / Style 2: Xanh Sinh học / Style 3: Tím Hóa học / Style 4: Sáng Học thuật / Style 5: Cam Năng động]" → Em sẽ đổi toàn bộ bảng màu.
+- "Đổi bố cục slide X thành [Lưới 4 ô / 3 Dải đánh số / Quy trình mũi tên...]" → Em sẽ đổi kiểu trình bày.
+- "Đổi ảnh slide X" hoặc "Sửa nội dung / Thêm / Bớt slide" → Em sẽ điều chỉnh và gửi lại bảng cập nhật.
 ```
 
 > ⚠️ **BẮT BUỘC DỪNG & CHỜ**: Sau khi gửi Bản phác thảo chi tiết, **dừng lại ngay** và hỏi:  
@@ -364,7 +370,91 @@ Trình bày đầy đủ Bản phác thảo Storyboard chi tiết từng slide g
 
 ---
 
-## V. CÁC BƯỚC KỸ THUẬT CHUNG (KHI ĐÃ BẮT ĐẦU TẠO SLIDE)
+## V. HỆ THỐNG 5 PHONG CÁCH CHỦ ĐỀ (THEME STYLES) & 6 KIỂU BỐ CỤC (LAYOUT PATTERNS) CHUẨN STEM_MHHTH_v6
+
+Để bài giảng luôn mới mẻ, cuốn hút và phù hợp với từng môn học/chủ đề, trợ lý hỗ trợ **5 Phong cách bảng màu (Theme Styles)** và **6 Kiểu bố cục (Layout Patterns)** kế thừa tinh hoa thiết kế từ bộ slide mẫu `STEM_MHHTH_v6.pptx`. Giáo viên có thể chỉ định phong cách yêu thích hoặc trợ lý tự động chọn phong cách phù hợp nhất với môn học:
+
+### 🎨 1. BẢNG 5 PHONG CÁCH CHỦ ĐỀ MÀU SẮC (5 THEME STYLES)
+
+| Mã Phong Cách | Tên Phong Cách | Nền Slide | Màu Header Đặc & Footer | Đường Chỉ Điểm Nhấn (6px) | 4 Màu Thẻ Phân Nhóm (Đậm / Nền Nhạt) | Phù Hợp Nhất Cho |
+|:---:|:---|:---:|:---:|:---:|:---|:---|
+| **Style 1** | **STEM Modern Navy & Gold** *(Chuẩn STEM_v6)* | `#F0F5FB` | `#1B3A6B` *(Xanh Navy)* | `#E8941A` *(Vàng cam)* | 1. Đỏ `#C0392B` / `#FDEDEC`<br>2. Cam `#E8941A` / `#FFF3DB`<br>3. Ngọc `#16A085` / `#E8F8F5`<br>4. Lam `#1B3A6B` / `#E8EFF8` | Toán học, Vật lí, Hoạt động STEM, Báo cáo sáng kiến |
+| **Style 2** | **Bio-Nature Emerald** *(Xanh Sinh Học)* | `#F2F9F6` | `#0F5132` *(Lục bảo đậm)* | `#F59E0B` *(Vàng nắng)* | 1. Lá `#198754` / `#E8F5E9`<br>2. Cam `#D97706` / `#FEF3C7`<br>3. Biển `#0284C7` / `#E0F2FE`<br>4. Tím `#7C3AED` / `#F3E8FF` | Sinh học, KHTN (Tế bào, Đa dạng sinh học, Sinh thái) |
+| **Style 3** | **Chem-Lab Royal Purple** *(Tím Hoá Học)* | `#F5F3FF` | `#3B0764` *(Tím hoàng gia)* | `#06B6D4` *(Xanh Cyan)* | 1. Tím `#6D28D9` / `#EDE9FE`<br>2. Cyan `#0891B2` / `#CFFAFE`<br>3. Hồng `#BE185D` / `#FCE7F3`<br>4. Cam `#EA580C` / `#FFEDD5` | Hóa học, KHTN (Chất, Nguyên tử, Bảng tuần hoàn) |
+| **Style 4** | **Classic Academic Light** *(Học Thuật Sáng)* | `#F8FAFC` | Nền sáng + Badge `#EBF3FA` | `#3B82F6` *(Line mảnh)* | 1. Xanh `#1F4E79` / `#EFF6FF`<br>2. Vàng `#F59E0B` / `#FFFBEB`<br>3. Lục `#10B981` / `#ECFDF5`<br>4. Tím `#6366F1` / `#EEF2FF` | Bài giảng lý thuyết truyền thống, Ôn tập nhẹ nhàng |
+| **Style 5** | **Warm Terracotta** *(Năng Động Ấm Áp)* | `#FFFDF9` | `#7C2D12` *(Đỏ nâu ấm)* | `#FBBF24` *(Vàng tươi)* | 1. Cam `#EA580C` / `#FFEDD5`<br>2. Rêu `#15803D` / `#DCFCE7`<br>3. Lam `#1D4ED8` / `#DBEAFE`<br>4. Đỏ `#B91C1C` / `#FEE2E2` | Hoạt động Khởi động, Trò chơi, Lịch sử, Địa lí |
+
+> 💡 **Quy tắc chọn Style**: Nếu giáo viên không chỉ định, trợ lý tự động chọn **Style 1 (STEM Navy & Gold)** cho Toán/Lí/STEM, **Style 2 (Bio-Nature Emerald)** cho Sinh học/Tế bào, **Style 3 (Chem-Lab)** cho Hóa học, hoặc luân chuyển khi giáo viên yêu cầu *"Đổi sang phong cách..."*.
+
+---
+
+### 📐 2. SÁU KIỂU BỐ CỤC HIỆN ĐẠI (6 LAYOUT PATTERNS TỪ STEM_MHHTH_v6)
+
+Tuyệt đối **không dùng 1 bố cục lặp đi lặp lại cho cả bài**. Trong một bài giảng (8–12 slide), trợ lý phải phối hợp linh hoạt 6 kiểu bố cục sau và luôn dùng ký hiệu `▸` cho các dòng liệt kê:
+
+#### 🔹 Layout 1: `Split Visual-Pedagogy` (Trái Kênh Hình 45% – Phải Hỏi & Ghi Nhớ 55%)
+- **Ứng dụng**: Slide hình thành kiến thức có ảnh SGK, ảnh hiển vi thực tế hoặc sơ đồ thí nghiệm.
+- **Cấu trúc**: Cột trái (`x=40..590`) đặt khung ảnh lớn bo góc kèm chú thích; Cột phải (`x=620..1240`) chia 2 hộp: Hộp trên là `❓ CÂU HỎI THẢO LUẬN` (nền vàng nhạt `#FFF3DB`, thanh tiêu đề cam `#E8941A`), hộp dưới là `💡 EM CẦN GHI NHỚ` (nền xanh nhạt `#E8EFF8`, thanh tiêu đề `#1B3A6B`).
+
+#### 🔹 Layout 2: `2x2 Color-Coded Grid` (Lưới 4 Ô Đa Sắc — Chuẩn Slide 10, 18, 19 STEM_v6)
+- **Ứng dụng**: Khi bài học có **4 phần, 4 thành phần, 4 vai trò, 4 tính chất** hoặc **4 câu hỏi luyện tập**.
+- **Cấu trúc SVG mẫu**:
+```xml
+<!-- Ô 1 (Trái Trên - Đỏ San Hô) -->
+<rect x="40" y="125" width="585" height="255" rx="10" fill="#FDEDEC" stroke="#F5B7B1" stroke-width="1"/>
+<rect x="40" y="125" width="585" height="52" rx="10" fill="#C0392B"/>
+<text x="60" y="159" font-size="26.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">1. [TIÊU ĐỀ Ô 1]</text>
+<text x="60" y="205" font-size="24.0" fill="#1E293B" font-family="Times New Roman, serif">▸ [Nội dung ý 1...]</text>
+
+<!-- Ô 2 (Phải Trên - Cam Vàng) -->
+<rect x="655" y="125" width="585" height="255" rx="10" fill="#FFF3DB" stroke="#FAD7A0" stroke-width="1"/>
+<rect x="655" y="125" width="585" height="52" rx="10" fill="#E8941A"/>
+<text x="675" y="159" font-size="26.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">2. [TIÊU ĐỀ Ô 2]</text>
+
+<!-- Ô 3 (Trái Dưới - Xanh Ngọc) -->
+<rect x="40" y="400" width="585" height="255" rx="10" fill="#E8F8F5" stroke="#A3E4D7" stroke-width="1"/>
+<rect x="40" y="400" width="585" height="52" rx="10" fill="#16A085"/>
+<text x="60" y="434" font-size="26.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">3. [TIÊU ĐỀ Ô 3]</text>
+
+<!-- Ô 4 (Phải Dưới - Xanh Navy) -->
+<rect x="655" y="400" width="585" height="255" rx="10" fill="#E8EFF8" stroke="#AED6F1" stroke-width="1"/>
+<rect x="655" y="400" width="585" height="52" rx="10" fill="#1B3A6B"/>
+<text x="675" y="434" font-size="26.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">4. [TIÊU ĐỀ Ô 4]</text>
+```
+
+#### 🔹 Layout 3: `3-Row Numbered Cards` (3 Dải Thẻ Ngang Đánh Số Lớn — Chuẩn Slide 8 STEM_v6)
+- **Ứng dụng**: Khi trình bày **3 thành phần chính** (ví dụ: Màng tế bào, Chất tế bào, Nhân tế bào), **3 định luật**, hoặc **3 bước trọng tâm**.
+- **Cấu trúc SVG mẫu**:
+```xml
+<!-- Dải thẻ 1 -->
+<rect x="40" y="130" width="1200" height="160" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
+<rect x="40" y="130" width="85" height="160" rx="10" fill="#C0392B"/>
+<text x="82" y="225" font-size="42.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle" font-family="Times New Roman, serif">1</text>
+<text x="150" y="172" font-size="26.67" font-weight="bold" fill="#C0392B" font-family="Times New Roman, serif">[Tên thành phần / Bước 1]</text>
+<text x="150" y="212" font-size="24.0" fill="#1E293B" font-family="Times New Roman, serif">▸ [Mô tả chi tiết ngắn gọn, súc tích dòng 1]</text>
+<!-- Dải thẻ 2 (y=310, màu #16A085) và Dải thẻ 3 (y=490, màu #1B3A6B) tương tự -->
+```
+
+#### 🔹 Layout 4: `Horizontal Process Flow` (Sơ Đồ Quy Trình Mũi Tên Ngang `▶` — Chuẩn Slide 9 STEM_v6)
+- **Ứng dụng**: Dạy về **Quy trình thí nghiệm, Chu trình sinh học, Các bước giải bài toán thực tế**.
+- **Cấu trúc**:
+  - Phần trên (`y=125..245`): Hộp định nghĩa/Khái niệm nền `#E8EFF8`.
+  - Phần giữa (`y=290..430`): Chuỗi 4–6 hộp bước quy trình (`fill="#C0392B"`, `#E8941A`, `#16A085`, `#2980B9`, `#1B3A6B`) xếp ngang, ngăn cách bởi ký hiệu mũi tên `▶` cỡ lớn.
+  - Phần dưới (`y=465..655`): Khung `💡 EM CẦN GHI NHỚ` hoặc các tiêu chí kiểm chứng.
+
+#### 🔹 Layout 5: `Concept Label Stripes` (Bảng Dải Băng Nhãn Màu — Chuẩn Slide 12 STEM_v6)
+- **Ứng dụng**: Bảng tổng hợp thuật ngữ, chức năng các bộ phận/bào quan, hoặc phân công nhiệm vụ nhóm.
+- **Cấu trúc**: 4–6 hàng ngang (`height="72"` mỗi hàng). Cột trái (`width="320"`) là hộp màu đặc (`#C0392B`, `#E8941A`, `#16A085`, `#2980B9`...) in chữ trắng đậm tên bộ phận; Cột phải (`width="880"`) là hộp nền trắng ghi chức năng tương ứng.
+
+#### 🔹 Layout 6: `Comparison Table & Big Stat Cards` (Bảng Đối Chiếu Màu & Thẻ Số Liệu Lớn — Chuẩn Slide 4, 26 STEM_v6)
+- **Ứng dụng**: So sánh 2 đối tượng (Tế bào nhân sơ vs Nhân thực; Thực vật vs Động vật; Trước vs Sau) hoặc nhấn mạnh các con số khoa học ấn tượng.
+- **Cấu trúc**:
+  - Bảng so sánh 3 cột: Cột 1 (Tiêu chí - Header `#1B3A6B`), Cột 2 (Đối tượng A - Header `#1B3A6B`, nền `#E8EFF8`), Cột 3 (Đối tượng B nổi bật - Header `#1E8A44`, nền xanh lá dịu `#D4EDDA`).
+  - Hoặc đặt 3 **Thẻ Số Liệu Lớn (Big Stat Cards)** bên phải: Số liệu in cỡ `44pt` (`font-size="58.67"`) màu đậm nổi bật phía trên, lời giải thích 2 dòng phía dưới.
+
+---
+
+## VI. CÁC BƯỚC KỸ THUẬT CHUNG (KHI ĐÃ BẮT ĐẦU TẠO SLIDE)
 
 ### Bước kỹ thuật 1: Khởi tạo dự án
 ```bash
@@ -380,12 +470,28 @@ python3 skills/ppt-master/scripts/project_manager.py import-sources <project_pat
 - Sơ đồ thí nghiệm / cấu tạo khoa học:
   Vẽ trực tiếp bằng hình học SVG vector (ống nghiệm, ngọn lửa nến, biểu đồ quạt donut).
 
-### Bước kỹ thuật 3: Quy chuẩn Header & Bố cục SVG
+### Bước kỹ thuật 3: Quy chuẩn Header & Footer SVG (Hỗ trợ cả 2 Kiểu Header)
 
-#### Khung Header chuẩn (Không dòng chữ bé):
+#### Kiểu Header A — `Solid Top Banner` (Chuẩn STEM_MHHTH_v6 cho Style 1, 2, 3, 5):
+Thanh Header màu đậm tràn viền (`height="100"`) kèm đường chỉ vàng cam `#E8941A` (`height="6"`) cực kỳ sang trọng và nổi bật:
 ```python
-header_svg = f"""
-    <!-- Header -->
+header_banner_svg = f"""
+    <!-- Solid Top Banner Header (Chuẩn STEM_v6) -->
+    <g id="page_header" data-pptx-role="header" data-pptx-bounds="0 0 1280 106">
+        <rect x="0" y="0" width="1280" height="100" fill="{theme_primary}"/>
+        <rect x="0" y="100" width="1280" height="6" fill="{theme_accent}"/>
+        <rect x="40" y="14" width="260" height="26" rx="5" fill="{theme_accent}"/>
+        <text x="52" y="33" font-size="18.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">{tag}</text>
+        <text x="40" y="80" font-size="29.33" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">{title}</text>
+        <text x="1240" y="80" font-size="18.67" font-weight="bold" fill="#E2E8F0" text-anchor="end" font-family="Times New Roman, serif">{page_num:02d} / {total_pages:02d}</text>
+    </g>
+"""
+```
+
+#### Kiểu Header B — `Clean Academic` (Nền sáng thanh lịch cho Style 4):
+```python
+header_clean_svg = f"""
+    <!-- Clean Academic Header -->
     <g id="page_header" data-pptx-role="header" data-pptx-bounds="60 20 1160 78">
         <rect x="60" y="24" width="280" height="28" rx="6" fill="#EBF3FA"/>
         <text x="70" y="44" font-size="18.67" font-weight="bold" fill="#1F4E79" font-family="Times New Roman, serif">{tag}</text>
@@ -395,29 +501,16 @@ header_svg = f"""
 """
 ```
 
-#### Khung Footer chuẩn:
+#### Khung Footer chuẩn (Đồng bộ với Style):
 ```python
 footer_svg = f"""
     <!-- Footer -->
-    <g id="page_footer" data-pptx-role="footer" data-pptx-bounds="60 670 1160 40">
-        <line x1="60" y1="672" x2="1220" y2="672" stroke="#E2E8F0" stroke-width="1.5"/>
-        <text x="60" y="695" font-size="18.67" fill="#94A3B8" font-family="Times New Roman, serif">{ten_bai} • GV: {ten_gv} • Lớp {lop}</text>
-        <text x="1220" y="695" font-size="18.67" font-weight="bold" fill="#1F4E79" text-anchor="end" font-family="Times New Roman, serif">{page_num:02d} / {total_pages:02d}</text>
+    <g id="page_footer" data-pptx-role="footer" data-pptx-bounds="0 688 1280 32">
+        <rect x="0" y="688" width="1280" height="32" fill="{theme_primary}"/>
+        <text x="40" y="710" font-size="18.67" fill="#FFFFFF" font-family="Times New Roman, serif">{ten_truong} • GV: {ten_gv} • {ten_bai}</text>
+        <text x="1240" y="710" font-size="18.67" font-weight="bold" fill="{theme_accent}" text-anchor="end" font-family="Times New Roman, serif">Trang {page_num:02d}/{total_pages:02d}</text>
     </g>
 """
-```
-
-#### Quy chuẩn thẻ thảo luận & Em cần ghi nhớ:
-```xml
-<!-- Khung Câu hỏi thảo luận -->
-<rect x="645" y="112" width="575" height="265" rx="16" fill="#FFFBEB" stroke="#FDE68A" stroke-width="1.5"/>
-<rect x="645" y="112" width="575" height="42" rx="16" fill="#F59E0B"/>
-<text x="690" y="141" font-size="26.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">CÂU HỎI THẢO LUẬN</text>
-
-<!-- Khung Em cần ghi nhớ (chốt kiến thức ghi vở) -->
-<rect x="645" y="390" width="575" height="270" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
-<rect x="645" y="390" width="575" height="42" rx="16" fill="#1F4E79"/>
-<text x="690" y="419" font-size="26.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">💡 EM CẦN GHI NHỚ</text>
 ```
 
 ### Bước kỹ thuật 4: Kiểm định & Xuất Native DrawingML PPTX
@@ -446,11 +539,13 @@ footer_svg = f"""
 
 ---
 
-## VI. XỬ LÝ KHI GIÁO VIÊN PHẢN HỒI KẾ HOẠCH (Luồng A & B)
+## VII. XỬ LÝ KHI GIÁO VIÊN PHẢN HỒI KẾ HOẠCH (Luồng A & B)
 
 | Phản hồi của giáo viên | Hành động của trợ lý |
 |:---|:---|
 | "Đồng ý" / "OK" / "Làm đi" / "Được" | Bắt đầu Bước kỹ thuật 1 (init project) ngay |
+| "Đổi sang phong cách [Style 1 / STEM / Xanh Sinh học...]" | Đổi toàn bộ bảng màu và kiểu Header sang Style tương ứng |
+| "Đổi bố cục slide X thành lưới 4 ô / quy trình..." | Áp dụng đúng Layout Pattern giáo viên yêu cầu cho slide X |
 | "Bỏ slide X" | Ghi chú xoá slide X, cập nhật lại bảng kế hoạch, hỏi "Thầy cô xác nhận kế hoạch mới chưa ạ?" |
 | "Gộp slide X và Y" | Ghi chú gộp nội dung, cập nhật bảng, hỏi xác nhận |
 | "Thêm slide về [chủ đề]" | Thêm slide mới vào đúng vị trí, cập nhật bảng, hỏi xác nhận |
@@ -462,7 +557,7 @@ footer_svg = f"""
 
 ---
 
-## VII. BẢNG TRA CỨU CÁC CỤM TỪ CHUẨN SƯ PHẠM
+## VIII. BẢNG TRA CỨU CÁC CỤM TỪ CHUẨN SƯ PHẠM
 
 | Mục | ❌ KHÔNG DÙNG (Lý luận nội bộ) | ✅ DÙNG CHUẨN SƯ PHẠM (Học sinh & SGK) |
 | :--- | :--- | :--- |
@@ -473,3 +568,4 @@ footer_svg = f"""
 | **Đề mục** | Có dòng chữ nhỏ chú thích dưới đề mục | **Bỏ hoàn toàn**, chỉ để tiêu đề to rõ và thanh gạch ngang |
 | **Khởi động** | `Hoạt động phát vấn khởi động` | `HOẠT ĐỘNG KHỞI ĐỘNG`, `TÌNH HUỐNG THỰC TẾ` |
 | **Củng cố** | `Kiểm tra trắc nghiệm phát vấn` | `HOẠT ĐỘNG LUYỆN TẬP`, `THỬ TÀI ĐÚNG – SAI` |
+| **Ký hiệu liệt kê** | Dấu gạch ngang `-` hoặc chấm tròn đơn điệu | Dùng ký hiệu tam giác `▸` sắc nét, hiện đại |

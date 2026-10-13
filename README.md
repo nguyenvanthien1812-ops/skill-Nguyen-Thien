@@ -70,6 +70,33 @@ Kho lưu trữ các Skill chuyên biệt dành cho giáo viên và trợ lý AI 
    - Slide không làm toàn chữ, nhưng không chèn ảnh hoạt hình vô nghĩa.
    - Hỗ trợ mượt mà 3 nguồn ảnh: (1) Bóc tách trực tiếp từ PDF SGK/ảnh chụp điện thoại; (2) Lấy ảnh từ thư mục riêng trên máy tính; (3) Tự động tìm kiếm ảnh thực tế/hiển vi khoa học chất lượng cao từ Web (Openverse & Wikimedia).
 
+9. **Đa dạng Phong cách chủ đề (5 Theme Styles) & Đa dạng Bố cục (6 Layout Patterns chuẩn STEM_MHHTH_v6)**:
+   - Cho phép giáo viên chọn hoặc trợ lý tự động phối hợp **5 phong cách bảng màu chủ đề** khác nhau.
+   - Luân chuyển linh hoạt **6 kiểu bố cục hiện đại** trong cùng một bài giảng và dùng ký hiệu `▸` cho mọi danh sách.
+
+---
+
+## 🎨 5 PHONG CÁCH CHỦ ĐỀ MÀU SẮC (5 THEME STYLES)
+
+| Mã Phong Cách | Tên Phong Cách | Nền Slide | Màu Header & Footer | Chỉ Điểm Nhấn (6px) | 4 Màu Thẻ Phân Nhóm | Phù Hợp Nhất Cho |
+|:---:|:---|:---:|:---:|:---:|:---|:---|
+| **Style 1** | **STEM Modern Navy & Gold** *(Chuẩn STEM_v6)* | `#F0F5FB` | `#1B3A6B` | `#E8941A` | Đỏ `#C0392B`, Cam `#E8941A`, Ngọc `#16A085`, Lam `#1B3A6B` | Toán, Vật lí, Hoạt động STEM, Báo cáo |
+| **Style 2** | **Bio-Nature Emerald** *(Xanh Sinh Học)* | `#F2F9F6` | `#0F5132` | `#F59E0B` | Lá `#198754`, Cam `#D97706`, Biển `#0284C7`, Tím `#7C3AED` | Sinh học, KHTN (Tế bào, Sinh thái) |
+| **Style 3** | **Chem-Lab Royal Purple** *(Tím Hoá Học)* | `#F5F3FF` | `#3B0764` | `#06B6D4` | Tím `#6D28D9`, Cyan `#0891B2`, Hồng `#BE185D`, Cam `#EA580C` | Hóa học, KHTN (Chất, Nguyên tử) |
+| **Style 4** | **Classic Academic Light** *(Học Thuật Sáng)* | `#F8FAFC` | Badge `#EBF3FA` | `#3B82F6` | Xanh `#1F4E79`, Vàng `#F59E0B`, Lục `#10B981`, Tím `#6366F1` | Bài giảng lý thuyết truyền thống |
+| **Style 5** | **Warm Terracotta** *(Năng Động Ấm Áp)* | `#FFFDF9` | `#7C2D12` | `#FBBF24` | Cam `#EA580C`, Rêu `#15803D`, Lam `#1D4ED8`, Đỏ `#B91C1C` | Khởi động, Trò chơi, Lịch sử, Địa lí |
+
+---
+
+## 📐 6 KIỂU BỐ CỤC HIỆN ĐẠI (6 LAYOUT PATTERNS TỪ STEM_MHHTH_v6)
+
+1. **Layout 1 (`Split Visual-Pedagogy`)**: Trái Kênh hình lớn (45%) – Phải Hộp Câu hỏi thảo luận & Khung Em cần ghi nhớ (55%).
+2. **Layout 2 (`2x2 Color-Coded Grid`)**: Lưới 4 ô vuông/chữ nhật với 4 màu tiêu đề khác nhau (`#C0392B`, `#E8941A`, `#16A085`, `#1B3A6B`) và nền pastel dịu mắt.
+3. **Layout 3 (`3-Row Numbered Cards`)**: 3 dải thẻ ngang xếp tầng, có ô số thứ tự lớn (`1`, `2`, `3`) in đậm trên nền màu đặc bên trái.
+4. **Layout 4 (`Horizontal Process Flow`)**: Sơ đồ quy trình chuỗi hộp ngang nối nhau bằng mũi tên `▶` chuyển màu trực quan.
+5. **Layout 5 (`Concept Label Stripes`)**: Bảng dải băng nhãn màu bên trái + hộp trắng giải thích chức năng/vai trò bên phải.
+6. **Layout 6 (`Comparison Table & Big Stat Cards`)**: Bảng đối chiếu 3 cột (tô nền xanh lá `#D4EDDA` cột kết quả) hoặc Thẻ số liệu lớn (`44pt`).
+
 ---
 
 ## 📸 3 NGUỒN HÌNH ẢNH ĐƯỢC HỖ TRỢ VÀ TỐI ƯU
