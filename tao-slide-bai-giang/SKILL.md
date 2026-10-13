@@ -95,7 +95,13 @@ Thầy/cô có thể chọn **1 trong 3 cách** tiện nhất trên máy tính:
 - **Style 2:** `Bio-Nature Emerald` (Xanh lục bảo `#0F5132`, vàng nắng — *Rất hợp Sinh học, Tế bào, KHTN*)
 - **Style 3:** `Chem-Lab Royal Purple` (Tím hoàng gia `#3B0764`, xanh Cyan — *Rất hợp Hóa học, Nguyên tử*)
 - **Style 4:** `Classic Academic Light` (Nền sáng thanh lịch, thẻ xanh `#1F4E79` — *Hợp bài lý thuyết nhẹ nhàng*)
-- **Style 5:** `Warm Terracotta` (Đỏ cam ấm áp `#7C2D12` — *Hợp Khởi động, Lịch sử, Địa lí, Hoạt động Đoàn*)
+- **Style 5:** `Warm Terracotta` (Đỏ cam ấm áp `#7C2D12` — *Hợp Tiếng Anh, Khởi động, Lịch sử, Địa lí*)
+
+---
+### ✨ CHỌN MỨC HIỆU ỨNG TRÌNH CHIẾU (`animations.json`):
+- **Mức `Vừa` *(Mặc định chuẩn sư phạm)***: Mở trang hiện Kênh hình $\to$ Bấm chuột lần 1 hiện **Câu hỏi thảo luận** $\to$ Bấm chuột lần 2 hiện **Em cần ghi nhớ**; Bấm nút **"Xem đáp án"** ở câu trắc nghiệm.
+- **Mức `Nhiều` *(Có hiệu ứng Morph biến hình)***: Như mức Vừa + Thêm hiệu ứng **Morph** phóng to chi tiết sơ đồ/tế bào hoặc biến đổi trước–sau thí nghiệm cực mượt.
+- **Mức `Không`**: Hiện sẵn toàn bộ nội dung trên slide.
 
 ---
 ### ❓ THẦY CÔ ĐANG CÓ TÀI LIỆU DẠNG NÀO? (CHỌN PHÍM 1, 2 HOẶC 3):
@@ -106,16 +112,19 @@ Thầy/cô có thể chọn **1 trong 3 cách** tiện nhất trên máy tính:
 ---
 ### 💬 CÁC MẪU CÂU LỆNH CHI TIẾT (THẦY CÔ COPY & ĐIỀN THÔNG TIN DÙNG NGAY):
 
-📌 **Mẫu 1 — Làm từ File Giáo án / PDF SGK (Bóc tách ảnh gốc trong file):**
-> *"Làm cho tôi slide từ file `"D:\GiaoAn\Bai17_CauTaoTeBao.pdf"` (hoặc file đính kèm). Môn KHTN 6, bộ Kết nối tri thức, 1 tiết, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 2 (Xanh Sinh học). Nhớ bóc tách đúng các hình 17.1, 17.2 trong file vào slide và lên Bản phác thảo Storyboard chi tiết cho tôi duyệt trước nhé!"*
+📌 **Mẫu 1 — Làm từ File Giáo án / PDF SGK (Bóc tách ảnh gốc + Hiệu ứng Vừa/Morph):**
+> *"Làm cho tôi slide từ file `"D:\GiaoAn\Bai17_CauTaoTeBao.pdf"` (hoặc file đính kèm). Môn KHTN 6, bộ Kết nối tri thức, 1 tiết, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 2 (Xanh Sinh học), Hiệu ứng mức Nhiều (có Morph phóng to tế bào). Nhớ bóc tách đúng các hình 17.1, 17.2 trong file vào slide và lên Bản phác thảo Storyboard chi tiết cho tôi duyệt trước nhé!"*
 
 📌 **Mẫu 2 — Kết hợp Giáo án + Thư mục ảnh riêng đã copy trên máy:**
-> *"Soạn slide bài Cấu tạo tế bào, KHTN 6 bộ Cánh Diều, Trường THCS ..., GV: ..., Phong cách Style 1 (STEM Navy). Nội dung lấy từ file `"D:\GiaoAn\Bai17.docx"`, còn hình ảnh minh hoạ em lấy toàn bộ trong thư mục `"D:\anh_bai17"` đưa vào các slide tương ứng. Lên bản phác thảo cho tôi xem trước nhé!"*
+> *"Soạn slide bài Cấu tạo tế bào, KHTN 6 bộ Cánh Diều, Trường THCS ..., GV: ..., Phong cách Style 1 (STEM Navy), Hiệu ứng mức Vừa. Nội dung lấy từ file `"D:\GiaoAn\Bai17.docx"`, còn hình ảnh minh hoạ em lấy toàn bộ trong thư mục `"D:\anh_bai17"` đưa vào các slide tương ứng. Lên bản phác thảo cho tôi xem trước nhé!"*
 
 📌 **Mẫu 3 — Chưa có sẵn ảnh, nhờ AI tự tìm ảnh thực tế / hiển vi siêu nét từ Web:**
-> *"Soạn slide bài 17 Cấu tạo tế bào, KHTN 6 Kết nối tri thức, Trường THCS ..., GV: ..., Phong cách Style 1. Ở các slide quan sát, em tự tìm giúp tôi ảnh chụp tế bào vảy hành thật và tế bào biểu bì dưới kính hiển vi độ nét cao từ trên mạng nhé. Lập bản phác thảo Storyboard cho tôi duyệt trước!"*
+> *"Soạn slide bài 17 Cấu tạo tế bào, KHTN 6 Kết nối tri thức, Trường THCS ..., GV: ..., Phong cách Style 1, Hiệu ứng mức Vừa. Ở các slide quan sát, em tự tìm giúp tôi ảnh chụp tế bào vảy hành thật và tế bào biểu bì dưới kính hiển vi độ nét cao từ trên mạng nhé. Lập bản phác thảo Storyboard cho tôi duyệt trước!"*
 
-👉 **Thầy/cô chỉ cần gõ phím `1`, `2`, `3` hoặc copy 1 trong 3 mẫu câu lệnh trên gửi cho em. Em sẽ lập ngay BẢN PHÁC THẢO CHI TIẾT TỪNG SLIDE (Kênh hình, Bố cục, Câu hỏi thảo luận, Em cần ghi nhớ, Lời giảng) để thầy/cô duyệt OK rồi mới xuất file PPTX ạ!**
+📌 **Mẫu 4 — Dành cho môn Tiếng Anh (Global Success / Smart World / Friends Plus):**
+> *"Soạn slide Tiếng Anh lớp [7] Unit [4]: [Music and Arts] - Lesson [Getting Started / A Closer Look 1], từ file SGK `"D:\English7_GlobalSuccess.pdf"` trang [40-41]. Trường THCS ..., GV: ..., Phong cách Style 5. Nhớ lập bảng Vocabulary có phiên âm quốc tế IPA `/.../` kèm ảnh Flashcard, khung Grammar rõ ràng và hiệu ứng bấm nút hiện đáp án cho các Task nhé!"*
+
+👉 **Thầy/cô chỉ cần gõ phím `1`, `2`, `3` hoặc copy 1 trong 4 mẫu câu lệnh trên gửi cho em. Em sẽ lập ngay BẢN PHÁC THẢO CHI TIẾT TỪNG SLIDE (Kênh hình, Bố cục, Hiệu ứng, Câu hỏi, Ghi nhớ) để thầy/cô duyệt OK rồi mới xuất file PPTX ạ!**
 ```
 
 > ⚠️ **BẮT BUỘC DỪNG VÀ CHỜ**: Sau khi gửi tin nhắn trên, trợ lý phải dừng lại và chờ giáo viên chọn 1, 2, 3 (hoặc gửi câu lệnh kèm đường dẫn file). Không chạy bất kỳ lệnh `project_manager.py init` hay tạo file nào lúc này.
@@ -547,29 +556,98 @@ footer_svg = f"""
 """
 ```
 
-### Bước kỹ thuật 4: Kiểm định & Xuất Native DrawingML PPTX
-1. **Kiểm tra chất lượng**:
+### Bước kỹ thuật 4: Thiết lập Hiệu ứng Sư phạm Bấm chuột, Nút Đáp án & Morph (`animations.json`)
+
+Để bài giảng có hiệu ứng chuẩn nhịp dạy học trên lớp, khi viết mã SVG ở mỗi slide nội dung, **bắt buộc bọc từng khối nội dung vào các thẻ `<g id="...">` riêng biệt ở cấp gốc (direct-root groups)** có `data-pptx-bounds` không chồng lấn:
+- `id="kenh_hinh"`: Khung hình ảnh SGK / sơ đồ (Hiện sẵn khi mở trang).
+- `id="cau_hoi_thao_luan"`: Hộp câu hỏi thảo luận (Bấm chuột lần 1 mới hiện).
+- `id="em_can_ghi_nho"`: Khung chốt kiến thức ghi vở (Bấm chuột lần 2 mới hiện).
+- Ở slide Trắc nghiệm / Luyện tập: Tạo nhóm nút bấm `id="nut_xem_dap_an"` và nhóm hộp đáp án `id="hop_dap_an"` đặt cạnh nhau (không đè lên nhau).
+
+#### 1. Cấu trúc `animations.json` chuẩn (3 nhịp bấm chuột + Nút đáp án + Morph):
+Tạo file `<project_path>/animations.json` trước khi chạy `svg_to_pptx.py`:
+```json
+{
+  "version": 1,
+  "defaults": {
+    "transition": { "effect": "fade", "duration": 0.4 }
+  },
+  "slides": {
+    "02_khoi_dong": {
+      "transition": { "effect": "push", "duration": 0.5 },
+      "groups": {
+        "cau_hoi_thao_luan": {
+          "effects": [{ "effect": "entrance_fade", "trigger": "on-click", "order": 1, "duration": 0.35 }]
+        },
+        "em_can_ghi_nho": {
+          "effects": [{ "effect": "entrance_wipe", "trigger": "on-click", "order": 2, "duration": 0.4 }]
+        }
+      }
+    },
+    "04_chi_tiet_te_bao": {
+      "transition": { "effect": "morph", "effect_options": { "morph_by": "object" }, "duration": 0.8 },
+      "morph": {
+        "from": "03_tong_quan_te_bao",
+        "pairs": {
+          "khoi-nhan-te-bao": { "from": "group_nhan_nho", "to": "group_nhan_phong_to" }
+        }
+      }
+    },
+    "07_luyen_tap": {
+      "groups": {
+        "hop_dap_an": {
+          "effects": [{ "effect": "entrance_fade", "trigger_shape": "nut_xem_dap_an", "order": 1, "duration": 0.3 }]
+        }
+      }
+    }
+  }
+}
+```
+- Kiểm tra hợp lệ cấu hình hiệu ứng trước khi xuất:
+  ```bash
+  python3 skills/ppt-master/scripts/animation_config.py validate <project_path>
+  ```
+
+---
+
+### Bước kỹ thuật 5: Quy chuẩn Chuyên biệt khi soạn Môn Tiếng Anh (English Teaching Mode)
+
+Khi giáo viên yêu cầu soạn slide môn **Tiếng Anh** (*Global Success, i-Learn Smart World, Friends Plus, Explore English...*), trợ lý tự động kích hoạt **Chế độ Tiếng Anh**:
+1. **Tiến trình chuẩn tiết dạy Tiếng Anh (PPP & SGK mới)**:
+   - `Slide 1 (Cover)` $\to$ `Slide 2 (Warm-up: Kim's Game / Guessing Picture / Pelmanism)` $\to$ `Slide 3 (I. Vocabulary: Bảng từ vựng + IPA + Ảnh Flashcard)` $\to$ `Slide 4 (II. Listen & Read / Presentation)` $\to$ `Slide 5 (III. Grammar Focus: (+), (-), (?) & Usage)` $\to$ `Slide 6–7 (IV. Practice: Task 1, Task 2, Task 3 theo SGK kèm nút bấm hiện đáp án)` $\to$ `Slide 8 (V. Production: Work in pairs / Let's talk & Wrap-up + Homework)`.
+2. **Quy chuẩn trình bày Từ vựng (Vocabulary) & Phiên âm Quốc tế IPA**:
+   - Bắt buộc ghi đầy đủ: **Từ vựng (Word) + Từ loại `(n/v/adj/adv)` + Phiên âm Quốc tế IPA `/.../` (có dấu trọng âm `'`) + Nghĩa tiếng Việt**.
+   - Font `Times New Roman` hiển thị hoàn hảo 100% ký tự IPA (`/ˈnætʃ.ər.əl/`, `/θɪŋk/`, `/ʃʊd/`).
+3. **Nhãn tiêu đề Khung chuẩn Tiếng Anh trên Slide**:
+   - `🔤 NEW VOCABULARY` *(Thay cho Khung kiến thức ở phần từ vựng)*
+   - `📐 GRAMMAR FOCUS` *(Khung công thức ngữ pháp)*
+   - `💬 LET'S TALK / WORK IN PAIRS` *(Thay cho `CÂU HỎI THẢO LUẬN`)*
+   - `🎯 PRACTICE — TASK 1, 2, 3` *(Các bài tập thực hành có nút bấm hiện Key/Answer)*
+   - `💡 REMEMBER! / KEY TAKEAWAYS` *(Thay cho `EM CẦN GHI NHỚ`)*
+
+---
+
+### Bước kỹ thuật 6: Kiểm định SVG, Xuất Native DrawingML PPTX & Kiểm tra Hiệu ứng
+1. **Kiểm tra chất lượng SVG**:
    ```bash
    python3 skills/ppt-master/scripts/svg_quality_checker.py <project_path> --canonical-authoring --stage final --json
    ```
-2. **Xuất PowerPoint Native**:
+2. **Xuất PowerPoint Native (tự động đọc `animations.json`)**:
    ```bash
    python3 skills/ppt-master/scripts/svg_to_pptx.py <project_path>
    ```
-3. **Vá font Times New Roman** (chạy sau khi xuất PPTX):
+3. **Vá font Times New Roman** (chạy ngay sau khi xuất PPTX):
    ```bash
    python3 skills/ppt-master/scripts/patch_fonts.py <đường_dẫn_file.pptx>
    ```
-
-### Bước kỹ thuật 5: Kiểm tra hiệu ứng sư phạm & Bàn giao
-- Chạy kiểm tra hiệu ứng:
+4. **Kiểm tra hiệu ứng sư phạm & Bàn giao**:
    ```bash
    python3 tools/vi/kiem_hieu_ung.py <duong_dan_file.pptx> --muc vua
    ```
-   *(Đảm bảo kết quả trả về `"ready": true` và các thẻ câu hỏi/kết luận xuất hiện theo click chuột.)*
-- Tạo bản sao có tên thân thiện:
-   `KHTN[Khối]_[TenBai]_ChuanSuPham.pptx`
-- Cung cấp link mở file cho giáo viên với cú pháp `file:///...`.
+   *(Hoặc `--muc nhieu` nếu có hiệu ứng Morph; đảm bảo kết quả trả về `"ready": true`).*
+5. **Tạo bản sao có tên thân thiện & Gửi link**:
+   - Đặt tên: `[Mon][Khoi]_[TenBai]_ChuanSuPham.pptx`
+   - Cung cấp link mở file cho giáo viên với cú pháp `file:///...`.
 
 ---
 
@@ -580,26 +658,20 @@ footer_svg = f"""
 | "Đồng ý" / "OK" / "Làm đi" / "Được" | Bắt đầu Bước kỹ thuật 1 (init project) ngay |
 | "Đổi sang phong cách [Style 1 / STEM / Xanh Sinh học...]" | Đổi toàn bộ bảng màu và kiểu Header sang Style tương ứng |
 | "Đổi bố cục slide X thành lưới 4 ô / quy trình..." | Áp dụng đúng Layout Pattern giáo viên yêu cầu cho slide X |
-| "Bỏ slide X" | Ghi chú xoá slide X, cập nhật lại bảng kế hoạch, hỏi "Thầy cô xác nhận kế hoạch mới chưa ạ?" |
-| "Gộp slide X và Y" | Ghi chú gộp nội dung, cập nhật bảng, hỏi xác nhận |
-| "Thêm slide về [chủ đề]" | Thêm slide mới vào đúng vị trí, cập nhật bảng, hỏi xác nhận |
-| "Sửa nội dung slide X thành..." | Cập nhật nội dung slide X theo ý giáo viên, xác nhận lại |
-| "Ít slide hơn" / "Nhiều slide hơn" | Điều chỉnh số lượng, giải thích gộp/chia như thế nào, hỏi xác nhận |
-| "Bài này không cần luyện tập" | Bỏ slide Luyện tập, cập nhật bảng, hỏi xác nhận |
+| "Thêm hiệu ứng Morph cho slide X và Y" | Thiết kế 2 slide liên tiếp có cặp nhóm đối tượng đồng nhất và khai báo `"morph"` trong `animations.json` |
+| "Bỏ slide X" / "Gộp slide X và Y" / "Thêm slide..." | Điều chỉnh cấu trúc bảng Storyboard và hiển thị lại toàn bộ bảng để giáo viên xác nhận |
 
 **Nguyên tắc vàng khi nhận phản hồi**: Mỗi lần cập nhật bảng kế hoạch phải **hiển thị lại toàn bộ bảng đã cập nhật** để giáo viên dễ xem và duyệt lần cuối.
 
 ---
 
-## VIII. BẢNG TRA CỨU CÁC CỤM TỪ CHUẨN SƯ PHẠM
+## VIII. BẢNG TRA CỨU CÁC CỤM TỪ CHUẨN SƯ PHẠM (ĐA MÔN & TIẾNG ANH)
 
-| Mục | ❌ KHÔNG DÙNG (Lý luận nội bộ) | ✅ DÙNG CHUẨN SƯ PHẠM (Học sinh & SGK) |
-| :--- | :--- | :--- |
-| **Kênh hình** | `Kênh hình 11.1 SGK`, `Hình ảnh kênh hình` | `HÌNH 11.1: [TÊN]`, `QUAN SÁT HÌNH 11.1 (SGK)` |
-| **Phát vấn** | `Câu hỏi phát vấn`, `Phát vấn học sinh` | `CÂU HỎI THẢO LUẬN`, `❓ THẢO LUẬN NHÓM` |
-| **Ghi vở** | `Kết luận học sinh ghi vào vở`, `Chốt bài ghi vở` | `💡 EM CẦN GHI NHỚ`, `💡 KIẾN THỨC TRỌNG TÂM` |
-| **Thí nghiệm** | `Mô phỏng kênh hình thí nghiệm` | `THÍ NGHIỆM: [TÊN THÍ NGHIỆM]` |
-| **Đề mục** | Có dòng chữ nhỏ chú thích dưới đề mục | **Bỏ hoàn toàn**, chỉ để tiêu đề to rõ và thanh gạch ngang |
-| **Khởi động** | `Hoạt động phát vấn khởi động` | `HOẠT ĐỘNG KHỞI ĐỘNG`, `TÌNH HUỐNG THỰC TẾ` |
-| **Củng cố** | `Kiểm tra trắc nghiệm phát vấn` | `HOẠT ĐỘNG LUYỆN TẬP`, `THỬ TÀI ĐÚNG – SAI` |
-| **Ký hiệu liệt kê** | Dấu gạch ngang `-` hoặc chấm tròn đơn điệu | Dùng ký hiệu tam giác `▸` sắc nét, hiện đại |
+| Mục | ❌ KHÔNG DÙNG (Lý luận nội bộ) | ✅ DÙNG CHUẨN SƯ PHẠM (KHTN / Toán / Văn...) | ✅ DÙNG CHUẨN MÔN TIẾNG ANH (English Mode) |
+| :--- | :--- | :--- | :--- |
+| **Kênh hình** | `Kênh hình 11.1 SGK`, `Hình ảnh kênh hình` | `HÌNH 11.1: [TÊN]`, `QUAN SÁT HÌNH 11.1 (SGK)` | `LOOK AT THE PICTURE`, `VISUAL FLASHCARD` |
+| **Phát vấn** | `Câu hỏi phát vấn`, `Phát vấn học sinh` | `CÂU HỎI THẢO LUẬN`, `❓ THẢO LUẬN NHÓM` | `💬 LET'S TALK`, `❓ WORK IN PAIRS / GROUPS` |
+| **Ghi vở** | `Kết luận học sinh ghi vào vở`, `Chốt bài ghi vở` | `💡 EM CẦN GHI NHỚ`, `💡 KIẾN THỨC TRỌNG TÂM` | `💡 REMEMBER!`, `🔤 NEW VOCABULARY`, `📐 GRAMMAR FOCUS` |
+| **Thí nghiệm / Thực hành** | `Mô phỏng kênh hình thí nghiệm` | `THÍ NGHIỆM: [TÊN THÍ NGHIỆM]` | `🎯 PRACTICE — TASK 1, 2, 3` |
+| **Đề mục** | Có dòng chữ nhỏ chú thích dưới đề mục | **Bỏ hoàn toàn**, chỉ để tiêu đề to rõ (22pt) | **Bỏ hoàn toàn**, chỉ để Unit / Lesson Title to rõ (22pt) |
+| **Ký hiệu liệt kê** | Dấu gạch ngang `-` đơn điệu | Dùng ký hiệu tam giác `▸` sắc nét, hiện đại | Dùng ký hiệu `▸` sắc nét, hiện đại |

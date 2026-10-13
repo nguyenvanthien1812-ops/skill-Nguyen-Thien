@@ -126,21 +126,41 @@ Khi bắt đầu gõ *"Tôi muốn làm pptx"*, trợ lý sẽ tự động hư�
 
 ---
 
+## ✨ HIỆU ỨNG SƯ PHẠM BẤM CHUỘT, NÚT ĐÁP ÁN & MORPH (`animations.json`)
+
+- **Mức `Vừa` (Mặc định chuẩn sư phạm)**: Mở trang chỉ hiện **Kênh hình** $\to$ Bấm chuột lần 1 hiện **Câu hỏi thảo luận** (`on-click`) $\to$ Bấm chuột lần 2 hiện **Em cần ghi nhớ**; ở phần Luyện tập có nút bấm **"Xem đáp án"** (`trigger_shape`).
+- **Mức `Nhiều` (Có hiệu ứng `Morph` biến hình)**: Tự động thiết kế 2 slide liên tiếp có định danh ghép cặp `!!<tên_nhóm>` để **phóng to (Zoom-in) chi tiết sơ đồ/tế bào** hoặc **biến đổi trước–sau thí nghiệm** cực kỳ mượt mà.
+
+---
+
+## 🇬🇧 CHẾ ĐỘ CHUYÊN BIỆT CHO MÔN TIẾNG ANH (ENGLISH MODE)
+
+Hỗ trợ trọn vẹn các bộ sách *Global Success, i-Learn Smart World, Friends Plus...*:
+- Hiển thị chuẩn 100% ký tự **Phiên âm Quốc tế IPA (`/ˈnætʃ.ər.əl/`, `/θɪŋk/`)** bằng font `Times New Roman` kèm ảnh **Visual Flashcard**.
+- Tự động dùng tiến trình & nhãn tiêu đề chuẩn Tiếng Anh: `Warm-up` $\to$ `🔤 NEW VOCABULARY` $\to$ `📐 GRAMMAR FOCUS (+)/(-)/(?)` $\to$ `🎯 PRACTICE (TASK 1, 2, 3)` $\to$ `💬 LET'S TALK / WORK IN PAIRS` $\to$ `💡 REMEMBER!`.
+
+---
+
 ## 💬 CẨM NANG MẪU CÂU LỆNH GỢI Ý TỪNG BƯỚC (COPY DÙNG NGAY)
 
-### 📌 Mẫu 1: Làm từ File Giáo án / PDF SGK (Bóc tách ảnh gốc trong file)
+### 📌 Mẫu 1: Làm từ File Giáo án / PDF SGK (Bóc tách ảnh gốc + Hiệu ứng Morph)
 ```text
-Làm cho tôi slide từ file "D:\GiaoAn\Bai17_CauTaoTeBao.pdf" (hoặc file đính kèm). Môn KHTN 6, bộ Kết nối tri thức, 1 tiết, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 2 (Xanh Sinh học). Nhớ bóc tách đúng các hình 17.1, 17.2 trong file vào slide và lên Bản phác thảo Storyboard chi tiết cho tôi duyệt trước nhé!
+Làm cho tôi slide từ file "D:\GiaoAn\Bai17_CauTaoTeBao.pdf" (hoặc file đính kèm). Môn KHTN 6, bộ Kết nối tri thức, 1 tiết, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 2 (Xanh Sinh học), Hiệu ứng mức Nhiều (có Morph phóng to tế bào). Nhớ bóc tách đúng các hình 17.1, 17.2 trong file vào slide và lên Bản phác thảo Storyboard chi tiết cho tôi duyệt trước nhé!
 ```
 
 ### 📌 Mẫu 2: Kết hợp Giáo án + Thư mục ảnh riêng đã copy trên máy tính
 ```text
-Soạn slide bài Cấu tạo tế bào, KHTN 6 bộ Cánh Diều, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 1 (STEM Navy). Nội dung lấy từ file "D:\GiaoAn\Bai17.docx", còn hình ảnh minh hoạ em lấy toàn bộ trong thư mục "D:\anh_bai17" đưa vào các slide tương ứng. Lên bản phác thảo cho tôi xem trước nhé!
+Soạn slide bài Cấu tạo tế bào, KHTN 6 bộ Cánh Diều, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 1 (STEM Navy), Hiệu ứng mức Vừa. Nội dung lấy từ file "D:\GiaoAn\Bai17.docx", còn hình ảnh minh hoạ em lấy toàn bộ trong thư mục "D:\anh_bai17" đưa vào các slide tương ứng. Lên bản phác thảo cho tôi xem trước nhé!
 ```
 
 ### 📌 Mẫu 3: Nhờ AI tự tìm ảnh thực tế / hiển vi siêu nét từ Web
 ```text
-Soạn slide bài 17 Cấu tạo tế bào, KHTN 6 Kết nối tri thức, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 1. Ở các slide quan sát, em tự tìm giúp tôi ảnh chụp tế bào vảy hành thật và tế bào biểu bì dưới kính hiển vi độ nét cao từ trên mạng nhé. Lập bản phác thảo Storyboard cho tôi duyệt trước!
+Soạn slide bài 17 Cấu tạo tế bào, KHTN 6 Kết nối tri thức, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 1, Hiệu ứng mức Vừa. Ở các slide quan sát, em tự tìm giúp tôi ảnh chụp tế bào vảy hành thật và tế bào biểu bì dưới kính hiển vi độ nét cao từ trên mạng nhé. Lập bản phác thảo Storyboard cho tôi duyệt trước!
+```
+
+### 📌 Mẫu 4: Dành cho môn Tiếng Anh (Global Success / Smart World / Friends Plus)
+```text
+Soạn slide Tiếng Anh lớp 7 Unit 4: Music and Arts - Lesson Getting Started, từ file SGK "D:\English7_GlobalSuccess.pdf" trang 40-41. Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 5. Nhớ lập bảng Vocabulary có phiên âm quốc tế IPA /.../ kèm ảnh Flashcard, khung Grammar rõ ràng và hiệu ứng bấm nút hiện đáp án cho các Task nhé!
 ```
 
 ---
