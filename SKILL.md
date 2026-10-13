@@ -627,6 +627,150 @@ Khi giáo viên yêu cầu soạn slide môn **Tiếng Anh** (*Global Success, i
 
 ---
 
+### Bước kỹ thuật 5.5: Quy chuẩn Hiển thị Công thức Khoa học & Toán học (Môn Toán – Lí – Hóa – KHTN)
+
+Khi giáo viên soạn slide cho các môn có công thức (**Toán, Vật Lí, Hóa Học, KHTN, Sinh học**), trợ lý áp dụng **3 cấp độ** hiển thị theo độ phức tạp của công thức:
+
+#### Cấp độ 1 — Công thức đơn giản (Inline Unicode): ✅ Mặc định, không cần cài thêm
+
+Dùng trực tiếp ký tự Unicode toán học trong thẻ `<text>` SVG — hiển thị hoàn hảo trong PPTX:
+
+| Ký hiệu cần | Viết trong SVG | Hiển thị trong PPTX |
+| :--- | :--- | :--- |
+| Chỉ số dưới hóa học | `H₂SO₄`, `CO₂`, `NaHCO₃` | H₂SO₄, CO₂, NaHCO₃ |
+| Số mũ vật lý | `v₀`, `s = v₀t + ½at²`, `E = mc²` | Hiển thị đúng |
+| Ký hiệu phổ biến | `→`, `⇌`, `±`, `≤`, `≥`, `≈`, `∞` | Hiển thị đúng |
+| Ký hiệu Hi Lạp | `Δ`, `α`, `β`, `λ`, `ω`, `μ`, `π`, `θ`, `φ` | Hiển thị đúng |
+| Đơn vị vật lý | `m/s`, `m/s²`, `kg⋅m/s`, `°C`, `Ω`, `μF` | Hiển thị đúng |
+| Pt đơn giản Toán | `F = ma`, `P = UI`, `Δs = ½at²`, `s = (a+b)h/2` | Hiển thị đúng |
+
+**Cách viết SVG mẫu** (khung "EM CẦN GHI NHỚ" môn Vật Lí):
+```xml
+<g id="em_can_ghi_nho" data-pptx-bounds="40 500 1200 180">
+  <rect x="40" y="500" width="1200" height="180" rx="10" fill="#FFF9E6" stroke="#E8941A" stroke-width="3"/>
+  <text x="80" y="540" font-size="26.67" font-weight="bold" fill="#E8941A" font-family="Times New Roman, serif">💡 EM CẦN GHI NHỚ</text>
+  <text x="80" y="580" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif">▸ Định luật II Newton: F = ma</text>
+  <text x="80" y="615" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif">▸ Gia tốc: a = Δv/Δt (m/s²)</text>
+  <text x="80" y="650" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif">▸ Quãng đường: s = v₀t + ½at² (m)</text>
+</g>
+```
+
+---
+
+#### Cấp độ 2 — Công thức trung bình (Vẽ SVG thủ công): ✅ Đủ đẹp, không cần thư viện ngoài
+
+Dùng các thẻ `<text>`, `<line>`, `<rect>`, `<tspan>` SVG để "vẽ" công thức trông giống LaTeX.  
+Áp dụng cho: phân số đơn giản, căn bậc 2 ngắn, chỉ số phức hợp.
+
+**Mẫu vẽ phân số `a/b` bằng SVG thuần túy:**
+```xml
+<!-- Phân số: v̄ = Δs / Δt -->
+<g transform="translate(200, 400)">
+  <!-- Tử số -->
+  <text x="0" y="0" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif" text-anchor="middle">Δs</text>
+  <!-- Gạch phân số -->
+  <line x1="-30" y1="8" x2="30" y2="8" stroke="#1A1A2E" stroke-width="2"/>
+  <!-- Mẫu số -->
+  <text x="0" y="32" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif" text-anchor="middle">Δt</text>
+  <!-- Ký hiệu = và vế trái -->
+  <text x="-80" y="16" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif">v̄ =</text>
+</g>
+```
+
+**Mẫu vẽ căn thức `√(b²-4ac)` bằng SVG:**
+```xml
+<g transform="translate(300, 500)">
+  <!-- Dấu căn -->
+  <text x="0" y="0" font-size="28" fill="#1A1A2E" font-family="Times New Roman, serif">√</text>
+  <!-- Nội dung trong căn (có gạch trên) -->
+  <text x="28" y="0" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif">b²−4ac</text>
+  <line x1="28" y1="-22" x2="130" y2="-22" stroke="#1A1A2E" stroke-width="1.5"/>
+</g>
+```
+
+---
+
+#### Cấp độ 3 — Công thức phức tạp (Render LaTeX → PNG → Nhúng SVG): ⭐ Đẹp hoàn hảo như LaTeX
+
+Khi gặp công thức rất phức tạp: **tích phân, ma trận, sigma lồng nhau, phương trình vi phân, hóa hữu cơ chuỗi dài** — dùng `matplotlib` (đã có sẵn trong venv) để render LaTeX thành ảnh PNG 300 DPI rồi nhúng vào SVG qua thẻ `<image>`.
+
+**Script Python render công thức** (lưu tại `skills/ppt-master/scripts/render_formula.py` hoặc chạy thẳng):
+```python
+#!/usr/bin/env python3
+# render_formula.py — Render công thức LaTeX → PNG → nhúng vào SVG
+import sys
+import base64
+from io import BytesIO
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import matplotlib.mathtext as mathtext
+
+def render_latex_to_base64_png(latex_str: str, fontsize: int = 22, dpi: int = 300) -> str:
+    """Render chuỗi LaTeX thành PNG base64 để nhúng trực tiếp vào SVG <image>."""
+    fig, ax = plt.subplots(figsize=(0.01, 0.01))
+    ax.set_axis_off()
+    t = ax.text(0.5, 0.5, f"${latex_str}$",
+                fontsize=fontsize, ha='center', va='center',
+                fontfamily='Times New Roman',
+                transform=ax.transAxes)
+    fig.canvas.draw()
+    # Tính toán kích thước bbox thực
+    renderer = fig.canvas.get_renderer()
+    bbox = t.get_window_extent(renderer=renderer)
+    w_in = (bbox.width + 20) / fig.dpi
+    h_in = (bbox.height + 12) / fig.dpi
+    fig.set_size_inches(w_in, h_in)
+    buf = BytesIO()
+    fig.savefig(buf, format='png', dpi=dpi, bbox_inches='tight',
+                pad_inches=0.05, transparent=True)
+    plt.close(fig)
+    buf.seek(0)
+    return base64.b64encode(buf.read()).decode('utf-8')
+
+# === Ví dụ sử dụng ===
+if __name__ == '__main__':
+    # Công thức Tích phân
+    b64 = render_latex_to_base64_png(r'\int_a^b f(x)\,dx = F(b) - F(a)')
+    print(f'data:image/png;base64,{b64[:60]}...')  # In mẫu
+```
+
+**Cách nhúng PNG base64 vào SVG:**
+```xml
+<!-- Nhúng công thức tích phân vào slide — chiều rộng/cao tự điều chỉnh -->
+<image x="100" y="420" width="520" height="80"
+       href="data:image/png;base64,iVBORw0KGgoAAAANS..."
+       preserveAspectRatio="xMidYMid meet"/>
+```
+
+**Quy trình thực tế khi gặp công thức phức tạp:**
+```bash
+# Bước 1: Render công thức thành ảnh PNG (chạy từ thư mục repo)
+d:\2anh-studio-main\venv\Scripts\python.exe skills/ppt-master/scripts/render_formula.py \
+    --latex "\int_a^b f(x)\,dx" \
+    --output projects/<project>/images/formula_01.png \
+    --fontsize 24 --dpi 300
+
+# Bước 2: Tham chiếu file PNG trong SVG (dùng đường dẫn tương đối)
+# <image href="../images/formula_01.png" x="100" y="420" width="500" height="80"/>
+
+# Bước 3: Xuất PPTX bình thường — bộ exporter tự nhúng ảnh vào PPTX
+d:\2anh-studio-main\venv\Scripts\python.exe skills/ppt-master/scripts/svg_to_pptx.py <project_path>
+```
+
+#### Bảng quyết định nhanh — Chọn Cấp độ nào?
+
+| Loại công thức | Môn điển hình | Cấp độ dùng |
+| :--- | :--- | :---: |
+| `F = ma`, `v₀`, `H₂SO₄`, `CO₂`, `E = mc²` | Lý, Hóa, KHTN | **Cấp 1** (Unicode) |
+| `v̄ = Δs/Δt`, `√(b²−4ac)`, `x = (-b ± √Δ)/2a` | Toán, Lý | **Cấp 2** (SVG thủ công) |
+| `∫f(x)dx`, Ma trận, `∑ᵢ₌₁ⁿ`, `lim_{x→∞}` | Toán Đại học/THPT | **Cấp 3** (matplotlib) |
+| Chuỗi hóa hữu cơ, cơ chế phản ứng | Hóa hữu cơ | **Cấp 3** (matplotlib) |
+
+> **⚠️ LƯU Ý**: Công thức render thành ảnh PNG (Cấp 3) sẽ **không thể bấm vào chỉnh sửa** trực tiếp trong PowerPoint. Khi cần chỉnh công thức, phải render lại PNG. Hãy giữ file LaTeX nguồn bên cạnh.
+
+---
+
 ### Bước kỹ thuật 6: Kiểm định SVG, Xuất Native DrawingML PPTX & Kiểm tra Hiệu ứng
 1. **Kiểm tra chất lượng SVG**:
    ```bash

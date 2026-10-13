@@ -163,7 +163,30 @@ Soạn slide bài 17 Cấu tạo tế bào, KHTN 6 Kết nối tri thức, Trư�
 Soạn slide Tiếng Anh lớp 7 Unit 4: Music and Arts - Lesson Getting Started, từ file SGK "D:\English7_GlobalSuccess.pdf" trang 40-41. Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 5. Nhớ lập bảng Vocabulary có phiên âm quốc tế IPA /.../ kèm ảnh Flashcard, khung Grammar rõ ràng và hiệu ứng bấm nút hiện đáp án cho các Task nhé!
 ```
 
+### 📌 Mẫu 5: Dành cho môn có Công thức (Toán – Vật Lí – Hóa Học – KHTN)
+```text
+Soạn slide Vật Lí 9 bài 1 "Sự phụ thuộc của điện trở vào chiều dài dây dẫn", từ file "D:\VatLi9_Bai1.pdf". Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 1 (STEM Navy), Hiệu ứng mức Vừa. Các công thức như R = ρl/A, U = I·R cần hiển thị đẹp và rõ ràng trong khung Em cần ghi nhớ nhé! Lên Storyboard cho tôi duyệt trước!
+```
+
 ---
+
+## 🔢 HIỂN THỊ CÔNG THỨC TOÁN HỌC & KHOA HỌC (Toán – Lí – Hóa – KHTN)
+
+Bộ skill hỗ trợ **3 cấp độ hiển thị công thức**, tự động áp dụng theo độ phức tạp:
+
+| Cấp độ | Loại công thức | Ví dụ | Chất lượng |
+| :---: | :--- | :--- | :---: |
+| **Cấp 1** ⚡ | Công thức đơn giản — ký tự Unicode toán học | `F = ma`, `v₀`, `H₂SO₄`, `CO₂`, `E = mc²`, `Δ`, `α`, `β`, `°C`, `Ω` | ✅ Hoàn hảo |
+| **Cấp 2** ✏️ | Phân số đơn giản, căn thức ngắn, chỉ số phức hợp | `v̄ = Δs/Δt`, `√(b²−4ac)`, `x = (−b ± √Δ)/2a` | ✅ Đủ đẹp |
+| **Cấp 3** ⭐ | Tích phân, ma trận, Sigma lồng nhau, hóa hữu cơ chuỗi dài | `∫f(x)dx`, `∑ᵢ₌₁ⁿ`, `lim_{x→∞}`, Cơ chế phản ứng hóa hữu cơ | ✅ Đẹp như LaTeX |
+
+**Cấp 3** dùng thư viện `matplotlib` (có sẵn, không cần cài thêm) để render công thức LaTeX thành ảnh PNG 300 DPI siêu nét rồi nhúng thẳng vào slide — đảm bảo mọi công thức đều đẹp hoàn hảo dù phức tạp đến mức nào.
+
+> ⚠️ **Lưu ý**: Công thức Cấp 3 (ảnh PNG) không thể click-to-edit trong PowerPoint, nhưng hiển thị hoàn hảo khi trình chiếu. Hãy giữ nội dung LaTeX nguồn để render lại khi cần chỉnh sửa.
+
+---
+
+
 
 ## 📦 CÁCH CÀI ĐẶT & SỬ DỤNG BỘ SKILL
 
