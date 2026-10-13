@@ -109,23 +109,38 @@ Kho lưu trữ các Skill chuyên biệt dành cho giáo viên và trợ lý AI 
 
 ---
 
-## 💬 CẨM NANG MẪU CÂU LỆNH GỢI Ý THẦY CÔ CÓ THỂ DÙNG NGAY
+## 📂 HƯỚNG DẪN CHI TIẾT 3 CÁCH ĐƯA FILE GIÁO ÁN / SGK / ẢNH VÀO CHO AI
 
-Khi mở đầu với: *"Tôi muốn làm pptx"*, *"Tạo slide cho tôi"*..., trợ lý sẽ gợi ý sẵn các mẫu câu lệnh sau:
+Khi bắt đầu gõ *"Tôi muốn làm pptx"*, trợ lý sẽ tự động hướng dẫn thầy cô **3 cách đưa tài liệu cực dễ**:
 
-### 📌 Mẫu 1: Dùng ảnh bóc tách từ SGK
-```
-Soạn slide bài 17 Cấu tạo tế bào, SGK KHTN 6 Kết nối tri thức từ trang 60 đến 63. Trường THCS Ứng Hoè, GV: Nguyễn Văn Thiện, Tiết 1. Nhớ bóc tách đúng các hình 17.1, 17.2 trong sách vào slide cho tôi nhé!
+1. **Cách A — Kéo thả trực tiếp vào ô chat:**
+   - Mở thư mục máy tính, giữ chuột trái vào file **Giáo án (`.docx`, `.pdf`)**, **SGK (`.pdf`)** hoặc **Ảnh chụp** rồi **kéo thả thẳng vào ô nhập tin nhắn** (hoặc bấm nút đính kèm `📎` / `+`).
+2. **Cách B — Copy đường dẫn file trên máy tính (Nhanh nhất với file PDF/Word nặng):**
+   - **Bước 1:** Mở thư mục chứa file trên máy tính (ví dụ trong `Downloads` hoặc `Ổ D:`).
+   - **Bước 2:** Nhấp **Chuột phải** vào file cần dùng $\to$ chọn **"Copy as path"** *(Sao chép dưới dạng đường dẫn)* — hoặc bấm vào file rồi nhấn phím tắt `Ctrl + Shift + C`.
+   - **Bước 3:** Quay lại ô chat, nhấn `Ctrl + V` để dán đường dẫn vào câu lệnh (Ví dụ: `"D:\GiaoAn\KHTN6_Bai17.docx"`).
+3. **Cách C — Gom ảnh vào 1 thư mục riêng trên máy tính:**
+   - **Bước 1:** Tạo 1 thư mục mới trên ổ D (ví dụ: `D:\anh_bai17`).
+   - **Bước 2:** Copy (`Ctrl + C`) các ảnh chụp thí nghiệm, ảnh cắt từ SGK rồi dán (`Ctrl + V`) vào thư mục `D:\anh_bai17`.
+   - **Bước 3:** Nhắn đường dẫn `D:\anh_bai17` vào câu lệnh để AI tự động quét và chèn vào slide.
+
+---
+
+## 💬 CẨM NANG MẪU CÂU LỆNH GỢI Ý TỪNG BƯỚC (COPY DÙNG NGAY)
+
+### 📌 Mẫu 1: Làm từ File Giáo án / PDF SGK (Bóc tách ảnh gốc trong file)
+```text
+Làm cho tôi slide từ file "D:\GiaoAn\Bai17_CauTaoTeBao.pdf" (hoặc file đính kèm). Môn KHTN 6, bộ Kết nối tri thức, 1 tiết, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 2 (Xanh Sinh học). Nhớ bóc tách đúng các hình 17.1, 17.2 trong file vào slide và lên Bản phác thảo Storyboard chi tiết cho tôi duyệt trước nhé!
 ```
 
-### 📌 Mẫu 2: Dùng ảnh trong thư mục máy tính
-```
-Soạn slide bài Cấu tạo tế bào KHTN 6 Cánh Diều. Trường THCS Ứng Hoè, GV: Nguyễn Văn Thiện. Ảnh minh hoạ lấy từ thư mục D:\anh_tebao\ đưa vào các slide tương ứng giúp tôi nhé!
+### 📌 Mẫu 2: Kết hợp Giáo án + Thư mục ảnh riêng đã copy trên máy tính
+```text
+Soạn slide bài Cấu tạo tế bào, KHTN 6 bộ Cánh Diều, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 1 (STEM Navy). Nội dung lấy từ file "D:\GiaoAn\Bai17.docx", còn hình ảnh minh hoạ em lấy toàn bộ trong thư mục "D:\anh_bai17" đưa vào các slide tương ứng. Lên bản phác thảo cho tôi xem trước nhé!
 ```
 
-### 📌 Mẫu 3: Nhờ AI tìm ảnh thực tế / hiển vi nét cao từ Web
-```
-Soạn slide bài Cấu tạo tế bào KHTN 6. Ở phần thực hành quan sát, tìm giúp tôi ảnh chụp tế bào vảy hành thật và tế bào biểu bì dưới kính hiển vi độ nét cao nhé!
+### 📌 Mẫu 3: Nhờ AI tự tìm ảnh thực tế / hiển vi siêu nét từ Web
+```text
+Soạn slide bài 17 Cấu tạo tế bào, KHTN 6 Kết nối tri thức, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 1. Ở các slide quan sát, em tự tìm giúp tôi ảnh chụp tế bào vảy hành thật và tế bào biểu bì dưới kính hiển vi độ nét cao từ trên mạng nhé. Lập bản phác thảo Storyboard cho tôi duyệt trước!
 ```
 
 ---

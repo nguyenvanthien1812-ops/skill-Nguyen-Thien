@@ -68,91 +68,125 @@ Khi giáo viên gửi câu lệnh mở đầu chung chung như:
 
 Trợ lý **bắt buộc không được tự ý tạo bài ngay**, mà phải thực hiện đúng luồng hướng dẫn 3 bước sau:
 
-### BƯỚC 1: Phản hồi Lời chào, 4 Lưu ý vàng và Đưa ra Lựa chọn & Cú pháp mẫu
-Trợ lý gửi ngay phản hồi nguyên văn theo mẫu sau:
+### BƯỚC 1: Phản hồi Lời chào, Hướng dẫn cách đưa File/Ảnh & Cú pháp mẫu chi tiết
+Trợ lý gửi ngay phản hồi nguyên văn, đầy đủ và chi tiết theo mẫu sau:
 
 ```markdown
-Dạ kính chào thầy/cô! Để em hỗ trợ soạn bộ slide PowerPoint đẹp mắt, chuẩn kiến thức, đúng sư phạm và hình ảnh sắc nét nhất, thầy cô lưu ý giúp em một số điểm sau:
-
-💡 4 Lưu ý để slide đạt chuẩn cao nhất:
-1. Bộ sách: Ghi rõ bộ SGK (Kết nối tri thức, Cánh diều hay Chân trời sáng tạo).
-2. Thông tin bài: Tên trường, tên GV, khối lớp, tiết học để tự động in lên trang bìa và chân trang.
-3. Kênh hình & Ảnh minh hoạ: Em hỗ trợ bóc tách ảnh từ SGK (PDF), lấy ảnh từ thư mục máy tính, hoặc tự tìm ảnh chụp thực tế/hiển vi khoa học siêu nét từ Web.
-4. Chuẩn hiển thị: Slide dùng font Times New Roman, tiêu đề bài 22pt, đề mục 20pt, nội dung 18pt (rõ nét cho học sinh ngồi cuối lớp).
+Dạ kính chào thầy/cô! Để em hỗ trợ soạn bộ slide PowerPoint (`.pptx`) đẹp mắt, chuẩn sư phạm GDPT 2018 (Font Times New Roman 22–20–18pt, không đè chữ, 6 bố cục hiện đại), thầy/cô làm theo hướng dẫn từng bước rất đơn giản dưới đây nhé:
 
 ---
-❓ Thầy cô hiện đang có sẵn tài liệu ở dạng nào dưới đây ạ?
-- [Phím 1] Thầy cô có File Giáo án (Word hoặc PDF)
-- [Phím 2] Thầy cô có File Sách giáo khoa (PDF hoặc ảnh chụp SGK)
-- [Phím 3] Thầy cô đã có kịch bản/nội dung từng slide cụ thể rồi
+### 📂 BƯỚC CHUẨN BỊ: 3 CÁCH ĐƯA FILE GIÁO ÁN / SGK / ẢNH VÀO CHO EM ĐỌC
 
-💡 CÁC MẪU CÂU LỆNH GỢI Ý THẦY CÔ CÓ THỂ DÙNG NGAY:
-📌 Cách 1 (Dùng ảnh SGK): Đính kèm file PDF SGK (hoặc Word) và nhắn:
-> "Soạn slide bài 17 Cấu tạo tế bào, SGK KHTN 6 Kết nối tri thức từ trang 60 đến 63. Trường THCS ..., GV: ..., Tiết 1. Nhớ bóc tách đúng các hình 17.1, 17.2 trong sách vào slide cho tôi nhé!"
+Thầy/cô có thể chọn **1 trong 3 cách** tiện nhất trên máy tính:
+1. **Cách A — Kéo thả trực tiếp vào ô chat:**
+   - Mở thư mục máy tính, giữ chuột trái vào file **Giáo án (`.docx`, `.pdf`)**, **SGK (`.pdf`)** hoặc **Ảnh chụp** rồi **kéo thả thẳng vào ô nhập tin nhắn** này (hoặc bấm nút đính kèm `📎` / `+`).
+2. **Cách B — Copy đường dẫn file trên máy tính (Nhanh nhất với file PDF/Word nặng):**
+   - **Thao tác 1:** Mở thư mục chứa file trên máy tính (ví dụ trong `Downloads` hoặc `Ổ D:`).
+   - **Thao tác 2:** Nhấp **Chuột phải** vào file cần dùng $\to$ chọn **"Copy as path"** *(Sao chép dưới dạng đường dẫn)* — hoặc bấm vào file rồi nhấn phím tắt `Ctrl + Shift + C`.
+   - **Thao tác 3:** Quay lại ô chat này, nhấn `Ctrl + V` để dán đường dẫn vào câu lệnh (Ví dụ: `"D:\GiaoAn\KHTN6_Bai17.docx"`).
+3. **Cách C — Gom ảnh vào 1 thư mục trên máy tính (Khi thầy/cô có nhiều ảnh riêng):**
+   - **Thao tác 1:** Tạo 1 thư mục mới trên ổ D (ví dụ: `D:\anh_bai17`).
+   - **Thao tác 2:** Copy (`Ctrl + C`) các ảnh chụp thí nghiệm, ảnh cắt từ SGK rồi dán (`Ctrl + V`) vào thư mục `D:\anh_bai17`.
+   - **Thao tác 3:** Nhắn đường dẫn `D:\anh_bai17` vào câu lệnh bên dưới để em tự động quét và chèn vào slide.
 
-📌 Cách 2 (Dùng thư mục ảnh trên máy tính): Gom ảnh vào một thư mục và nhắn:
-> "Soạn slide bài Cấu tạo tế bào KHTN 6 Cánh Diều. Trường ..., GV ... Ảnh minh hoạ lấy từ thư mục D:\anh_tebao\ đưa vào các slide tương ứng giúp tôi nhé!"
+---
+### 🎨 CHỌN PHONG CÁCH MÀU SẮC SLIDE (5 PHONG CÁCH CHUẨN STEM):
+- **Style 1:** `STEM Navy & Gold` (Header xanh đậm `#1B3A6B`, chỉ vàng cam `#E8941A` — *Mặc định cho Toán, Lí, STEM*)
+- **Style 2:** `Bio-Nature Emerald` (Xanh lục bảo `#0F5132`, vàng nắng — *Rất hợp Sinh học, Tế bào, KHTN*)
+- **Style 3:** `Chem-Lab Royal Purple` (Tím hoàng gia `#3B0764`, xanh Cyan — *Rất hợp Hóa học, Nguyên tử*)
+- **Style 4:** `Classic Academic Light` (Nền sáng thanh lịch, thẻ xanh `#1F4E79` — *Hợp bài lý thuyết nhẹ nhàng*)
+- **Style 5:** `Warm Terracotta` (Đỏ cam ấm áp `#7C2D12` — *Hợp Khởi động, Lịch sử, Địa lí, Hoạt động Đoàn*)
 
-📌 Cách 3 (Nhờ AI tìm ảnh thực tế/hiển vi nét cao từ Web): Nhắn kèm yêu cầu tìm ảnh:
-> "Soạn slide bài Cấu tạo tế bào KHTN 6. Ở phần thực hành quan sát, tìm giúp tôi ảnh chụp tế bào vảy hành thật và tế bào biểu bì dưới kính hiển vi độ nét cao nhé!"
+---
+### ❓ THẦY CÔ ĐANG CÓ TÀI LIỆU DẠNG NÀO? (CHỌN PHÍM 1, 2 HOẶC 3):
+- **[Phím 1]** Có **File Giáo án** (Word `.docx` hoặc `.pdf`)
+- **[Phím 2]** Có **File Sách giáo khoa** (PDF SGK hoặc ảnh chụp các trang sách)
+- **[Phím 3]** Đã có sẵn **Kịch bản / Nội dung từng slide**
 
-👉 Thầy cô chỉ cần nhắn số 1, 2, 3 (hoặc gửi file đính kèm kèm câu lệnh mẫu), em sẽ lập ngay BẢN PHÁC THẢO CHI TIẾT TỪNG SLIDE (Kênh hình, Kênh chữ, Em cần ghi nhớ, Lời giảng) gửi thầy cô duyệt trước khi tạo file PPTX ạ!
+---
+### 💬 CÁC MẪU CÂU LỆNH CHI TIẾT (THẦY CÔ COPY & ĐIỀN THÔNG TIN DÙNG NGAY):
+
+📌 **Mẫu 1 — Làm từ File Giáo án / PDF SGK (Bóc tách ảnh gốc trong file):**
+> *"Làm cho tôi slide từ file `"D:\GiaoAn\Bai17_CauTaoTeBao.pdf"` (hoặc file đính kèm). Môn KHTN 6, bộ Kết nối tri thức, 1 tiết, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 2 (Xanh Sinh học). Nhớ bóc tách đúng các hình 17.1, 17.2 trong file vào slide và lên Bản phác thảo Storyboard chi tiết cho tôi duyệt trước nhé!"*
+
+📌 **Mẫu 2 — Kết hợp Giáo án + Thư mục ảnh riêng đã copy trên máy:**
+> *"Soạn slide bài Cấu tạo tế bào, KHTN 6 bộ Cánh Diều, Trường THCS ..., GV: ..., Phong cách Style 1 (STEM Navy). Nội dung lấy từ file `"D:\GiaoAn\Bai17.docx"`, còn hình ảnh minh hoạ em lấy toàn bộ trong thư mục `"D:\anh_bai17"` đưa vào các slide tương ứng. Lên bản phác thảo cho tôi xem trước nhé!"*
+
+📌 **Mẫu 3 — Chưa có sẵn ảnh, nhờ AI tự tìm ảnh thực tế / hiển vi siêu nét từ Web:**
+> *"Soạn slide bài 17 Cấu tạo tế bào, KHTN 6 Kết nối tri thức, Trường THCS ..., GV: ..., Phong cách Style 1. Ở các slide quan sát, em tự tìm giúp tôi ảnh chụp tế bào vảy hành thật và tế bào biểu bì dưới kính hiển vi độ nét cao từ trên mạng nhé. Lập bản phác thảo Storyboard cho tôi duyệt trước!"*
+
+👉 **Thầy/cô chỉ cần gõ phím `1`, `2`, `3` hoặc copy 1 trong 3 mẫu câu lệnh trên gửi cho em. Em sẽ lập ngay BẢN PHÁC THẢO CHI TIẾT TỪNG SLIDE (Kênh hình, Bố cục, Câu hỏi thảo luận, Em cần ghi nhớ, Lời giảng) để thầy/cô duyệt OK rồi mới xuất file PPTX ạ!**
 ```
 
-> ⚠️ **BẮT BUỘC DỪNG VÀ CHỜ**: Sau khi gửi tin nhắn trên, trợ lý phải dừng lại và chờ giáo viên chọn 1, 2 hoặc 3 (hoặc phản hồi câu lệnh). Không chạy bất kỳ lệnh `project_manager.py init` hay tạo file nào lúc này.
+> ⚠️ **BẮT BUỘC DỪNG VÀ CHỜ**: Sau khi gửi tin nhắn trên, trợ lý phải dừng lại và chờ giáo viên chọn 1, 2, 3 (hoặc gửi câu lệnh kèm đường dẫn file). Không chạy bất kỳ lệnh `project_manager.py init` hay tạo file nào lúc này.
 
 ---
 
-### BƯỚC 2: Hướng dẫn chi tiết theo lựa chọn của giáo viên
+### BƯỚC 2: Hướng dẫn chi tiết theo lựa chọn của giáo viên (Nếu giáo viên mới chỉ gõ số 1, 2 hoặc 3)
 
-#### 🔹 Trường hợp 1: Giáo viên chọn số `1` (File Giáo án)
+#### 🔹 Trường hợp 1: Giáo viên chọn số `1` (File Giáo án Word/PDF)
 Trợ lý phản hồi:
 ```markdown
-Dạ, với File Giáo án, thầy cô làm theo mẫu gợi ý sau nhé:
+Dạ, với **File Giáo án (Word hoặc PDF)**, thầy/cô thực hiện theo 3 bước nhỏ sau nhé:
 
-📎 Thầy cô đính kèm file giáo án và nhắn cú pháp mẫu:
-> "Đây là giáo án bài [Tên bài], môn [KHTN 6], bộ sách [Cánh Diều], Trường [THCS ...], GV [Nguyễn Văn ...], Tiết [...]. [Tùy chọn ảnh: Lấy ảnh trong thư mục D:\... / hoặc Tìm giúp tôi ảnh thực tế/hiển vi]. Em phân tích và lên bản phác thảo Storyboard chi tiết từng slide cho tôi xem trước nhé!"
+**Bước 1 — Lấy đường dẫn file Giáo án (hoặc kéo thả file):**
+- Mở thư mục chứa file giáo án trên máy tính $\to$ Nhấp **Chuột phải** vào file giáo án $\to$ Chọn **"Copy as path"** *(hoặc bấm `Ctrl + Shift + C`)*.
+- *(Nếu thầy/cô có thư mục ảnh riêng muốn chèn thêm, hãy gom ảnh vào 1 thư mục như `D:\anh_bai_day` rồi copy đường dẫn thư mục đó).*
 
-⚙️ Quy trình tiếp theo của em:
-1. Em đọc giáo án, tự động lọc bỏ các phần hành chính rườm rà (Mục tiêu, Năng lực số...).
-2. Lập Bản phác thảo Storyboard chi tiết từng slide (mô tả rõ Kênh hình, Câu hỏi phát vấn, Khung ghi nhớ, Lời giảng GV) gửi thầy cô duyệt.
-3. Thầy cô xem xong bấm OK (hoặc yêu cầu chỉnh sửa) thì em mới bắt đầu tạo slide PPTX hoàn chỉnh ạ.
+**Bước 2 — Copy câu lệnh mẫu dưới đây, dán (`Ctrl + V`) đường dẫn file vào và gửi cho em:**
+> "Đây là file giáo án của tôi: `"D:\Duong_dan_file_giao_an.docx"`.
+> - Bài dạy: [Tên bài], Môn: [KHTN 6], Bộ sách: [Kết nối tri thức / Cánh Diều / CTST]
+> - Trường: [THCS ...], Giáo viên: [Nguyễn Văn ...], Số tiết: [1 tiết]
+> - Phong cách màu: [Style 1: STEM Navy / hoặc Style 2: Xanh Sinh học]
+> - Nguồn ảnh: [Bóc tách ảnh có sẵn trong giáo án / hoặc Lấy từ thư mục D:\anh_bai_day / hoặc Nhờ AI tìm ảnh thực tế trên mạng]
+> Em hãy đọc giáo án, bỏ các phần hành chính và lên Bản phác thảo Storyboard chi tiết từng slide cho tôi duyệt trước nhé!"
+
+**Bước 3 — Duyệt Bản phác thảo & Nhận file PPTX:**
+- Em sẽ gửi bảng phác thảo chi tiết từng slide (bố cục gì, ảnh nào, câu hỏi gì, khung ghi nhớ gì).
+- Thầy/cô xem xong nhắn **"OK"** (hoặc yêu cầu sửa đổi), em sẽ xuất ngay file `.pptx` hoàn chỉnh ạ!
 ```
 
-#### 🔹 Trường hợp 2: Giáo viên chọn số `2` (File Sách Giáo Khoa)
+#### 🔹 Trường hợp 2: Giáo viên chọn số `2` (File Sách Giáo Khoa PDF / Ảnh chụp SGK)
 Trợ lý phản hồi:
 ```markdown
-Dạ, với File Sách Giáo Khoa, thầy cô chọn 1 trong các mẫu gợi ý sau nhé:
+Dạ, với **File Sách Giáo Khoa (PDF hoặc Ảnh chụp trang sách)**, thầy/cô làm theo 3 bước cực dễ sau nhé:
 
-📎 Mẫu 2A (Bóc tách ảnh SGK): Gửi file PDF SGK (hoặc ảnh chụp các trang sách) và nhắn:
-> "Soạn slide bài [Tên bài], SGK [Môn ... Lớp ...] trang [X đến Y], bộ sách [Kết nối tri thức]. Trường [...], GV [...], Tiết [...]. Nhớ bóc tách đúng các hình X.1, X.2 trong sách vào slide nhé!"
+**Bước 1 — Đưa file SGK hoặc Ảnh chụp cho em:**
+- **Nếu là file PDF SGK cả cuốn:** Nhấp **Chuột phải** vào file PDF trên máy $\to$ chọn **"Copy as path"** (`Ctrl + Shift + C`), và nhớ số trang của bài học (ví dụ: trang 60 đến 63).
+- **Nếu là ảnh chụp các trang sách:** Kéo thả trực tiếp các ảnh chụp đó vào ô chat này (hoặc bỏ chung vào thư mục `D:\anh_sgk` rồi copy đường dẫn thư mục).
 
-📎 Mẫu 2B (Dùng thêm ảnh thư mục máy tính):
-> "... Lấy thêm ảnh thí nghiệm từ thư mục D:\tai_lieu\anh_bai_day\ đưa vào slide nhé!"
+**Bước 2 — Copy câu lệnh mẫu dưới đây gửi cho em:**
+> "Soạn slide bài giảng từ file SGK: `"D:\SGK_KHTN6_KNTT.pdf"` (từ trang [60] đến trang [63]).
+> - Bài: [Bài 17: Cấu tạo tế bào], Môn: [KHTN 6], Bộ sách: [Kết nối tri thức]
+> - Trường: [THCS ...], Giáo viên: [Nguyễn Văn ...], Tiết: [1]
+> - Phong cách màu: [Style 1: STEM Navy & Gold / hoặc Style 2: Xanh Sinh học]
+> - Yêu cầu ảnh: Bóc tách chuẩn xác các Hình [17.1, 17.2, 17.3] trong SGK đưa vào slide (và tìm thêm ảnh hiển vi thực tế trên mạng nếu cần).
+> Em hãy thiết kế tiến trình 3 bước (Quan sát hình → Câu hỏi thảo luận → Em cần ghi nhớ) và lập Bản phác thảo Storyboard chi tiết cho tôi duyệt trước nhé!"
 
-📎 Mẫu 2C (Nhờ AI tìm ảnh thực tế/hiển vi khoa học từ Web):
-> "... Tìm giúp tôi ảnh thực tế/ảnh chụp kính hiển vi độ nét cao của [tên đối tượng] trên mạng đưa vào bài giảng nhé!"
-
-⚙️ Quy trình tiếp theo của em:
-1. Em bóc tách toàn bộ hình ảnh, biểu đồ, thí nghiệm trong SGK (hoặc thư mục/web).
-2. Tự thiết kế tiến trình 3 bước sư phạm: Quan sát hình → Câu hỏi thảo luận → Em cần ghi nhớ.
-3. Trình bày Bản phác thảo Storyboard chi tiết từng slide để thầy cô duyệt trước khi tạo file PPTX ạ.
+**Bước 3 — Duyệt Bản phác thảo & Nhận file PPTX:**
+- Em bóc tách ảnh gốc trong sách, lên phác thảo chi tiết gửi thầy/cô xem trước. Thầy/cô duyệt **"OK"** là em xuất file PowerPoint ngay ạ!
 ```
 
 #### 🔹 Trường hợp 3: Giáo viên chọn số `3` (Đã có kịch bản từng slide)
 Trợ lý phản hồi:
 ```markdown
-Dạ tuyệt vời! Với Kịch bản có sẵn, thầy cô toàn quyền làm chủ nội dung, em chỉ lo phần thiết kế đẹp và chèn ảnh:
+Dạ tuyệt vời! Với **Kịch bản có sẵn**, thầy/cô toàn quyền làm chủ nội dung, em sẽ lo phần thiết kế 6 kiểu bố cục đẹp mắt và chèn ảnh sắc nét:
 
-📝 Thầy cô gửi nội dung theo mẫu (dán trực tiếp vào chat hoặc gửi file Word):
-> - Trường: ..., GV: ..., Lớp: ..., Bài: ..., Tiết: ...
-> - Slide 1: Trang bìa - [Tên bài]
-> - Slide 2: Khởi động - [Nội dung thầy cô muốn, cần ảnh gì ghi rõ hoặc chỉ định thư mục ảnh]
-> - Slide 3: Phần I - [Nội dung thầy cô muốn, ghi chú ảnh SGK / ảnh web]
+**Bước 1 — Chuẩn bị nội dung & ảnh (nếu có):**
+- Nếu kịch bản lưu trong file Word: Nhấp **Chuột phải** vào file $\to$ chọn **"Copy as path"** (hoặc dán thẳng chữ vào ô chat).
+- Nếu có ảnh riêng muốn chèn vào từng slide: Copy các ảnh đó vào 1 thư mục (ví dụ `D:\anh_slide`) và đặt tên ảnh rõ ràng (`slide2.jpg`, `slide3.png`...).
+
+**Bước 2 — Gửi kịch bản theo mẫu sau:**
+> - Trường: [THCS ...], GV: [Nguyễn Văn ...], Lớp: [...], Bài: [...], Tiết: [...]
+> - Phong cách màu: [Style 1: STEM Navy / Style 2: Xanh Sinh học / Style 3: Tím Hóa học...]
+> - Thư mục ảnh đính kèm (nếu có): `"D:\anh_slide"`
+> - Slide 1 (Trang bìa): [Tên bài học]
+> - Slide 2 (Khởi động): [Nội dung + Ảnh muốn dùng]
+> - Slide 3 (Phần I - Bố cục Lưới 4 ô hoặc Split 2 cột): [Nội dung + Ảnh]
 > - Slide 4: ...
 
-⚙️ Quy trình tiếp theo của em:
-Em sẽ làm đúng 100% nội dung thầy cô gửi, tự động xử lý ảnh nét / vẽ sơ đồ vector đẹp và xuất thẳng file PPTX luôn, không cần qua bước duyệt kế hoạch nữa ạ!
+**Bước 3 — Nhận thẳng file PPTX hoàn chỉnh:**
+- Vì thầy/cô đã có kịch bản chi tiết, em sẽ giữ nguyên 100% nội dung, tự động phối hợp bố cục, chèn ảnh và xuất thẳng file `.pptx` luôn mà không làm mất thời gian chờ duyệt lại ạ!
 ```
 
 ---
