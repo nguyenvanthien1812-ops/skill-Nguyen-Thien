@@ -792,29 +792,64 @@ Khi bài học cần kèm theo **sơ đồ cấu trúc hóa hữu cơ (vòng Ben
 
 ---
 
-### Bước kỹ thuật 6: Kiểm định SVG, Xuất Native DrawingML PPTX & Kiểm tra Hiệu ứng
+### Bước kỹ thuật 6: Kiểm định & Xuất File PowerPoint (.pptx) Chuẩn Mực Sư Phạm
+
+Trợ lý kiểm tra môi trường hiện tại và thực hiện xuất file PPTX theo 1 trong 2 cơ chế:
+
+#### Cơ chế 1 — Môi trường Studio Đầy đủ (Khi có thư mục `skills/ppt-master`):
 1. **Kiểm tra chất lượng SVG**:
    ```bash
    python3 skills/ppt-master/scripts/svg_quality_checker.py <project_path> --canonical-authoring --stage final --json
    ```
-2. **Xuất PowerPoint Native (tự động đọc `animations.json`)**:
+2. **Xuất PowerPoint Native (tự động đọc `animations.json` & OMML)**:
    ```bash
    python3 skills/ppt-master/scripts/svg_to_pptx.py <project_path>
    ```
-3. **Vá font Times New Roman** (chạy ngay sau khi xuất PPTX):
+3. **Vá font Times New Roman**:
    ```bash
    python3 skills/ppt-master/scripts/patch_fonts.py <đường_dẫn_file.pptx>
    ```
-4. **Kiểm tra hiệu ứng sư phạm & Bàn giao**:
+4. **Kiểm tra hiệu ứng sư phạm**:
    ```bash
    python3 tools/vi/kiem_hieu_ung.py <duong_dan_file.pptx> --muc vua
    ```
-   *(Hoặc `--muc nhieu` nếu có hiệu ứng Morph; đảm bảo kết quả trả về `"ready": true`).*
-5. **Tạo bản sao có tên thân thiện & Gửi link**:
-   - Đặt tên: `[Mon][Khoi]_[TenBai]_ChuanSuPham.pptx`
-   - Cung cấp link mở file cho giáo viên với cú pháp `file:///...`.
+
+#### Cơ chế 2 — Môi trường Độc lập trên máy Giáo viên (Khi không có `skills/ppt-master`):
+Trợ lý AI **tự động viết script Python sử dụng thư viện `python-pptx`** (đã được cài đặt sẵn qua `cai_dat_tu_dong.bat`) để tạo trực tiếp file `.pptx` bài giảng với đầy đủ các tiêu chuẩn sư phạm vàng:
+- Tỉ lệ màn hình 16:9 (`slide_width = Inches(13.333)`, `slide_height = Inches(7.5)`).
+- Font chữ toàn bài chuẩn 100% `Times New Roman`.
+- Cỡ chữ to rõ: Tiêu đề 22pt, Đề mục 20pt, Thân bài/Câu hỏi 18pt, Ghi chú 14pt.
+- Bố cục 3 bước trực quan: Khung Kênh hình (ảnh SGK/thực tế), Khung Câu hỏi thảo luận phát vấn, Khung Nổi bật Em cần ghi nhớ.
+- Tự động ghi lời giảng chi tiết của giáo viên vào phần **Notes** (Ghi chú) của từng slide để hỗ trợ giảng dạy hoặc đọc lồng tiếng.
+
+5. **Đặt tên thân thiện & Bàn giao**:
+   - Đặt tên file: `[Mon][Khoi]_[TenBai]_ChuanSuPham.pptx` (Ví dụ: `Toan6_Bai13_UCLN_BCNN_ChuanSuPham.pptx`).
+   - Cung cấp link mở file trực tiếp cho giáo viên bằng cú pháp: `[Tên_File.pptx](file:///đường/dẫn/tuyệt/đối/file.pptx)`.
 
 ---
+
+### Bước kỹ thuật 7: Xuất Video Bài Giảng MP4 từ PowerPoint (Tự động hoặc Thủ công)
+
+Khi giáo viên có nhu cầu làm video bài giảng trình chiếu, gửi học sinh ôn bài hoặc làm video tư liệu:
+
+1. **Cách 1 — Xuất Video tự động 1-Click (Khuyên dùng)**:
+   - Giáo viên chỉ cần **KÉO THẢ file `.pptx` vừa tạo vào file `XUAT_VIDEO_TU_PPTX.bat`** trong thư mục phần mềm.
+   - Hoặc trợ lý chạy lệnh:
+     ```bash
+     python "<ĐƯỜNG_DẪN_SKILL>/scripts/xuat_video_pptx.py" "<đường_dẫn_file.pptx>"
+     ```
+   - Hệ thống tự động kết nối với Microsoft PowerPoint trên máy tính để kết xuất video `.mp4` Full HD (1080p, 30fps) giữ nguyên 100% hiệu ứng chuyển trang và hình ảnh sắc nét.
+
+2. **Cách 2 — Xuất Video trực tiếp từ PowerPoint (2 cú nhấp chuột)**:
+   - Mở file `.pptx` bằng Microsoft PowerPoint.
+   - Vào menu **File** (Tệp) $\to$ Chọn **Export** (Xuất) $\to$ Chọn **Create a Video** (Tạo video).
+   - Chọn độ phân giải **Full HD (1080p)** rồi bấm **Create Video**. PowerPoint sẽ tự động lưu thành file video MP4.
+
+3. **Cách 3 — Video Khởi động mở đầu tiết học (Warm-up Video 60s)**:
+   - Sử dụng kết hợp với skill `tao-video-khoi-dong-bai-hoc` của Thầy Thiện để tạo kịch bản và prompt Veo 3 / Kling dựng clip dẫn dắt vào bài học hấp dẫn.
+
+---
+
 
 ## VII. XỬ LÝ KHI GIÁO VIÊN PHẢN HỒI KẾ HOẠCH (Luồng A & B)
 

@@ -354,6 +354,23 @@ Khi Thầy Thiện nâng cấp thêm tính năng mới, mẫu slide mới hoặc
 
 ---
 
+## 🎥 CÁCH XUẤT VIDEO BÀI GIẢNG MP4 TỪ FILE POWERPOINT (.PPTX)
+
+Sau khi trợ lý AI tạo xong bài giảng PowerPoint, nếu thầy cô muốn chuyển thành video bài giảng MP4 để chiếu lớp hoặc gửi học sinh:
+
+### ✅ Cách 1 — Kéo thả 1-Click (Dễ nhất):
+1. Mở thư mục `tao-slide-bai-giang`.
+2. Dùng chuột **KÉO file bài giảng `.pptx`** $\to$ **THẢ vào file `XUAT_VIDEO_TU_PPTX.bat`**.
+3. Hệ thống tự động kết nối PowerPoint và xuất thành file video `.mp4` Full HD 1080p có sẵn toàn bộ hiệu ứng chuyển động!
+
+### ✅ Cách 2 — Xuất trực tiếp từ PowerPoint (Không cần phần mềm ngoài):
+1. Mở file bài giảng bằng **Microsoft PowerPoint**.
+2. Nhấp vào menu **File** (ở góc trên cùng bên trái) $\to$ Chọn **Export** (Xuất) $\to$ Chọn **Create a Video** (Tạo video).
+3. Chọn chất lượng **Full HD (1080p)** $\to$ Bấm nút **Create Video** $\to$ Chọn chỗ lưu là xong!
+
+---
+
+
 ## 📞 NẾU CẦN HỖ TRỢ THÊM
 
 Nếu thầy cô gặp khó khăn ở bất kỳ bước nào, chỉ cần gõ vào ô chat:
