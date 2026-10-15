@@ -1,0 +1,15 @@
+{
+  "name": "tao-slide-bai-giang",
+  "version": "1.0.0",
+  "updated": "2026-10-15",
+  "author": "Nguyễn Văn Thiện",
+  "changelog": {
+    "1.0.0": [
+      "Phát hành chính thức Skill Soạn Slide Bài Giảng Chuẩn Mực Sư Phạm",
+      "Tích hợp Native OMML Formula - Công thức toán vector sắc nét 100%, nhấp đúp chỉnh sửa trực tiếp",
+      "Bảo mật bản quyền RSA 2048-bit theo mã máy phần cứng",
+      "Hệ thống cài đặt và nạp tự động vào Google Antigravity 1-click",
+      "Hệ thống cập nhật tính năng mới tự động 1-click qua GitHub (bảo toàn bản quyền)"
+    ]
+  }
+}

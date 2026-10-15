@@ -344,6 +344,16 @@ Khi đã có 1 bài giảng ưng ý, gửi file đó vào chat và gõ: *"Lấy 
 
 ---
 
+## 🔄 CẬP NHẬT TÍNH NĂNG MỚI (1-CLICK, KHÔNG MẤT BẢN QUYỀN)
+
+Khi Thầy Thiện nâng cấp thêm tính năng mới, mẫu slide mới hoặc cải tiến công thức:
+1. Thầy cô chỉ cần vào thư mục `tao-slide-bai-giang`.
+2. **Nhấp đúp chuột vào file: `cap_nhat_tu_dong.bat`**.
+3. Hệ thống sẽ tự động kết nối máy chủ GitHub, tải toàn bộ tính năng mới về máy tính của thầy cô và nạp ngay vào trợ lý AI.
+4. **🛡️ BẢO VỆ BẢN QUYỀN TUYỆT ĐỐI**: Mã bản quyền và thông tin máy tính của thầy cô được giữ nguyên vẹn 100%, không bị mất bản quyền, không phải xin lại mã máy!
+
+---
+
 ## 📞 NẾU CẦN HỖ TRỢ THÊM
 
 Nếu thầy cô gặp khó khăn ở bất kỳ bước nào, chỉ cần gõ vào ô chat:
@@ -361,3 +371,4 @@ Trợ lý AI sẽ giải thích từng bước cụ thể cho tình huống củ
 
 *📄 Tài liệu: Hướng dẫn tạo slide bài giảng — Phiên bản Tháng 10/2026*  
 *🏫 Trường THCS Ứng Hòe | 👨‍🏫 Biên soạn hỗ trợ: Thầy Nguyễn Văn Thiện (Tổ Toán – KHTN)*
+
