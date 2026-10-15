@@ -166,10 +166,11 @@ Thầy/cô có thể chọn **1 trong 3 cách** tiện nhất trên máy tính:
 - **Mức `Không`**: Hiện sẵn toàn bộ nội dung trên slide.
 
 ---
-### ❓ THẦY CÔ ĐANG CÓ TÀI LIỆU DẠNG NÀO? (CHỌN PHÍM 1, 2 HOẶC 3):
+### ❓ THẦY CÔ ĐANG CÓ TÀI LIỆU DẠNG NÀO? (CHỌN PHÍM 1, 2, 3 HOẶC 4):
 - **[Phím 1]** Có **File Giáo án** (Word `.docx` hoặc `.pdf`)
 - **[Phím 2]** Có **File Sách giáo khoa** (PDF SGK hoặc ảnh chụp các trang sách)
 - **[Phím 3]** Đã có sẵn **Kịch bản / Nội dung từng slide**
+- **[Phím 4]** Đã có sẵn **File PowerPoint (`.pptx`) cũ**, cần **viết lời bình/lời giảng và chuyển sang video bài giảng MP4**
 
 ---
 ### 💬 CÁC MẪU CÂU LỆNH CHI TIẾT (THẦY CÔ COPY & ĐIỀN THÔNG TIN DÙNG NGAY):
@@ -186,7 +187,10 @@ Thầy/cô có thể chọn **1 trong 3 cách** tiện nhất trên máy tính:
 📌 **Mẫu 4 — Dành cho môn Tiếng Anh (Global Success / Smart World / Friends Plus):**
 > *"Soạn slide Tiếng Anh lớp [7] Unit [4]: [Music and Arts] - Lesson [Getting Started / A Closer Look 1], từ file SGK `"D:\English7_GlobalSuccess.pdf"` trang [40-41]. Trường THCS ..., GV: ..., Phong cách Style 5. Nhớ lập bảng Vocabulary có phiên âm quốc tế IPA `/.../` kèm ảnh Flashcard, khung Grammar rõ ràng và hiệu ứng bấm nút hiện đáp án cho các Task nhé!"*
 
-👉 **Thầy/cô chỉ cần gõ phím `1`, `2`, `3` hoặc copy 1 trong 4 mẫu câu lệnh trên gửi cho em. Em sẽ lập ngay BẢN PHÁC THẢO CHI TIẾT TỪNG SLIDE (Kênh hình, Bố cục, Hiệu ứng, Câu hỏi, Ghi nhớ) để thầy/cô duyệt OK rồi mới xuất file PPTX ạ!**
+📌 **Mẫu 5 — ĐÃ CÓ SẴN FILE POWERPOINT (.pptx), NHỜ AI VIẾT LỜI BÌNH & HỖ TRỢ LÀM VIDEO:**
+> *"Tôi có file PowerPoint này rồi `"D:\GiaoAn\Bai12_Toan6.pptx"` (hoặc đính kèm). Em hãy đọc nội dung từng slide, viết giúp tôi Lời giảng/Lời bình chi tiết chuẩn sư phạm vào mục Notes của từng trang, sau đó hướng dẫn tôi xuất thành Video bài giảng MP4 nhé!"*
+
+👉 **Thầy/cô chỉ cần gõ phím `1`, `2`, `3` hoặc `4` (hoặc copy 1 trong 5 mẫu câu lệnh trên) gửi cho em. Em sẽ lập ngay BẢN PHÁC THẢO CHI TIẾT TỪNG SLIDE (Kênh hình, Bố cục, Lời bình giảng dạy) để thầy/cô duyệt trước ạ!**
 ```
 
 > ⚠️ **BẮT BUỘC DỪNG VÀ CHỜ**: Sau khi gửi tin nhắn trên, trợ lý phải dừng lại và chờ giáo viên chọn 1, 2, 3 (hoặc gửi câu lệnh kèm đường dẫn file). Không chạy bất kỳ lệnh `project_manager.py init` hay tạo file nào lúc này.

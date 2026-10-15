@@ -87,7 +87,19 @@ Chỉ cần gõ thẳng vào ô chat nội dung bài học, ví dụ:
 
 ---
 
+### ✅ Cách 5 — Đã có sẵn file PowerPoint (`.pptx`) cũ *(Muốn viết lời bình & làm video)*
+
+> **Áp dụng khi:** Thầy cô đã có file bài giảng PowerPoint cũ từ các năm trước hoặc tải trên mạng về, nay muốn AI viết lời giảng chi tiết chuẩn sư phạm và hỗ trợ xuất video bài giảng.
+
+1. **Kéo thả file `.pptx`** cũ vào ô chat (hoặc dán đường dẫn file).
+2. Gõ câu lệnh mẫu:
+   > *"Tôi có file PowerPoint này rồi. Hãy đọc nội dung từng slide, viết giúp tôi Lời giảng/Lời bình chi tiết chuẩn sư phạm vào mục Notes của từng trang, sau đó hướng dẫn tôi xuất thành Video bài giảng MP4 nhé!"*
+3. Trợ lý AI sẽ đọc slide $\to$ soạn kịch bản lời giảng từng câu $\to$ nạp thẳng vào mục Notes của file PowerPoint và hướng dẫn thầy/cô xuất video bài giảng!
+
+---
+
 ## 💬 BƯỚC 2 — GỬI CÂU LỆNH TẠO SLIDE
+
 
 Sau khi đã gửi file lên, thầy cô **gõ thêm 1 câu lệnh yêu cầu** bên dưới rồi nhấn Enter.
 
