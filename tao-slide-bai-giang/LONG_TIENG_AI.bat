@@ -1,37 +1,40 @@
 @echo off
-chcp 65001 >nul
+setlocal enabledelayedexpansion
 title Long Tieng AI Cho Slide PowerPoint - Thay Thien
 
 echo.
 echo ====================================================================
-echo      TỰ ĐỘNG LỒNG TIẾNG AI CHO SLIDE POWERPOINT TỪ LỜI BÌNH (NOTES)
-echo           Tác giả: Thầy Nguyễn Văn Thiện - THCS Ứng Hòe
+echo      TU DONG LONG TIENG AI CHO SLIDE POWERPOINT TU LOI BINH (NOTES)
+echo           Tac gia: Thay Nguyen Van Thien - THCS Ung Hoe
 echo ====================================================================
 echo.
 
 set "PPTX_FILE=%~1"
 
 if "%PPTX_FILE%"=="" (
-    echo 👉 HƯỚNG DẪN DÙNG RẤT ĐƠN GIẢN:
-    echo    1. KÉO THẢ file PowerPoint (.pptx đã có lời bình ở Notes) vào file bat này.
-    echo    2. Hoặc dán đường dẫn file PowerPoint vào đây rồi nhấn Enter:
+    echo [HUONG DAN SU DUNG]:
+    echo   1. KEO THA file PowerPoint (.pptx da co Notes) vao file bat nay.
+    echo   2. Hoac nhap duong dan file PowerPoint vao ben duoi:
     echo.
-    set /p "PPTX_FILE=👉 Nhập đường dẫn file .pptx: "
+    set /p "PPTX_FILE=[*] Nhap duong dan file .pptx: "
 )
 
 if "%PPTX_FILE%"=="" (
-    echo [!] Chưa có file PowerPoint để lồng tiếng.
+    echo [!] Chua co file PowerPoint de long tieng.
     pause
     exit /b 1
 )
 
+:: Xoa dau ngoac kep neu co
+set "PPTX_FILE=%PPTX_FILE:"=%"
+
 echo.
-echo 🎙️ CHỌN GIỌNG ĐỌC PHÁT THANH VIÊN AI:
-echo    [1] Cô Hoài My  (Giọng nữ miền Bắc - Nhẹ nhàng, truyền cảm, chuẩn cô giáo)
-echo    [2] Thầy Nam Minh (Giọng nam miền Bắc - Dõng dạc, trầm ấm, chuẩn thầy giáo)
+echo [CHON GIONG DOC PHAT THANH VIEN AI]:
+echo   [1] Co Hoai My   (Giong nu mien Bac - Nhe nhang, truyen cam, chuan co giao)
+echo   [2] Thay Nam Minh (Giong nam mien Bac - Dong dac, tram am, chuan thay giao)
 echo.
 set "VOICE_OPT=1"
-set /p "VOICE_OPT=👉 Thầy/Cô chọn số [1 hoặc 2, nhấn Enter để mặc định chọn 1]: "
+set /p "VOICE_OPT=[*] Thay/Co chon [1 hoac 2, Nhan Enter de mac dinh chon 1]: "
 
 set "PYTHON_EXE="
 py -c "import sys" >nul 2>nul && set "PYTHON_EXE=py"

@@ -21,8 +21,14 @@ except Exception:
 try:
     from pptx import Presentation
 except ImportError:
-    print("[!] Chưa cài đặt thư viện python-pptx. Hãy chạy cai_dat_tu_dong.bat trước.")
-    sys.exit(1)
+    print("[*] Dang tu dong cai dat thu vien python-pptx (lan dau tien)...")
+    subprocess.run([sys.executable, "-m", "pip", "install", "python-pptx", "--quiet"])
+    try:
+        from pptx import Presentation
+    except ImportError:
+        print("[!] Khong the tu dong cai dat python-pptx. Vui long chay cai_dat_tu_dong.bat.")
+        sys.exit(1)
+
 
 
 def extract_slide_content(pptx_path):
