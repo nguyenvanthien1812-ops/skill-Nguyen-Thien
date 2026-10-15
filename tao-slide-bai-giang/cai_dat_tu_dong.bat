@@ -77,9 +77,9 @@ echo [OK] Python da san sang!
 
 :: ─── BƯỚC 2: CÀI ĐẶT CÁC THƯ VIỆN BỔ TRỢ ───────────────────────────
 echo.
-echo [*] Buoc 2/2: Cai dat cac thu vien can thiet (cryptography, python-pptx, pillow, lxml)...
+echo [*] Buoc 2/2: Cai dat cac thu vien can thiet (cryptography, python-pptx, edge-tts, pillow, lxml)...
 %PYTHON_EXE% -m pip install --upgrade pip --quiet
-%PYTHON_EXE% -m pip install cryptography python-pptx pillow lxml requests --quiet
+%PYTHON_EXE% -m pip install cryptography python-pptx edge-tts pillow lxml requests --quiet
 
 echo.
 echo ====================================================================
