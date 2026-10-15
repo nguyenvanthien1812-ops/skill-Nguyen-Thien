@@ -98,21 +98,32 @@ Chỉ cần gõ thẳng vào ô chat nội dung bài học, ví dụ:
 
 ---
 
-## 💬 BƯỚC 2 — GỬI CÂU LỆNH TẠO SLIDE
+## 💬 BƯỚC 2 — GỬI CÂU LỆNH TẠO SLIDE & LÀM VIDEO
 
-
-Sau khi đã gửi file lên, thầy cô **gõ thêm 1 câu lệnh yêu cầu** bên dưới rồi nhấn Enter.
-
-> [!TIP]
-> Chỉ cần **copy một trong các mẫu câu bên dưới**, thay tên bài và lớp cho phù hợp rồi gửi đi. Không cần phải gõ gì thêm!
+Sau khi đã gửi file lên, thầy cô **chọn 1 trong 2 phong cách ra lệnh** bên dưới:
 
 ---
 
-### 📋 BỘ MẪU CÂU LỆNH THEO TỪNG NHU CẦU
+### 🚀 LỰA CHỌN 1: CÂU LỆNH TRỌN GÓI 1 LẦN (ALL-IN-ONE — "1 PHÁT ĂN NGAY")
+> **Khuyên dùng khi:** Thầy cô bận rộn, muốn AI làm trọn gói từ A–Z (đọc file $\to$ tóm tắt 3 bước $\to$ xuất PowerPoint $\to$ viết lời bình $\to$ lồng tiếng AI $\to$ xuất Video MP4) mà không cần ngồi canh màn hình bấm duyệt.
+
+```text
+Từ file giáo án/SGK tôi vừa gửi:
+1. Đọc và tóm tắt nội dung bài học theo tiến trình 3 bước chuẩn GDPT 2018 (Quan sát hình → Thảo luận phát vấn → Khung Em cần ghi nhớ).
+2. Thiết kế bộ slide PowerPoint hoàn chỉnh (Font Times New Roman 22-20-18pt, Style 1 STEM, công thức chuẩn OMML).
+3. Tự động soạn Lời bình giảng dạy chi tiết bám sát từng slide vào phần Notes.
+4. Lồng tiếng AI giọng [Cô Hoài My / Thầy Nam Minh] và xuất luôn thành Video bài giảng E-learning MP4 Full HD dài khoảng [10 phút] giúp tôi nhé!
+```
 
 ---
 
-#### 🟦 Soạn bài giảng thông thường *(Môn KHTN / Sinh / Địa / Sử / Văn)*
+### 🎯 LỰA CHỌN 2: CÁC MẪU CÂU LỆNH THEO TỪNG BƯỚC / TỪNG NHU CẦU RIÊNG BIỆT
+> **Khuyên dùng khi:** Thầy cô muốn duyệt qua kịch bản kiến thức, sửa câu hỏi thảo luận hoặc chọn ảnh ưng ý trước khi xuất video.
+
+---
+
+#### 🟦 Soạn bài giảng thông thường *(Môn KHTN / Sinh / Địa / Sử / Văn - Duyệt kịch bản trước)*
+
 
 ```
 Soạn cho tôi bài giảng slide PowerPoint từ file giáo án tôi gửi.

@@ -174,24 +174,38 @@ Thầy/cô có thể chọn **1 trong 3 cách** tiện nhất trên máy tính:
 - **[Phím 4]** Đã có sẵn **File PowerPoint (`.pptx`) cũ**, cần **viết lời bình/lời giảng và chuyển sang video bài giảng MP4**
 
 ---
-### 💬 CÁC MẪU CÂU LỆNH CHI TIẾT (THẦY CÔ COPY & ĐIỀN THÔNG TIN DÙNG NGAY):
+### 💬 CÁC MẪU CÂU LỆNH CHI TIẾT (THẦY/CÔ COPY & ĐIỀN THÔNG TIN DÙNG NGAY):
 
-📌 **Mẫu 1 — Làm từ File Giáo án / PDF SGK (Bóc tách ảnh gốc + Hiệu ứng Vừa/Morph):**
-> *"Làm cho tôi slide từ file `"D:\GiaoAn\Bai17_CauTaoTeBao.pdf"` (hoặc file đính kèm). Môn KHTN 6, bộ Kết nối tri thức, 1 tiết, Trường THCS Ứng Hòe, GV: Nguyễn Văn Thiện, Phong cách Style 2 (Xanh Sinh học), Hiệu ứng mức Nhiều (có Morph phóng to tế bào). Nhớ bóc tách đúng các hình 17.1, 17.2 trong file vào slide và lên Bản phác thảo Storyboard chi tiết cho tôi duyệt trước nhé!"*
+#### 🚀 LỰA CHỌN 1: CÂU LỆNH TRỌN GÓI 1 LẦN (ALL-IN-ONE — LÀM TỪ A ĐẾN Z)
+> *Thầy/cô chỉ cần gửi 1 tin nhắn duy nhất kèm file, AI sẽ tự động đọc file → tóm tắt chuẩn 3 bước → tạo slide PPTX → soạn lời bình chi tiết → lồng tiếng phát thanh viên AI → xuất thẳng Video bài giảng MP4 hoàn chỉnh!*
 
-📌 **Mẫu 2 — Kết hợp Giáo án + Thư mục ảnh riêng đã copy trên máy:**
-> *"Soạn slide bài Cấu tạo tế bào, KHTN 6 bộ Cánh Diều, Trường THCS ..., GV: ..., Phong cách Style 1 (STEM Navy), Hiệu ứng mức Vừa. Nội dung lấy từ file `"D:\GiaoAn\Bai17.docx"`, còn hình ảnh minh hoạ em lấy toàn bộ trong thư mục `"D:\anh_bai17"` đưa vào các slide tương ứng. Lên bản phác thảo cho tôi xem trước nhé!"*
+📌 **Mẫu Trọn Gói A-Z (Copy gửi kèm file giáo án/SGK):**
+> *"Từ file tài liệu tôi gửi `"D:\GiaoAn\Ten_Bai_Hoc.docx"` (hoặc file tôi vừa kéo thả vào):
+> 1. Đọc và tóm tắt nội dung bài học theo tiến trình 3 bước chuẩn GDPT 2018 (Quan sát hình → Thảo luận phát vấn → Khung Em cần ghi nhớ).
+> 2. Thiết kế bộ slide PowerPoint hoàn chỉnh (Font Times New Roman 22-20-18pt, Style 1 STEM, công thức chuẩn OMML).
+> 3. Tự động soạn Lời bình/Lời giảng chi tiết bám sát từng slide vào phần Notes.
+> 4. Lồng tiếng AI giọng [Cô Hoài My / Thầy Nam Minh] và xuất luôn thành Video bài giảng E-learning MP4 Full HD dài khoảng [10 phút] giúp tôi nhé!"*
 
-📌 **Mẫu 3 — Chưa có sẵn ảnh, nhờ AI tự tìm ảnh thực tế / hiển vi siêu nét từ Web:**
-> *"Soạn slide bài 17 Cấu tạo tế bào, KHTN 6 Kết nối tri thức, Trường THCS ..., GV: ..., Phong cách Style 1, Hiệu ứng mức Vừa. Ở các slide quan sát, em tự tìm giúp tôi ảnh chụp tế bào vảy hành thật và tế bào biểu bì dưới kính hiển vi độ nét cao từ trên mạng nhé. Lập bản phác thảo Storyboard cho tôi duyệt trước!"*
+---
 
-📌 **Mẫu 4 — Dành cho môn Tiếng Anh (Global Success / Smart World / Friends Plus):**
-> *"Soạn slide Tiếng Anh lớp [7] Unit [4]: [Music and Arts] - Lesson [Getting Started / A Closer Look 1], từ file SGK `"D:\English7_GlobalSuccess.pdf"` trang [40-41]. Trường THCS ..., GV: ..., Phong cách Style 5. Nhớ lập bảng Vocabulary có phiên âm quốc tế IPA `/.../` kèm ảnh Flashcard, khung Grammar rõ ràng và hiệu ứng bấm nút hiện đáp án cho các Task nhé!"*
+#### 🎯 LỰA CHỌN 2: CÁC MẪU CÂU LỆNH THEO TỪNG BƯỚC (KIỂM SOÁT TỐI ĐA NỘI DUNG)
+> *Dành cho thầy/cô muốn duyệt qua kịch bản, chỉnh sửa câu hỏi thảo luận hoặc chọn ảnh ưng ý trước khi xuất video:*
 
-📌 **Mẫu 5 — ĐÃ CÓ SẴN FILE POWERPOINT (.pptx), NHỜ AI VIẾT LỜI BÌNH & HỖ TRỢ LÀM VIDEO:**
-> *"Tôi có file PowerPoint này rồi `"D:\GiaoAn\Bai12_Toan6.pptx"` (hoặc đính kèm). Em hãy đọc nội dung từng slide, viết giúp tôi Lời giảng/Lời bình chi tiết chuẩn sư phạm vào mục Notes của từng trang, sau đó hướng dẫn tôi xuất thành Video bài giảng MP4 nhé!"*
+📌 **Mẫu 1 — Soạn slide từ Giáo án / SGK (Duyệt kịch bản trước):**
+> *"Soạn slide bài [Tên bài], môn [Toán / KHTN / Văn...], lớp [6], bộ sách [Kết nối tri thức / Cánh Diều / Chân trời sáng tạo] từ file tôi gửi. Phong cách Style 1, Hiệu ứng mức Vừa. Lập Bản phác thảo Storyboard chi tiết từng slide (Kênh hình, Câu hỏi, Ghi nhớ, Lời giảng gợi ý) cho tôi duyệt trước nhé!"*
 
-👉 **Thầy/cô chỉ cần gõ phím `1`, `2`, `3` hoặc `4` (hoặc copy 1 trong 5 mẫu câu lệnh trên) gửi cho em. Em sẽ lập ngay BẢN PHÁC THẢO CHI TIẾT TỪNG SLIDE (Kênh hình, Bố cục, Lời bình giảng dạy) để thầy/cô duyệt trước ạ!**
+📌 **Mẫu 2 — Dành riêng cho môn Tiếng Anh (Global Success / Smart World / Friends Plus):**
+> *"Soạn slide Tiếng Anh lớp [7] Unit [4]: [Music and Arts] - Lesson [Getting Started / A Closer Look 1], từ file SGK `"D:\English7.pdf"` trang [40-41]. Trường THCS ..., GV: ..., Phong cách Style 5. Nhớ lập bảng Vocabulary có phiên âm quốc tế IPA `/.../` kèm ảnh Flashcard, khung Grammar rõ ràng và hiệu ứng bấm nút hiện đáp án cho các Task nhé!"*
+
+📌 **Mẫu 3 — Đã có sẵn file PowerPoint (.pptx), nhờ AI viết lời bình bám sát từng slide:**
+> *"Tôi có file PowerPoint này rồi `"D:\GiaoAn\Bai12_Toan6.pptx"` (hoặc file đính kèm). Hãy đọc nội dung từng slide, viết giúp tôi Lời giảng/Lời bình chi tiết chuẩn sư phạm bám sát từng slide vào mục Notes của từng trang để tôi làm video bài giảng nhé!"*
+
+📌 **Mẫu 4 — Lồng tiếng phát thanh viên AI & Xuất Video bài giảng MP4 (5–10–15 phút):**
+> *"Em hãy lồng tiếng AI giọng [Cô Hoài My / Thầy Nam Minh] từ lời bình trong Notes của file slide này, và xuất thành Video bài giảng MP4 Full HD dài khoảng [5 / 10 / 15 phút] giúp tôi nhé!"*
+
+---
+
+👉 **Thầy/cô chỉ cần gõ phím `1`, `2`, `3` hoặc `4` (hoặc copy 1 trong các mẫu câu lệnh trên) gửi cho em. Em sẽ lập tức thực hiện theo đúng yêu cầu của Thầy/Cô ạ!**
 ```
 
 > ⚠️ **BẮT BUỘC DỪNG VÀ CHỜ**: Sau khi gửi tin nhắn trên, trợ lý phải dừng lại và chờ giáo viên chọn 1, 2, 3 (hoặc gửi câu lệnh kèm đường dẫn file). Không chạy bất kỳ lệnh `project_manager.py init` hay tạo file nào lúc này.
