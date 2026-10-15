@@ -909,27 +909,36 @@ Trợ lý AI **tự động viết script Python sử dụng thư viện `python
 
 ---
 
-### Bước kỹ thuật 7: Xuất Video Bài Giảng MP4 từ PowerPoint (Tự động hoặc Thủ công)
+### Bước kỹ thuật 7: Xuất Video Bài Giảng E-learning MP4 từ PowerPoint (Tự động hoặc Thủ công)
 
-Khi giáo viên có nhu cầu làm video bài giảng trình chiếu, gửi học sinh ôn bài hoặc làm video tư liệu:
+Khi giáo viên có nhu cầu làm video bài giảng E-learning trình chiếu, gửi học sinh ôn bài hoặc làm video tư liệu:
 
-1. **Cách 1 — Xuất Video tự động 1-Click (Khuyên dùng)**:
-   - Giáo viên chỉ cần **KÉO THẢ file `.pptx` vừa tạo vào file `XUAT_VIDEO_TU_PPTX.bat`** trong thư mục phần mềm.
-   - Hoặc trợ lý chạy lệnh:
-     ```bash
-     python "<ĐƯỜNG_DẪN_SKILL>/scripts/xuat_video_pptx.py" "<đường_dẫn_file.pptx>"
-     ```
-   - Hệ thống tự động kết nối với Microsoft PowerPoint trên máy tính để kết xuất video `.mp4` Full HD (1080p, 30fps) giữ nguyên 100% hiệu ứng chuyển trang và hình ảnh sắc nét.
+#### 1. Cơ chế 1 — Trợ lý AI thực hiện trọn gói trong khung chat (Khuyên dùng nhất):
+Khi giáo viên yêu cầu trong khung chat: *"Em viết lời bình và xuất video bài giảng [5 / 10 / 15 phút], lồng tiếng giọng [Cô Hoài My / Thầy Nam Minh] giúp tôi nhé!"*:
+- **Bước A (Căn chỉnh thời lượng lời bình chuẩn xác)**:
+  + Video 5 phút (~6–8 slide): Viết ~500–600 từ (ngắn gọn, cô đọng).
+  + Video 10 phút (~8–12 slide): Viết ~1.000–1.300 từ (giảng giải cặn kẽ từng bước, dẫn dắt câu hỏi, ví dụ).
+  + Video 15 phút (~12–16 slide): Viết ~1.500–1.800 từ (chuyên sâu, giải bài tập chi tiết).
+- **Bước B (Nạp lời bình vào Notes)**:
+  Chạy lệnh: `python "<ĐƯỜNG_DẪN_SKILL>/scripts/them_loi_binh_pptx.py" "<file.pptx>" --inject-json "<file_notes.json>"`
+- **Bước C (Lồng tiếng AI phát thanh viên)**:
+  Chạy lệnh: `python "<ĐƯỜNG_DẪN_SKILL>/scripts/long_tieng_pptx.py" "<file_CoLoiBinh.pptx>" --voice "1"` (hoặc `"2"`) $\to$ Xuất ra `[TenBai]_DaLongTieng.pptx`.
+- **Bước D (Render Video MP4 Full HD)**:
+  Chạy lệnh: `python "<ĐƯỜNG_DẪN_SKILL>/scripts/xuat_video_pptx.py" "<file_DaLongTieng.pptx>"`
+- **Bước E (Bàn giao cho giáo viên)**:
+  Gửi link mở file video trực tiếp: `[Tên_Video_Bài_Giảng.mp4](file:///đường/dẫn/tuyệt/đối/video.mp4)`.
 
-2. **Cách 2 — Xuất Video trực tiếp từ PowerPoint (2 cú nhấp chuột)**:
-   - Mở file `.pptx` bằng Microsoft PowerPoint.
-   - Vào menu **File** (Tệp) $\to$ Chọn **Export** (Xuất) $\to$ Chọn **Create a Video** (Tạo video).
-   - Chọn độ phân giải **Full HD (1080p)** rồi bấm **Create Video**. PowerPoint sẽ tự động lưu thành file video MP4.
+#### 2. Cơ chế 2 — Giáo viên tự chạy 1-Click bằng file công cụ trên máy:
+1. Lồng tiếng AI: Kéo thả file `.pptx` vào **`LONG_TIENG_AI.bat`** $\to$ Chọn giọng Cô Hoài My hoặc Thầy Nam Minh.
+2. Xuất video MP4: Kéo thả file `_DaLongTieng.pptx` vào **`XUAT_VIDEO_TU_PPTX.bat`** $\to$ PowerPoint tự động render video Full HD 1080p.
 
-3. **Cách 3 — Video Khởi động mở đầu tiết học (Warm-up Video 60s)**:
-   - Sử dụng kết hợp với skill `tao-video-khoi-dong-bai-hoc` của Thầy Thiện để tạo kịch bản và prompt Veo 3 / Kling dựng clip dẫn dắt vào bài học hấp dẫn.
+#### 3. Cơ chế 3 — Giáo viên tự thu âm giọng thật & bật Camera ở góc (Chuẩn thi E-learning cấp Huyện/Tỉnh):
+1. Mở file `.pptx` bằng Microsoft PowerPoint $\to$ Vào menu **Slide Show** $\to$ Bấm **Record**.
+2. Bật Camera máy tính $\to$ Lời bình AI đã viết sẽ hiện trên đỉnh màn hình để đọc theo như máy nhắc chữ.
+3. Giảng xong bấm **Stop** $\to$ Vào **File $\to$ Export $\to$ Create a Video** $\to$ Bấm **Create Video**.
 
 ---
+
 
 
 ## VII. XỬ LÝ KHI GIÁO VIÊN PHẢN HỒI KẾ HOẠCH (Luồng A & B)

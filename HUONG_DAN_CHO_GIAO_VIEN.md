@@ -375,21 +375,52 @@ Khi Thầy Thiện nâng cấp thêm tính năng mới, mẫu slide mới hoặc
 
 ---
 
-## 🎥 CÁCH XUẤT VIDEO BÀI GIẢNG MP4 TỪ FILE POWERPOINT (.PPTX)
+## 🎥 CÁCH LÀM VIDEO BÀI GIẢNG E-LEARNING (TÙY CHỈNH ĐỘ DÀI 5–10–15 PHÚT)
 
-Sau khi trợ lý AI tạo xong bài giảng PowerPoint, nếu thầy cô muốn chuyển thành video bài giảng MP4 để chiếu lớp hoặc gửi học sinh:
-
-### ✅ Cách 1 — Kéo thả 1-Click (Dễ nhất):
-1. Mở thư mục `tao-slide-bai-giang`.
-2. Dùng chuột **KÉO file bài giảng `.pptx`** $\to$ **THẢ vào file `XUAT_VIDEO_TU_PPTX.bat`**.
-3. Hệ thống tự động kết nối PowerPoint và xuất thành file video `.mp4` Full HD 1080p có sẵn toàn bộ hiệu ứng chuyển động!
-
-### ✅ Cách 2 — Xuất trực tiếp từ PowerPoint (Không cần phần mềm ngoài):
-1. Mở file bài giảng bằng **Microsoft PowerPoint**.
-2. Nhấp vào menu **File** (ở góc trên cùng bên trái) $\to$ Chọn **Export** (Xuất) $\to$ Chọn **Create a Video** (Tạo video).
-3. Chọn chất lượng **Full HD (1080p)** $\to$ Bấm nút **Create Video** $\to$ Chọn chỗ lưu là xong!
+Sau khi có file bài giảng PowerPoint (hoặc gửi file PowerPoint có sẵn vào), thầy cô có thể chuyển thành **Video bài giảng MP4 Full HD** cực kỳ dễ dàng theo 3 cách:
 
 ---
+
+### 🌟 CÁCH 1 — NHẮN TRỰC TIẾP TRONG Ô CHAT *(Nhanh nhất & Nhàn nhất - Khuyên dùng 100%)*
+
+Thầy cô **không cần mở thư mục, không cần tìm file `.bat` nào cả**! Chỉ cần kéo thả file PowerPoint vào ô chat này và gõ đúng 1 câu lệnh:
+
+> *"Em viết lời bình chi tiết cho bài giảng này, giảng giải cặn kẽ để độ dài **khoảng 10 phút**, sau đó lồng tiếng giọng **[Cô Hoài My / Thầy Nam Minh]** và xuất video bài giảng MP4 giúp tôi nhé!"*
+
+👉 **Trợ lý AI sẽ tự động làm trọn gói từ A đến Z:**
+1. Tự động căn chỉnh lời giảng từng slide để tổng độ dài đạt chuẩn **đúng ~10 phút** (hoặc 5 phút, 15 phút tùy ý thầy cô).
+2. Tự động lồng tiếng đọc phát thanh viên AI chuẩn xác từng câu.
+3. Tự động xuất file video `.mp4` Full HD 1080p và gửi link tải file video hoàn chỉnh cho thầy cô tải về ngay trong ô chat!
+
+---
+
+### ⏱️ BẢNG THỜI LƯỢNG VIDEO BÀI GIẢNG GỢI Ý:
+
+| Thời lượng mong muốn | Số lượng slide | Độ dài lời giảng (Notes) | Phù hợp cho nhu cầu |
+| :---: | :---: | :---: | :--- |
+| **5 Phút** | 6 – 8 slide | ~500 – 600 từ (ngắn gọn, súc tích) | Video tóm tắt kiến thức gửi Zalo, Facebook, TikTok học tập. |
+| **⭐ 10 Phút** *(Chuẩn)* | 8 – 12 slide | ~1.000 – 1.300 từ (giảng giải cặn kẽ) | **Video bài giảng E-learning chuẩn 1 tiết học**, đăng LMS, K12Online, OLM. |
+| **15 Phút** | 12 – 16 slide | ~1.500 – 1.800 từ (phân tích chi tiết) | Video ôn tập chuyên đề, chữa bài tập khó cho học sinh giỏi. |
+
+---
+
+### 🛠️ CÁCH 2 — TỰ ĐỘNG BẰNG FILE CÔNG CỤ TRÊN MÁY *(Dành cho máy không có mạng)*
+
+Nếu thầy cô muốn tự chạy trên máy tính:
+1. **Lồng tiếng AI**: Kéo file slide `.pptx` thả vào file **`LONG_TIENG_AI.bat`** $\to$ Chọn phím `1` (Cô Hoài My) hoặc phím `2` (Thầy Nam Minh) $\to$ Tạo ra file `_DaLongTieng.pptx`.
+2. **Xuất Video**: Kéo file `_DaLongTieng.pptx` thả vào file **`XUAT_VIDEO_TU_PPTX.bat`** $\to$ Hệ thống tự xuất ra file video `.mp4` Full HD có giọng đọc phát thanh viên!
+
+---
+
+### 🎙️ CÁCH 3 — THẦY CÔ TỰ THU ÂM GIỌNG NÓI THẬT CỦA MÌNH (VÀ BẬT CAMERA Ở GÓC)
+
+Nếu thầy cô muốn video có **giọng nói thật của mình** và **khuôn mặt thầy cô ở góc màn hình** (chuẩn thi E-learning cấp Huyện/Tỉnh):
+1. Mở file PowerPoint lên $\to$ Vào menu **Slide Show** $\to$ Bấm **Record** (Ghi âm bài giảng).
+2. Bật Camera/Webcam của máy tính $\to$ Lời bình AI đã viết sẽ hiện trên đỉnh màn hình để thầy cô đọc theo như máy nhắc chữ.
+3. Giảng xong bấm **Stop** $\to$ Vào **File $\to$ Export $\to$ Create a Video** $\to$ Bấm **Create Video** là xong!
+
+---
+
 
 
 ## 📞 NẾU CẦN HỖ TRỢ THÊM
