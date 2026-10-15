@@ -1,0 +1,33 @@
+@echo off
+chcp 65001 >nul
+title LAY MA MAY - SKILL SOAN SLIDE BAI GIANG
+
+set "PYTHON_EXE="
+py -c "import sys" >nul 2>nul && set "PYTHON_EXE=py"
+if "%PYTHON_EXE%"=="" python -c "import sys" >nul 2>nul && set "PYTHON_EXE=python"
+if "%PYTHON_EXE%"=="" (
+    for /d %%D in ("%LOCALAPPDATA%\Programs\Python\Python3*") do if exist "%%D\python.exe" set "PYTHON_EXE=%%D\python.exe"
+)
+if "%PYTHON_EXE%"=="" (
+    for /d %%D in ("C:\Program Files\Python3*") do if exist "%%D\python.exe" set "PYTHON_EXE=%%D\python.exe"
+)
+if "%PYTHON_EXE%"=="" (
+    for /d %%D in ("C:\Python3*") do if exist "%%D\python.exe" set "PYTHON_EXE=%%D\python.exe"
+)
+
+if "%PYTHON_EXE%"=="" (
+    echo [!] Chua tim thay Python! Vui long chay cai_dat_tu_dong.bat truoc.
+    pause
+    exit /b 1
+)
+
+set "LM_SCRIPT=%~dp0scripts\license_manager.py"
+if not exist "%LM_SCRIPT%" (
+    echo [X] Khong tim thay script license_manager.py!
+    pause
+    exit /b 1
+)
+
+%PYTHON_EXE% "%LM_SCRIPT%" --machine-id
+echo.
+pause

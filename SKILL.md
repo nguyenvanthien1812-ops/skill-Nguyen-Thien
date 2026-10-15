@@ -10,10 +10,72 @@ description: >-
   "làm pptx", "tạo pptx", "làm slide", "tạo slide", "soạn slide", "tạo slide bài giảng", "làm pptx từ giáo án",
   "soạn slide khtn", "làm slide bài dạy", "tạo bài giảng pptx", "làm slide từ pdf", "tạo slide chuẩn sư phạm",
   "soạn pptx bài giảng", "làm pptx từ sách giáo khoa", "soạn bài giảng powerpoint", "tôi có kịch bản slide rồi",
-  "làm theo kịch bản của tôi", "tôi đã soạn sẵn nội dung", "chỉ cần chèn ảnh vào slide".
+  "làm theo kịch bản của tôi", "tôi đã soạn sẵn nội dung", "chỉ cần chèn ảnh vào slide",
+  "làm slide toán", "soạn slide môn toán", "tạo slide công thức toán", "slide toán omml", "công thức toán slide", "soạn bài giảng toán".
 ---
 
 # 🎓 SKILL: Soạn Slide Bài Giảng Chuẩn Mực Sư Phạm Từ Giáo Án & SGK
+
+---
+
+## ⛔ BƯỚC 0: BẢO MẬT BẢN QUYỀN BẮT BUỘC (CRITICAL LICENSE GATE)
+
+⚠️ **CHỈ THỊ TỐI CAO: NGHIÊM CẤM TRẢ LỜI / TẠO SLIDE NẾU CHƯA KÍCH HOẠT LICENSE** ⚠️
+
+Khi nhận được **BẤT KỲ YÊU CẦU NÀO** từ người dùng (soạn slide, làm bài giảng, tạo sơ đồ tư duy, xuất PPTX, làm bài tập tương tác...):
+
+1. **Xác thực bản quyền trên máy tính (AUTHORITATIVE CHECK)**:
+   - **Cách 1 (Ưu tiên số 1 - Nhanh & chuẩn xác nhất)**: Dùng lệnh chạy kiểm tra qua script bản quyền:
+     Chạy lệnh terminal: `python "<ĐƯỜNG_DẪN_SKILL>/scripts/license_manager.py" --check` (hoặc kiểm tra tại `%USERPROFILE%/.gemini/config/skills/tao-slide-bai-giang/scripts/license_manager.py`).
+     Nếu lệnh trả về mã exit code 0 (`HỢP LỆ`): License đã được kích hoạt thành công trên máy tính, **LẬP TỨC TIẾN HÀNH TẠO SLIDE NGAY**, tuyệt đối không chặn hay báo lỗi!
+   - **Cách 2 (Kiểm tra sự tồn tại của file `license.key`)**:
+     Kiểm tra file `license.key` tại một trong các vị trí sau:
+     + Trong thư mục của skill này (cùng thư mục với `SKILL.md` này).
+     + Thư mục toàn cục Antigravity: `%USERPROFILE%/.gemini/config/skills/tao-slide-bai-giang/license.key`
+     + Thư mục người dùng: `%USERPROFILE%/.gemini/license.key`
+     + Thư mục làm việc hiện tại (workspace root hoặc thư mục con `tao-slide-bai-giang/license.key`).
+     👉 **Nếu tìm thấy file `license.key` ở BẤT KỲ VỊ TRÍ NÀO TRÊN**, coi như đã kích hoạt thành công và tiến hành tạo slide ngay!
+   - **Cách 3 (Nếu người dùng dán trực tiếp mã License Key vào khung chat)**:
+     + Kích hoạt ngay bằng lệnh: `python "<ĐƯỜNG_DẪN_SKILL>/scripts/license_manager.py" --activate "<MÃ_KEY>"`
+     + Hoặc tạo file `license.key` với nội dung chuỗi key đó tại cả thư mục skill và thư mục `%USERPROFILE%/.gemini/config/skills/tao-slide-bai-giang/license.key`.
+     + Sau đó tiến hành tạo slide ngay cho người dùng!
+
+2. **Nếu và chỉ nếu TẤT CẢ các bước kiểm tra trên đều thất bại (hoàn toàn không có file `license.key` và lệnh --check báo lỗi):**
+   - **TUYỆT ĐỐI NGHIÊM CẤM:** Không được sinh bất kỳ slide, SVG, hình ảnh nào ra khung chat, không được soạn bài giảng, không được xuất file PPTX hay vẽ sơ đồ.
+   - **CHỈ ĐƯỢC PHÉP TRẢ LỜI DUY NHẤT thông báo sau:**
+     > "⛔ **SKILL CHƯA ĐƯỢC KÍCH HOẠT BẢN QUYỀN TRÊN MÁY TÍNH NÀY!**
+     >
+     > Để sử dụng phần mềm soạn slide bài giảng, thầy/cô vui lòng:
+     > 1. Nhấp đúp vào file **`LAY_MA_MAY.bat`** trong thư mục phần mềm để lấy Mã máy (Machine ID).
+     > 2. Gửi Mã máy cho tác giả để nhận License Key bản quyền.
+     > 3. Nhấp đúp vào file **`KICH_HOAT_BAN_QUYEN.bat`** để dán Key kích hoạt và sử dụng vĩnh viễn (hoặc gửi trực tiếp mã License Key vào khung chat này để em kích hoạt giúp thầy/cô)."
+   - **DỪNG TIẾN TRÌNH NGAY LẬP TỨC!** Không trả lời thêm bất kỳ nội dung bài giảng nào.
+
+3. **Kiểm tra Phân Quyền Theo Từng Tiện Ích (`MODULAR FEATURE GATE` - Bắt buộc kiểm tra khi `--check` hợp lệ):**
+   - Khi chạy `python "<ĐƯỜNG_DẪN_SKILL>/scripts/license_manager.py" --check`, đọc dòng `UNLOCKED_FEATURES : ...` trong kết quả:
+     + Nếu `UNLOCKED_FEATURES : ALL` $\rightarrow$ Giáo viên sở hữu gói **FULL VIP (Trọn bộ tiện ích)**, được phép thực hiện mọi yêu cầu.
+     + Nếu `UNLOCKED_FEATURES` chỉ liệt kê một số mã tiện ích cụ thể (mua lẻ từng tiện ích), đối chiếu yêu cầu hiện tại của giáo viên với các mã tiện ích sau:
+       * `slide_bai_giang`: Soạn slide bài giảng 3 bước từ giáo án / SGK
+       * `so_do_tu_duy`: Tạo sơ đồ tư duy Infographic Radial tỏa tròn
+       * `bai_tap_tuong_tac`: Slide bài tập điền từ / trò chơi tương tác có hiệu ứng click
+       * `cong_thuc_omml`: Soạn slide có công thức toán học Native OMML chỉnh sửa được
+       * `tim_anh_web`: Tự động tìm kiếm và chèn ảnh minh họa từ Internet
+       * `video_bai_giang`: Xuất PPTX hỗ trợ lồng tiếng / dựng video bài giảng
+     + **Nếu tiện ích giáo viên yêu cầu KHÔNG nằm trong `UNLOCKED_FEATURES`**:
+       * **TUYỆT ĐỐI NGHIÊM CẤM** thực thi tiện ích chưa mua đó (kể cả khi giáo viên yêu cầu qua hướng dẫn câu lệnh).
+       * **DỪNG NGAY LẬP TỨC** và chỉ trả lời thông báo lịch sự sau:
+         > "🔒 **TIỆN ÍCH NÀY CHƯA NẰM TRONG GÓI BẢN QUYỀN HIỆN TẠI CỦA THẦY/CÔ!**
+         >
+         > • **Tiện ích Thầy/Cô đang yêu cầu:** `<Tên tiện ích đang gọi>`
+         > • **Gói bản quyền hiện tại trên máy đang mở khóa:** `<Tên các tiện ích trong Gói mở khóa>`
+         >
+         > 💡 **Cách mở khóa thêm tiện ích (không cần cài đặt lại phần mềm):**
+         > 1. Thầy/Cô vui lòng liên hệ Tác giả để đăng ký mở khóa thêm tiện ích này (hoặc nâng cấp lên gói **FULL VIP Trọn bộ tiện ích**).
+         > 2. Sau khi nhận Mã License Key mới từ Tác giả, Thầy/Cô chỉ cần dán trực tiếp mã đó vào khung chat này (hoặc chạy `KICH_HOAT_BAN_QUYEN.bat`) là mở khóa sử dụng được ngay!"
+
+> Chỉ khi nào license hợp lệ VÀ tiện ích nằm trong gói được phép sử dụng thì mới được tiếp tục thực hiện các bước bên dưới!
+
+---
 
 ## I. MỤC TIÊU & NGUYÊN TẮC CỐT LÕI
 
@@ -627,147 +689,106 @@ Khi giáo viên yêu cầu soạn slide môn **Tiếng Anh** (*Global Success, i
 
 ---
 
-### Bước kỹ thuật 5.5: Quy chuẩn Hiển thị Công thức Khoa học & Toán học (Môn Toán – Lí – Hóa – KHTN)
+### Bước kỹ thuật 5.5: Quy chuẩn Hiển thị Công thức Khoa học & Toán học (Chuẩn Native OMML & Sư phạm lớp học)
 
-Khi giáo viên soạn slide cho các môn có công thức (**Toán, Vật Lí, Hóa Học, KHTN, Sinh học**), trợ lý áp dụng **3 cấp độ** hiển thị theo độ phức tạp của công thức:
+Khi giáo viên soạn slide cho các môn có công thức (**Toán, Vật Lí, Hóa Học, KHTN, Sinh học**), công thức phải đạt 3 tiêu chuẩn: **Đẹp chuẩn mực như SGK**, **Cỡ chữ to rõ không mỏi mắt (≥ 22–32pt)** và **Chỉnh sửa được trực tiếp 100% trong PowerPoint**.
 
-#### Cấp độ 1 — Công thức đơn giản (Inline Unicode): ✅ Mặc định, không cần cài thêm
+Trợ lý áp dụng hệ thống phân cấp công nghệ công thức như sau (ưu tiên số 1 cho Native OMML):
 
-Dùng trực tiếp ký tự Unicode toán học trong thẻ `<text>` SVG — hiển thị hoàn hảo trong PPTX:
+---
 
-| Ký hiệu cần | Viết trong SVG | Hiển thị trong PPTX |
-| :--- | :--- | :--- |
-| Chỉ số dưới hóa học | `H₂SO₄`, `CO₂`, `NaHCO₃` | H₂SO₄, CO₂, NaHCO₃ |
-| Số mũ vật lý | `v₀`, `s = v₀t + ½at²`, `E = mc²` | Hiển thị đúng |
-| Ký hiệu phổ biến | `→`, `⇌`, `±`, `≤`, `≥`, `≈`, `∞` | Hiển thị đúng |
-| Ký hiệu Hi Lạp | `Δ`, `α`, `β`, `λ`, `ω`, `μ`, `π`, `θ`, `φ` | Hiển thị đúng |
-| Đơn vị vật lý | `m/s`, `m/s²`, `kg⋅m/s`, `°C`, `Ω`, `μF` | Hiển thị đúng |
-| Pt đơn giản Toán | `F = ma`, `P = UI`, `Δs = ½at²`, `s = (a+b)h/2` | Hiển thị đúng |
+#### 🌟 CÔNG NGHỆ SỐ 1: NATIVE OMML FORMULA (CHỈNH SỬA TRỰC TIẾP 100% TRONG POWERPOINT — KHUYÊN DÙNG HÀNG ĐẦU)
 
-**Cách viết SVG mẫu** (khung "EM CẦN GHI NHỚ" môn Vật Lí):
+Hệ thống tích hợp bộ biên dịch LaTeX sang **Office Math (OMML)** nguyên bản của Microsoft PowerPoint. Khi mở file PPTX, công thức hiển thị dưới dạng đối tượng toán học vector chuẩn mực (`m:oMath`), dùng font chuyên dụng `Cambria Math` kết hợp `Times New Roman`.
+
+**Ưu điểm tuyệt đối cho giáo viên:**
+1. **Chỉnh sửa trực tiếp 100%**: Giáo viên mở slide trong PowerPoint, click đúp chuột vào công thức là sửa được số, đổi dấu, thay đổi biểu thức bằng thanh công cụ *Equation Tools* (không cần cài thêm MathType hay phần mềm phụ trợ).
+2. **Sắc nét vĩnh viễn (Vector thuần túy)**: Phóng to trên màn hình máy chiếu phòng học hay hội trường lớn không bao giờ bị vỡ hạt, mờ nhòe như ảnh chụp/ảnh PNG.
+3. **Chuẩn mực ký hiệu Toán GDPT 2018**: Thể hiện hoàn hảo phân số gạch ngang $\frac{A}{B}$, căn bậc hai $\sqrt{x}$, căn bậc $n$, hệ phương trình có dấu ngoặc nhọn $\begin{cases}...\end{cases}$, số mũ lũy thừa, chỉ số dưới, tích phân, giới hạn $\lim$, ma trận, v.v.
+
+##### Cách viết trong SVG (2 Dạng chuẩn):
+
+**Dạng A — Công thức nội dòng (Inline Formula):**
+- Đặt thuộc tính `data-pptx-inline-formula="[Mã_LaTeX]"` trên thẻ `<tspan>` lá (không lồng thẻ con, không chứa tọa độ x/y riêng, không chứa `$` bao quanh).
+- Cỡ chữ khuyến nghị: **22pt – 24pt** (để phân số hoặc số mũ trong dòng không bị bé).
+
 ```xml
-<g id="em_can_ghi_nho" data-pptx-bounds="40 500 1200 180">
-  <rect x="40" y="500" width="1200" height="180" rx="10" fill="#FFF9E6" stroke="#E8941A" stroke-width="3"/>
-  <text x="80" y="540" font-size="26.67" font-weight="bold" fill="#E8941A" font-family="Times New Roman, serif">💡 EM CẦN GHI NHỚ</text>
-  <text x="80" y="580" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif">▸ Định luật II Newton: F = ma</text>
-  <text x="80" y="615" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif">▸ Gia tốc: a = Δv/Δt (m/s²)</text>
-  <text x="80" y="650" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif">▸ Quãng đường: s = v₀t + ½at² (m)</text>
+<text x="80" y="320" font-size="24" fill="#1B3A6B" font-family="Times New Roman, serif">
+  ▸ Nghiệm phương trình: <tspan data-pptx-inline-formula="x = \frac{-b \pm \sqrt{\Delta}}{2a}">x = (-b ± √Δ)/(2a)</tspan> (với Δ > 0)
+</text>
+```
+
+**Dạng B — Khối công thức độc lập (Block Formula):**
+- Áp dụng cho: Công thức trọng tâm, hệ phương trình, bài toán phân số nhiều tầng, công thức đóng khung chốt kiến thức.
+- Sử dụng group `<g id="..." data-pptx-replace-with="formula">` kèm một thẻ con `<metadata type="application/json">` khai báo: `latex`, `display: "block"`, `font_size` (từ 28 đến 36pt), `color`, `align: "center"`.
+- Đi kèm thẻ `<text>` preview tượng trưng bên dưới để hiển thị khi xem trực tiếp file SVG.
+
+```xml
+<g id="ct_phuong_trinh_bac_hai" data-pptx-replace-with="formula"
+   data-pptx-x="200" data-pptx-y="320"
+   data-pptx-width="880" data-pptx-height="130"
+   data-pptx-bounds="200 320 880 130">
+  <metadata type="application/json"><![CDATA[
+    {"latex":"x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}",
+     "display":"block","font_size":32,"color":"#1B3A6B","align":"center"}
+  ]]></metadata>
+  <!-- Preview trực quan trong lúc xem bản SVG -->
+  <text x="640" y="390" text-anchor="middle" font-size="28" fill="#1B3A6B" font-family="Times New Roman, serif">
+    x = (-b ± √(b² - 4ac)) / (2a)
+  </text>
+</g>
+```
+
+**Mẫu khối hệ phương trình bậc nhất hai ẩn:**
+```xml
+<g id="ct_he_phuong_trinh" data-pptx-replace-with="formula"
+   data-pptx-x="250" data-pptx-y="300"
+   data-pptx-width="780" data-pptx-height="140"
+   data-pptx-bounds="250 300 780 140">
+  <metadata type="application/json"><![CDATA[
+    {"latex":"\\begin{cases} 2x + 3y = 7 \\\\ 4x - y = 5 \\end{cases}",
+     "display":"block","font_size":30,"color":"#854D0E","align":"center"}
+  ]]></metadata>
+  <text x="640" y="375" text-anchor="middle" font-size="26" fill="#854D0E" font-family="Times New Roman, serif">
+    { 2x + 3y = 7 ; 4x - y = 5 }
+  </text>
 </g>
 ```
 
 ---
 
-#### Cấp độ 2 — Công thức trung bình (Vẽ SVG thủ công): ✅ Đủ đẹp, không cần thư viện ngoài
-
-Dùng các thẻ `<text>`, `<line>`, `<rect>`, `<tspan>` SVG để "vẽ" công thức trông giống LaTeX.  
-Áp dụng cho: phân số đơn giản, căn bậc 2 ngắn, chỉ số phức hợp.
-
-**Mẫu vẽ phân số `a/b` bằng SVG thuần túy:**
-```xml
-<!-- Phân số: v̄ = Δs / Δt -->
-<g transform="translate(200, 400)">
-  <!-- Tử số -->
-  <text x="0" y="0" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif" text-anchor="middle">Δs</text>
-  <!-- Gạch phân số -->
-  <line x1="-30" y1="8" x2="30" y2="8" stroke="#1A1A2E" stroke-width="2"/>
-  <!-- Mẫu số -->
-  <text x="0" y="32" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif" text-anchor="middle">Δt</text>
-  <!-- Ký hiệu = và vế trái -->
-  <text x="-80" y="16" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif">v̄ =</text>
-</g>
-```
-
-**Mẫu vẽ căn thức `√(b²-4ac)` bằng SVG:**
-```xml
-<g transform="translate(300, 500)">
-  <!-- Dấu căn -->
-  <text x="0" y="0" font-size="28" fill="#1A1A2E" font-family="Times New Roman, serif">√</text>
-  <!-- Nội dung trong căn (có gạch trên) -->
-  <text x="28" y="0" font-size="24" fill="#1A1A2E" font-family="Times New Roman, serif">b²−4ac</text>
-  <line x1="28" y1="-22" x2="130" y2="-22" stroke="#1A1A2E" stroke-width="1.5"/>
-</g>
-```
+#### Cấp độ 2 — Công thức đơn giản (Inline Unicode): ✅ Nhanh gọn, không cần cấu hình
+Dùng cho các công thức hóa học đơn giản, ký hiệu vật lý một dòng trong văn bản thông thường:
+- Chỉ số dưới hóa học: `H₂SO₄`, `CO₂`, `NaHCO₃`, `Ca(OH)₂`
+- Số mũ vật lý: `v₀`, `s = v₀t + ½at²`, `E = mc²`
+- Ký hiệu toán học thông dụng: `→`, `⇌`, `±`, `≤`, `≥`, `≈`, `≠`, `∈`, `∉`, `⊂`, `∪`, `∩`, `⋮`, `∤`
+- Ký hiệu Hy Lạp: `Δ`, `α`, `β`, `λ`, `ω`, `μ`, `π`, `θ`, `φ`, `Ω`
 
 ---
 
-#### Cấp độ 3 — Công thức phức tạp (Render LaTeX → PNG → Nhúng SVG): ⭐ Đẹp hoàn hảo như LaTeX
+#### Cấp độ 3 — Công thức vẽ đồ họa SVG (Interactive / Step-by-step Math): ✅ Dành cho bài tập tương tác
+Khi thiết kế slide bài giảng có hoạt động học sinh điền số, hiệu ứng từng bước xuất hiện đáp án hoặc các hộp màu sắc phân biệt tử số và mẫu số:
+- Dùng các thẻ `<rect>`, `<line>`, `<text>` bo góc với màu sắc tương phản.
+- Gán animation click từng bước để hiện tử số trước, gạch phân số, rồi đến mẫu số hoặc kết quả.
 
-Khi gặp công thức rất phức tạp: **tích phân, ma trận, sigma lồng nhau, phương trình vi phân, hóa hữu cơ chuỗi dài** — dùng `matplotlib` (đã có sẵn trong venv) để render LaTeX thành ảnh PNG 300 DPI rồi nhúng vào SVG qua thẻ `<image>`.
+---
 
-**Script Python render công thức** (lưu tại `skills/ppt-master/scripts/render_formula.py` hoặc chạy thẳng):
-```python
-#!/usr/bin/env python3
-# render_formula.py — Render công thức LaTeX → PNG → nhúng vào SVG
-import sys
-import base64
-from io import BytesIO
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-import matplotlib.mathtext as mathtext
+#### Cấp độ 4 — Công thức phức tạp đặc thù (TikZ / Matplotlib 300 DPI): ⭐ Cho hình vẽ thí nghiệm & Đồ thị
+Khi bài học cần kèm theo **sơ đồ cấu trúc hóa hữu cơ (vòng Benzen, mạch nhánh)**, **đồ thị hàm số có tiệm cận xiên / bảng biến thiên**, hoặc **sơ đồ mạch điện KHTN**:
+- Sử dụng công cụ vẽ Matplotlib hoặc TikZ Engine để xuất hình ảnh kỹ thuật sắc nét 300 DPI.
+- Nhúng vào slide qua thẻ `<image href="...">`.
 
-def render_latex_to_base64_png(latex_str: str, fontsize: int = 22, dpi: int = 300) -> str:
-    """Render chuỗi LaTeX thành PNG base64 để nhúng trực tiếp vào SVG <image>."""
-    fig, ax = plt.subplots(figsize=(0.01, 0.01))
-    ax.set_axis_off()
-    t = ax.text(0.5, 0.5, f"${latex_str}$",
-                fontsize=fontsize, ha='center', va='center',
-                fontfamily='Times New Roman',
-                transform=ax.transAxes)
-    fig.canvas.draw()
-    # Tính toán kích thước bbox thực
-    renderer = fig.canvas.get_renderer()
-    bbox = t.get_window_extent(renderer=renderer)
-    w_in = (bbox.width + 20) / fig.dpi
-    h_in = (bbox.height + 12) / fig.dpi
-    fig.set_size_inches(w_in, h_in)
-    buf = BytesIO()
-    fig.savefig(buf, format='png', dpi=dpi, bbox_inches='tight',
-                pad_inches=0.05, transparent=True)
-    plt.close(fig)
-    buf.seek(0)
-    return base64.b64encode(buf.read()).decode('utf-8')
+---
 
-# === Ví dụ sử dụng ===
-if __name__ == '__main__':
-    # Công thức Tích phân
-    b64 = render_latex_to_base64_png(r'\int_a^b f(x)\,dx = F(b) - F(a)')
-    print(f'data:image/png;base64,{b64[:60]}...')  # In mẫu
-```
+#### 📊 Bảng quyết định chọn công nghệ công thức trên slide:
 
-**Cách nhúng PNG base64 vào SVG:**
-```xml
-<!-- Nhúng công thức tích phân vào slide — chiều rộng/cao tự điều chỉnh -->
-<image x="100" y="420" width="520" height="80"
-       href="data:image/png;base64,iVBORw0KGgoAAAANS..."
-       preserveAspectRatio="xMidYMid meet"/>
-```
-
-**Quy trình thực tế khi gặp công thức phức tạp:**
-```bash
-# Bước 1: Render công thức thành ảnh PNG (chạy từ thư mục repo)
-d:\2anh-studio-main\venv\Scripts\python.exe skills/ppt-master/scripts/render_formula.py \
-    --latex "\int_a^b f(x)\,dx" \
-    --output projects/<project>/images/formula_01.png \
-    --fontsize 24 --dpi 300
-
-# Bước 2: Tham chiếu file PNG trong SVG (dùng đường dẫn tương đối)
-# <image href="../images/formula_01.png" x="100" y="420" width="500" height="80"/>
-
-# Bước 3: Xuất PPTX bình thường — bộ exporter tự nhúng ảnh vào PPTX
-d:\2anh-studio-main\venv\Scripts\python.exe skills/ppt-master/scripts/svg_to_pptx.py <project_path>
-```
-
-#### Bảng quyết định nhanh — Chọn Cấp độ nào?
-
-| Loại công thức | Môn điển hình | Cấp độ dùng |
-| :--- | :--- | :---: |
-| `F = ma`, `v₀`, `H₂SO₄`, `CO₂`, `E = mc²` | Lý, Hóa, KHTN | **Cấp 1** (Unicode) |
-| `v̄ = Δs/Δt`, `√(b²−4ac)`, `x = (-b ± √Δ)/2a` | Toán, Lý | **Cấp 2** (SVG thủ công) |
-| `∫f(x)dx`, Ma trận, `∑ᵢ₌₁ⁿ`, `lim_{x→∞}` | Toán Đại học/THPT | **Cấp 3** (matplotlib) |
-| Chuỗi hóa hữu cơ, cơ chế phản ứng | Hóa hữu cơ | **Cấp 3** (matplotlib) |
-
-> **⚠️ LƯU Ý**: Công thức render thành ảnh PNG (Cấp 3) sẽ **không thể bấm vào chỉnh sửa** trực tiếp trong PowerPoint. Khi cần chỉnh công thức, phải render lại PNG. Hãy giữ file LaTeX nguồn bên cạnh.
+| Dạng công thức / Môn học | Ví dụ điển hình | Công nghệ ưu tiên | Đặc điểm hiển thị |
+| :--- | :--- | :---: | :--- |
+| **Công thức đại số, phân số, căn thức** | $\frac{x-1}{x+2} = 3$, $x = \frac{-b \pm \sqrt{\Delta}}{2a}$ | ⭐ **Native OMML** | Chỉnh sửa trực tiếp 100%, nét vector siêu đẹp |
+| **Hệ phương trình, phương trình chứa ẩn ở mẫu** | $\begin{cases} ax+by=c \\ a'x+b'y=c' \end{cases}$ | ⭐ **Native OMML (Block)** | Căn lề chuẩn mực, ngoặc nhọn lớn chuẩn SGK |
+| **Ký hiệu hóa học, công thức vật lý 1 dòng** | $H_2SO_4 + 2NaOH$, $F = ma$, $P = UI$ | **Inline Unicode** | Gõ trực tiếp trong text, nhẹ nhàng, tương thích cao |
+| **Bài tập điền từ/số vào phân số** | Điền tử số/mẫu số có ô màu vàng | **Đồ họa SVG** | Có animation click hiện từng số, trực quan sinh động |
+| **Đồ thị hàm số, bảng biến thiên, mạch điện** | Bảng biến thiên Toán 12, Sơ đồ mạch điện | **TikZ / Matplotlib** | 300 DPI chính xác tuyệt đối từng tọa độ |
 
 ---
 
@@ -819,3 +840,42 @@ d:\2anh-studio-main\venv\Scripts\python.exe skills/ppt-master/scripts/svg_to_ppt
 | **Thí nghiệm / Thực hành** | `Mô phỏng kênh hình thí nghiệm` | `THÍ NGHIỆM: [TÊN THÍ NGHIỆM]` | `🎯 PRACTICE — TASK 1, 2, 3` |
 | **Đề mục** | Có dòng chữ nhỏ chú thích dưới đề mục | **Bỏ hoàn toàn**, chỉ để tiêu đề to rõ (22pt) | **Bỏ hoàn toàn**, chỉ để Unit / Lesson Title to rõ (22pt) |
 | **Ký hiệu liệt kê** | Dấu gạch ngang `-` đơn điệu | Dùng ký hiệu tam giác `▸` sắc nét, hiện đại | Dùng ký hiệu `▸` sắc nét, hiện đại |
+
+---
+
+## IX. CẨM NANG BỎ TÚI DÀNH CHO GIÁO VIÊN: 5 CÁCH SỬ DỤNG "HAY & TIỆN NHẤT" MÀ KHÔNG CẦN GIỎI CÔNG NGHỆ
+
+Rất nhiều thầy cô giáo băn khoăn: *"Tôi không rành về tin học, không biết viết câu lệnh (prompt) phức tạp, vậy làm sao để dùng hệ thống này cho hay và hiệu quả?"*
+
+Dưới đây là triết lý **"3 Không — 3 Dễ"** và **5 công thức 1 dòng** giúp bất kỳ giáo viên nào cũng có thể tạo ra những bài giảng xuất sắc chỉ trong vài phút:
+
+### 1. Triết lý "3 Không — 3 Dễ"
+* ❌ **Không cần học câu lệnh phức tạp** $\to$ ✅ **Cứ nói tiếng Việt tự nhiên** như đang trao đổi với một giáo viên thực tập/đồng nghiệp tổ chuyên môn giỏi việc.
+* ❌ **Không cần gõ lại nội dung bài học** $\to$ ✅ **Thấy gì gửi nấy**: Kéo thả file Word giáo án cũ, file PDF SGK, hoặc lấy điện thoại chụp ngay trang sách rồi gửi vào ô chat.
+* ❌ **Không sợ làm hỏng hay đè bài** $\to$ ✅ **Xem duyệt kịch bản trước**: Hệ thống luôn đưa bảng tóm tắt từng slide để thầy cô xem lướt và góp ý trước khi xuất file.
+
+---
+
+### 2. Bộ câu lệnh "Thần chú 1 dòng" giáo viên dùng hàng ngày:
+
+| Tình huống thực tế trên lớp | Câu lệnh mẫu ngắn gọn giáo viên chỉ cần gửi | Kết quả nhận được |
+| :--- | :--- | :--- |
+| **Soạn bài giảng tiết mới** | *"Soạn bài giảng cho bài này từ file giáo án tôi gửi, làm theo tiến trình 3 bước, chữ to rõ nhé."* | Slide 16:9 chuẩn mực, lọc sạch mục tiêu rườm rà, có ảnh minh họa & khung ghi nhớ. |
+| **Làm sơ đồ tư duy ôn tập** | *"Tạo cho tôi 1 slide sơ đồ tư duy dạng tỏa tròn tổng kết bài [Tên bài], có mẹo nhớ nhanh."* | Infographic Radial Mindmap đối xứng, màu sắc đẹp mắt, hiệu ứng bung tỏa từ tâm. |
+| **Soạn bài toán có công thức** | *"Tạo slide hướng dẫn giải bài toán trong ảnh này, dùng công thức OMML to rõ để học sinh dễ chép."* | Slide lời giải từng bước, công thức phân số/căn thức chuẩn Native OMML, click đúp sửa được ngay. |
+| **Làm trò chơi / Bài tập điền từ** | *"Làm slide bài tập điền từ vào chỗ trống, các từ khuyết bấm vào sẽ chạy lên vị trí đúng."* | Slide bài tập tương tác chia 2 cột/khung, học sinh lên bảng bấm hoặc GV click chuột đáp án nhảy lên. |
+| **Làm video mở đầu tiết học** | *"Lên kịch bản và prompt video khởi động 60s dẫn dắt vào bài học này cho học sinh lớp 6."* | Kịch bản sư phạm hấp dẫn, gợi mở vấn đề thực tế, sẵn sàng đưa vào Veo 3 dựng video. |
+
+---
+
+### 3. Quy trình 3 bước nhàn nhã cho giáo viên:
+1. **Bước 1 — Gửi tài liệu & Nói mong muốn**: Thả file giáo án Word hoặc ảnh chụp SGK vào, kèm 1 câu mong muốn (ví dụ: *"lớp 6, học sinh trung bình, cần nhiều ví dụ thực tế"*).
+2. **Bước 2 — Duyệt lướt kịch bản (1 phút)**: Xem qua bảng phân chia từng slide. Thầy cô chỉ cần gõ: *"Đồng ý, làm đi"* hoặc *"Thêm cho tôi 1 bài tập nữa ở slide 4"*.
+3. **Bước 3 — Nhận file PowerPoint tải về**: Mở file `.pptx` lên trình chiếu F5 ngay trên lớp, hoặc nhấp đúp vào bất kỳ dòng chữ/công thức nào để chỉnh sửa theo thói quen giảng dạy riêng của mình.
+
+---
+
+### 4. Tại sao công thức OMML là "cứu tinh" cho giáo viên Toán – KHTN:
+* **Không phụ thuộc MathType**: Máy tính ở trường không cài MathType vẫn mở ra bình thường, không bao giờ bị lỗi ô vuông, dấu hỏi chấm `?` hay mất công thức.
+* **Chỉnh sửa click đúp**: Nhấp đúp chuột vào công thức là sửa số liệu ngay trên thanh công cụ *Equation* quen thuộc của Microsoft PowerPoint.
+* **Nét chữ sắc sảo trên máy chiếu**: Công thức là vector toán học nguyên bản, học sinh ngồi dãy bàn cuối cùng nhìn lên bảng vẫn thấy rõ từng nét gạch ngang phân số, dấu căn và số mũ lũy thừa.

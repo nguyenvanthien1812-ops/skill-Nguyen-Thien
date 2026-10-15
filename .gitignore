@@ -18,3 +18,9 @@ ENV/
 # OS specific
 .DS_Store
 Thumbs.db
+
+# License & Security (Không đẩy key bản quyền cá nhân lên GitHub)
+*.key
+license.key
+*.pem
+*da_cap.json
