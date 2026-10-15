@@ -11,7 +11,8 @@ description: >-
   "soạn slide khtn", "làm slide bài dạy", "tạo bài giảng pptx", "làm slide từ pdf", "tạo slide chuẩn sư phạm",
   "soạn pptx bài giảng", "làm pptx từ sách giáo khoa", "soạn bài giảng powerpoint", "tôi có kịch bản slide rồi",
   "làm theo kịch bản của tôi", "tôi đã soạn sẵn nội dung", "chỉ cần chèn ảnh vào slide",
-  "làm slide toán", "soạn slide môn toán", "tạo slide công thức toán", "slide toán omml", "công thức toán slide", "soạn bài giảng toán".
+  "làm slide toán", "soạn slide môn toán", "tạo slide công thức toán", "slide toán omml", "công thức toán slide", "soạn bài giảng toán",
+  "viết cho tôi lời bình file pptx nhé", "viết lời bình pptx", "viết lời bình cho slide", "soạn lời giảng cho file pptx", "viết kịch bản lời giảng", "thêm lời bình vào powerpoint", "lời bình bài giảng pptx".
 ---
 
 # 🎓 SKILL: Soạn Slide Bài Giảng Chuẩn Mực Sư Phạm Từ Giáo Án & SGK
@@ -266,7 +267,83 @@ Dạ tuyệt vời! Với **Kịch bản có sẵn**, thầy/cô toàn quyền l
 
 ---
 
+## II.B LUỒNG TƯƠNG TÁC KHI GIÁO VIÊN YÊU CẦU: "VIẾT CHO TÔI LỜI BÌNH FILE PPTX NHÉ"
+
+Khi giáo viên gửi câu lệnh như:
+> *"viết cho tôi lời bình file pptx nhé"*, *"viết lời bình pptx"*, *"soạn lời giảng cho file pptx"*, *"tạo lời bình cho slide có sẵn"*, *"viết kịch bản thuyết trình slide"*... (mà chưa gửi file kèm theo)
+
+Trợ lý **bắt buộc không được trả lời chung chung**, mà phải gửi ngay **Bản Hướng Dẫn Cầm Tay Chỉ Việc** theo mẫu sau:
+
+```markdown
+Dạ kính chào Thầy/Cô! Để em hỗ trợ soạn bộ Lời bình / Lời giảng chi tiết bám sát 100% từng slide cho bài giảng PowerPoint của Thầy/Cô (chuẩn mực sư phạm, tự nhiên, sinh động để lên lớp hoặc xuất video bài giảng), Thầy/Cô làm theo 2 bước cực kỳ đơn giản dưới đây nhé:
+
+---
+### 📂 BƯỚC 1: ĐƯA FILE POWERPOINT (.pptx) VÀO CHO EM ĐỌC
+Thầy/Cô chọn **1 trong 2 cách** tiện nhất trên máy tính:
+- **Cách 1 (Kéo thả chuột - Dễ nhất):** Mở thư mục chứa file slide trên máy tính, giữ chuột trái vào file `.pptx` rồi **KÉO SANG VÀ THẢ VÀO Ô CHAT NÀY** (hoặc bấm nút đính kèm `📎` / `+`).
+- **Cách 2 (Copy đường dẫn - Rất nhanh):**
+  + Tìm file `.pptx` trên máy tính (trong thư mục `Downloads` hoặc `Ổ D:`).
+  + Giữ phím `Shift` + nhấp **Chuột phải** vào file $\to$ Chọn **"Copy as path"** *(Sao chép dưới dạng đường dẫn)*.
+  + Quay lại đây, nhấn `Ctrl + V` để dán đường dẫn vào ô tin nhắn.
+
+---
+### 🎙️ BƯỚC 2: CHỌN PHONG CÁCH GIẢNG BẠI MONG MUỐN (TÙY CHỌN)
+Thầy/Cô có thể nhắn thêm mong muốn giảng bài của mình (hoặc để em tự tối ưu chuẩn mực GDPT 2018):
+1. **Đối tượng học sinh:** [Lớp 6, 7, 8, 9, THPT, học sinh đại trà hay ôn thi HSG...]
+2. **Phong cách giọng giảng:**
+   - 🌟 *Gợi mở, truyền cảm, gần gũi* (xưng Thầy/Cô - các em, nhiều câu hỏi tương tác).
+   - 🌟 *Dõng dạc, trang trọng, mạch lạc* (phù hợp bài giảng thi giáo viên giỏi hoặc chuyên đề).
+   - 🌟 *Tỉ mỉ, chi tiết từng bước* (phù hợp bài tập Toán, Khoa học khó, giải thích cặn kẽ).
+   - 🌟 *Ngắn gọn, súc tích* (mỗi slide 30–45 giây để làm video bài giảng ngắn gọn gửi Zalo học sinh).
+3. **Mục đích sử dụng:**
+   - [ ] Để Thầy/Cô tự ghi âm (lời bình hiện sẵn trên màn hình PowerPoint để đọc theo như máy nhắc chữ).
+   - [ ] Để lồng tiếng AI tự động xuất video bài giảng MP4.
+
+---
+### 📋 MẪU CÂU LỆNH ĐIỀN SẴN (THẦY/CÔ CHỈ CẦN COPY & GỬI CHO EM):
+
+> *"Em hãy viết lời bình chi tiết bám sát từng slide cho file PowerPoint này của tôi: `"D:\GiaoAn\Ten_Bai_Giang.pptx"` (hoặc file tôi vừa kéo thả vào). Môn [Toán / KHTN / Văn / Sử / Anh...], lớp [6], phong cách truyền cảm gợi mở, bám sát các kênh hình, câu hỏi và công thức trên slide để tôi làm video bài giảng nhé!"*
+
+👉 **Ngay khi nhận được file `.pptx`, em sẽ đọc từng trang slide và lập BẢNG LỜI BÌNH CHI TIẾT TỪNG SLIDE cho Thầy/Cô duyệt trước khi nạp thẳng vào mục Notes của PowerPoint ạ!**
+```
+
+> ⚠️ **BẮT BUỘC DỪNG VÀ CHỜ**: Trợ lý dừng lại chờ giáo viên gửi file `.pptx` hoặc dán đường dẫn file kèm thông tin.
+
+---
+
+### 🌟 6 NGUYÊN TẮC VÀNG KHI VIẾT LỜI BÌNH BÁM SÁT SLIDE POWERPOINT
+
+Khi nhận được file `.pptx`, trợ lý chạy lệnh `python scripts/them_loi_binh_pptx.py "<file.pptx>" --extract` để trích xuất toàn bộ tiêu đề, đề mục, nội dung chữ, bảng biểu của từng slide. Sau đó biên soạn lời bình tuân thủ tuyệt đối 6 nguyên tắc:
+
+1. **Bám sát 100% nội dung thực tế trên từng slide**:
+   - Slide có định nghĩa hay khái niệm nào $\implies$ Lời bình giảng giải đúng định nghĩa đó, không bịa thêm kiến thức ngoài làm loãng bài.
+   - Slide có công thức toán/lý/hóa $\implies$ Lời bình đọc chuẩn xác tên từng ký hiệu (ví dụ: *"Delta phẩy bằng b phẩy bình phương trừ a nhân c"*), giải thích ý nghĩa từng đại lượng và điều kiện áp dụng.
+   - Slide có hình ảnh, sơ đồ, đồ thị $\implies$ Lời bình chủ động dẫn dắt: *"Các em hãy quan sát hình ảnh ở bên trái màn hình...", "Nhìn vào nhánh số 2 của sơ đồ..."*.
+   - Slide có câu hỏi thảo luận / trắc nghiệm $\implies$ Lời bình đặt câu hỏi gợi mở, gợi ý hướng suy nghĩ, sau đó phân tích tại sao phương án đó là đáp án chính xác.
+   - Slide có khung chốt ghi nhớ $\implies$ Lời bình nhấn mạnh: *"Đây là kiến thức trọng tâm của bài, các em hãy ghi cẩn thận nội dung đóng khung này vào vở nhé."*
+2. **Khẩu khí sư phạm tự nhiên, ấm áp**:
+   - Xưng hô chuẩn mực: *"Thầy/Cô chào các em..."*, *"Các em thân mến..."*, *"Thầy tin chắc rằng các em đã nhận ra..."*.
+   - Tuyệt đối không dùng giọng đọc văn xuôi máy móc hay đọc lại từng chữ trơ trọi trên slide; phải có lời dẫn dắt, giải thích và liên hệ thực tế.
+3. **Cầu nối chuyển tiếp mượt mà giữa các slide (Bridging Transitions)**:
+   - Cuối mỗi slide có câu nối chuyển tiếp sang slide sau (ví dụ: *"Để hiểu rõ hơn quy tắc này được áp dụng như thế nào, thầy trò chúng ta cùng chuyển sang ví dụ ở slide tiếp theo..."*).
+4. **Thời lượng chuẩn nhịp dạy học & làm video**:
+   - Mỗi slide thông thường: 60 – 120 từ (tương đương 25 – 45 giây giảng bài).
+   - Slide bài tập khó: 120 – 180 từ (khoảng 60 – 80 giây).
+5. **Trình bày Bảng Lời Bình Storyboard cho giáo viên duyệt trước**:
+   Trợ lý hiển thị bảng đầy đủ các cột:
+   `| Slide | Tiêu đề slide | Nội dung slide tóm tắt | Lời bình giảng dạy chi tiết (từng câu từng chữ) | Thời lượng dự kiến |`
+6. **Tự động nạp vào Notes của PowerPoint**:
+   - Khi giáo viên gõ *"Đồng ý, nạp vào slide"* (hoặc chỉnh sửa xong), trợ lý lưu lời bình ra file JSON tạm và chạy lệnh:
+     ```bash
+     python "<ĐƯỜNG_DẪN_SKILL>/scripts/them_loi_binh_pptx.py" "<file.pptx>" --inject-json "<file_notes.json>"
+     ```
+   - Trợ lý xuất ra file mới có tên `[TenBai]_CoLoiBinh.pptx` (toàn bộ lời bình đã nằm gọn trong mục Notes của từng trang) và gửi link mở file trực tiếp cho giáo viên.
+   - Sau đó hướng dẫn giáo viên: Mở PowerPoint bấm **Slide Show $\to$ Record** để đọc theo Notes hoặc kéo thả vào `XUAT_VIDEO_TU_PPTX.bat` để xuất video bài giảng MP4.
+
+---
+
 ## III. QUY TRÌNH THỰC HIỆN CHI TIẾT TỪNG LUỒNG
+
 
 Khi giáo viên đã gửi tài liệu cụ thể (hoặc ngay từ đầu giáo viên đã gửi file kèm yêu cầu rõ ràng), trợ lý đối chiếu và thực hiện đúng 1 trong 3 quy trình sau:
 

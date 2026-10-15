@@ -171,7 +171,16 @@ Soạn bộ slide đầy đủ cho bài [TÊN BÀI] lớp [SỐ LỚP], gồm:
 - Slide khởi động (câu hỏi thực tế hoặc trò chơi nhỏ)
 - Slide hình thành kiến thức (3 bước: hình → câu hỏi → ghi nhớ)
 - Slide luyện tập (2–3 bài tập từ dễ đến khó)
-- Slide tổng kết và dặn dò về nhà
+```
+
+---
+
+#### 🟧 Viết lời bình bám sát slide cho file PowerPoint (`.pptx`) có sẵn
+
+```
+Viết cho tôi lời bình chi tiết bám sát từng slide cho file PowerPoint này nhé.
+Lời giảng chuẩn sư phạm, truyền cảm, bám sát các kênh hình, câu hỏi và công thức trên slide.
+Ghi sẵn vào mục Notes của từng trang để tôi làm video bài giảng nhé!
 ```
 
 ---
