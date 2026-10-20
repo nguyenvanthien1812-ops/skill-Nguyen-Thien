@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
+r"""
 Công cụ Cấp Key Bản Quyền Nhanh Cho Giáo Viên (Dành Riêng Cho Thầy Thiện)
 Vị trí: D:\skill-Nguyen-Thien\
 - Nhập/Dán Machine ID của giáo viên
@@ -11,6 +11,12 @@ import sys, os, json, uuid, base64, subprocess
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdin.reconfigure(encoding='utf-8')
+except Exception:
+    pass
+
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.backends import default_backend
@@ -19,7 +25,6 @@ SCRIPT_DIR = Path(__file__).parent.resolve()
 PRIVATE_KEY_PATH = SCRIPT_DIR / "private_key.pem"
 DB_PATH = SCRIPT_DIR / "danh_sach_license_da_cap.json"
 
-# Nếu chưa có ở thư mục scripts, tìm ở thư mục quản lý tác quyền gốc
 if not PRIVATE_KEY_PATH.exists():
     fallback_key = Path(r"D:\skill-quan-trong\QUAN_LY_BAN_QUYEN_TAC_GIA\private_key.pem")
     if fallback_key.exists():
@@ -97,7 +102,6 @@ def main():
     })
     DB_PATH.write_text(json.dumps(db, ensure_ascii=False, indent=2), encoding='utf-8')
 
-    # Đồng bộ sang database gốc nếu khác đường dẫn
     root_db = Path(r"D:\skill-quan-trong\QUAN_LY_BAN_QUYEN_TAC_GIA\danh_sach_license_da_cap.json")
     if root_db.exists() and root_db != DB_PATH:
         try:
@@ -124,7 +128,8 @@ def main():
     except Exception:
         pass
 
-    input("\nBấm Enter để đóng cửa sổ...")
+    if len(sys.argv) <= 1:
+        input("\nBấm Enter để đóng cửa sổ...")
 
 if __name__ == "__main__":
     main()
