@@ -12,6 +12,7 @@ description: >-
   "soạn pptx bài giảng", "làm pptx từ sách giáo khoa", "soạn bài giảng powerpoint", "tôi có kịch bản slide rồi",
   "làm theo kịch bản của tôi", "tôi đã soạn sẵn nội dung", "chỉ cần chèn ảnh vào slide",
   "làm slide toán", "soạn slide môn toán", "tạo slide công thức toán", "slide toán omml", "công thức toán slide", "soạn bài giảng toán",
+  "tôi có file pptx rồi tôi muốn viết lời bình", "tôi có file pptx rồi", "tôi muốn viết lời bình", "tôi có file pptx", "thêm lời bình cho slide",
   "viết cho tôi lời bình file pptx nhé", "viết lời bình pptx", "viết lời bình cho slide", "soạn lời giảng cho file pptx", "viết kịch bản lời giảng", "thêm lời bình vào powerpoint", "lời bình bài giảng pptx".
 ---
 
@@ -78,14 +79,24 @@ Khi nhận được **BẤT KỲ YÊU CẦU NÀO** từ người dùng (soạn s
 
 ---
 
-## I. MỤC TIÊU & NGUYÊN TẮC CỐT LÕI
+## I. MỤC TIÊU & NGUYÊN TẮC CỐT LÕI (DÀNH RIÊNG CHO THẦY NGUYỄN THIỆN — THCS ỨNG HÒE)
 
-Skill này được thiết kế chuyên biệt để hỗ trợ giáo viên chuyển đổi bất kỳ giáo án (Word, PDF), nội dung Sách giáo khoa (SGK) hoặc kịch bản tự soạn thành một bộ slide PowerPoint bài giảng trình chiếu chuyên nghiệp, chuẩn mực sư phạm và tối ưu cho học sinh tiếp thu trên lớp.
+Skill này được thiết kế chuyên biệt và tối ưu riêng cho **Thầy Nguyễn Thiện** (Giáo viên môn KHTN — Trường THCS Ứng Hòe), hỗ trợ chuyển đổi bất kỳ giáo án (Word, PDF), nội dung Sách giáo khoa (SGK) hoặc kịch bản tự soạn thành một bộ slide PowerPoint bài giảng trình chiếu chuyên nghiệp, chuẩn mực sư phạm, đạt độ chính xác cao về mặt khoa học và hình ảnh hiển thị sắc nét nhất trên máy chiếu.
 
-### 9 Nguyên tắc vàng:
+### 🌟 Hồ sơ Giáo viên mặc định:
+- **Giáo viên**: Nguyễn Thiện
+- **Đơn vị**: Trường THCS Ứng Hòe
+- **Cấp học**: THCS (Lớp 6, 7, 8, 9)
+- **Bộ môn phụ trách**: Khoa học tự nhiên (Vật lí, Hóa học, Sinh học) & Toán học
+- **Font chuẩn**: Times New Roman (hiển thị 100% tiếng Việt có dấu, không đè chữ)
+- **Màu chủ đạo mặc định**: `#1F4E79` (STEM Xanh Navy chuyên môn) hoặc đổi linh hoạt theo từng phân môn.
+
+---
+
+### 10 Nguyên tắc vàng tạo PPTX chuẩn mực:
 1. **Loại bỏ 100% slide hành chính rườm rà**:
    - Tuyệt đối **không** tạo các slide: "Mục tiêu bài học", "Năng lực số và AI", "Phẩm chất và năng lực", "Tiến trình dạy học", "Yêu cầu cần đạt".
-   - Bộ slide trình chiếu chỉ phục vụ học sinh trên lớp, đi thẳng từ:
+   - Bộ slide trình chiếu chỉ phục vụ học sinh trên lớp theo chuẩn **Công văn 5512**:
      `Trang bìa` $\to$ `Khởi động` $\to$ `Hình thành kiến thức` $\to$ `Luyện tập` $\to$ `Vận dụng & Dặn dò`.
 2. **Không để dòng chữ bé dưới đề mục slide**:
    - Dưới tiêu đề slide/đề mục **không thêm bất kỳ dòng chữ phụ nhỏ (subtitle)** nào.
@@ -102,113 +113,150 @@ Skill này được thiết kế chuyên biệt để hỗ trợ giáo viên chu
 5. **Kỹ thuật chống lỗi đè chữ DrawingML (PowerPoint Engine)**:
    - Trong định dạng DrawingML PPTX, **không bao giờ** đặt 2 thẻ `<text>` ở tọa độ cố định cạnh nhau để giả lập inline label + value.
    - **Bắt buộc** hợp nhất vào 1 thẻ `<text>` chứa các `<tspan>` tuần tự.
-6. **Quy chuẩn Font chữ & Cỡ chữ bắt buộc (Chuẩn giảng dạy THCS/THPT)**:
+6. **Quy chuẩn Cỡ Chữ Chiếu Lớp Học Chuẩn Mực (Chống Chữ Nhỏ Khi Chiếu Máy Chiếu)**:
    - **Font chữ toàn bài**: **Times New Roman** (`Times New Roman, serif`).
-   - **Quy đổi DPI bắt buộc (PowerPoint Display Engine)**:
-     - PowerPoint hiển thị cỡ chữ theo đơn vị Point (`pt`), trong khi SVG định nghĩa theo pixel (`px`).
-     - Tỉ lệ chuẩn của bộ chuyển đổi: `1 px = 0.75 pt` $\implies$ `px = pt / 0.75`.
-     - **Tiêu đề của tiết, bài (Slide Title)**: Hiển thị **22pt** $\to$ SVG ghi `font-size="29.33"` (`sz="2200"`).
-     - **Tiêu đề các phần / thẻ / khung nội dung (Section Header)**: Hiển thị **20pt** $\to$ SVG ghi `font-size="26.67"` (`sz="2000"`).
-     - **Nội dung bài học / câu hỏi thảo luận / ghi nhớ (Body text)**: Hiển thị **18pt** $\to$ SVG ghi `font-size="24.0"` (`sz="1800"`).
-     - **Chú thích ảnh, số trang, tag trường (Caption/Footer)**: Hiển thị **14pt** $\to$ SVG ghi `font-size="18.67"` (`sz="1400"`).
+   - **Quy đổi DPI bắt buộc (PowerPoint Display Engine)**: `1 px = 0.75 pt` $\implies$ `px = pt / 0.75` (hoặc `pt = px * 0.75`).
+   - **Nâng toàn bộ cỡ chữ lên chuẩn Trình chiếu lớp học (Presentation Mode)** để học sinh ngồi cuối lớp (khoảng cách 8–10m) nhìn rõ từng nét:
+     - 🌟 **Tiêu đề của bài, tên slide (Slide Title)**: **32pt – 36pt** (rực rỡ, to rõ) $\to$ SVG ghi `font-size="42.67"` đến `48.0` (`sz="3200"` đến `"3600"`).
+     - 🌟 **Tiêu đề các phần / thẻ / khung ghi nhớ (Section / Box Header)**: **24pt – 26pt** $\to$ SVG ghi `font-size="32.0"` đến `34.67` (`sz="2400"` đến `"2600"`).
+     - 🌟 **Nội dung bài học / câu hỏi thảo luận / chốt kiến thức (Body text)**: **20pt – 24pt** (tối thiểu 20pt, chuẩn mực là 22pt–24pt) $\to$ SVG ghi `font-size="26.67"` đến `32.0` (`sz="2000"` đến `"2400"`). Tuyệt đối **không** để 18pt vì quá nhỏ trên máy chiếu.
+     - 🌟 **Chú thích ảnh, số trang, chân trang (Caption/Footer)**: **16pt – 18pt** $\to$ SVG ghi `font-size="21.33"` đến `24.0` (`sz="1600"` đến `"1800"`).
    - Sau khi xuất PPTX, chạy script vá theme và run element để đảm bảo DrawingML ribbon hiển thị chuẩn xác 100% `Times New Roman`.
+
+6.B. **Quy Tắc Tuyệt Đối Chống Tràn Chữ Khỏi Khung (Frame Text Overflow Prevention)**:
+   - **Quy tắc 1: Công thức tính chiều cao khung (`height`)**:
+     Khi vẽ khung chữ nhật (`<rect>`) hoặc khung vẽ tay (`<use href="#ht-khung-but-da">`), chiều cao khung phải được tính toán đủ cho toàn bộ các dòng chữ:
+     `Chiều cao khung (H) >= Padding trên (35px) + Padding dưới (35px) + (Số dòng * khoảng cách dòng dy)`
+     *Ví dụ: Khung có tiêu đề + 3 dòng ghi nhớ (tổng 4 dòng text), mỗi dòng cách nhau `dy="38"`, thì chiều cao khung tối thiểu phải là: `35 + 35 + (4 * 38) = 222px` $\to$ Đặt `height="230"` đến `240` để có khoảng thở.*
+   - **Quy tắc 2: Chống tràn mép phải (Bắt buộc ngắt dòng `<tspan>`)**:
+     Một dòng text trong khung chỉ chứa tối đa **10 – 12 từ** (khoảng 40 – 48 ký tự tiếng Việt). Vượt quá độ dài này, **bắt buộc phải ngắt sang dòng mới** bằng `<tspan x="[tọa độ lề trái khung + 40]" dy="38">`. Tuyệt đối không để một câu dài tuột chạy thẳng sang mép phải khung.
+   - **Quy tắc 3: Tối đa số lượng dòng trong một khung**:
+     Mỗi khung "Em cần ghi nhớ" hoặc "Thảo luận" chỉ chứa tối đa **3 – 4 ý gạch đầu dòng ngắn gọn**, cô đọng. Không bao giờ đưa cả đoạn văn dài vào khung.
+   - **Quy tắc 4: Khoảng đệm an toàn với khung vẽ tay (`ht-khung-but-da`)**:
+     Vì khung vẽ tay có đường viền lượn sóng và góc nghiêng, vị trí đặt chữ `x` phải cách mép trái khung tối thiểu **40px**, mép trên tối thiểu **35px**, và mép phải cách ít nhất **40px** để chữ không bao giờ đè lên hoặc vượt qua nét vẽ viền.
 7. **Bắt buộc lập Bản phác thảo chi tiết (Storyboard) từng slide duyệt trước khi tạo PPTX**:
-   - Khi có file giáo án, file SGK hoặc tài liệu giảng dạy, trợ lý **bắt buộc** phải lập bản phác thảo chi tiết từng slide (mô tả rõ Kênh hình, Kênh chữ/Câu hỏi, Khung ghi nhớ, Lời giảng GV) để giáo viên duyệt.
-   - **Tuyệt đối không chạy lệnh tạo slide hay init project** khi chưa có sự phản hồi đồng ý của giáo viên.
+   - Khi có file giáo án, file SGK hoặc tài liệu giảng dạy, trợ lý **bắt buộc** phải lập bản phác thảo chi tiết từng slide (mô tả rõ Kênh hình, Kênh chữ/Câu hỏi, Khung ghi nhớ, Lời giảng GV) để thầy Nguyễn Thiện duyệt.
+   - **Tuyệt đối không chạy lệnh tạo slide hay init project** khi chưa có sự phản hồi đồng ý của thầy.
 8. **Cơ chế linh hoạt tiếp nhận & xử lý 3 nguồn hình ảnh**:
    - Bài giảng không làm bài toàn chữ, nhưng không chèn ảnh trang trí vô nghĩa.
    - Xử lý mượt mà cả 3 nguồn ảnh: (1) Bóc tách trực tiếp từ PDF SGK/ảnh chụp điện thoại; (2) Lấy ảnh từ thư mục riêng trên máy giáo viên; (3) Tự động tìm kiếm ảnh thực tế/hiển vi khoa học chất lượng cao từ web (Openverse & Wikimedia).
-9. **Đa dạng Phong cách chủ đề (5 Theme Styles) & Đa dạng Bố cục (6 Layout Patterns chuẩn STEM_MHHTH_v6)**:
-   - Cho phép giáo viên chọn hoặc trợ lý tự động phối hợp **5 phong cách bảng màu chủ đề** khác nhau (STEM Navy-Gold, Bio-Nature Emerald, Chem-Lab Purple-Cyan, Classic Academic, Warm Terracotta).
-   - Không lặp lại 1 bố cục đơn điệu: Trong một bài giảng (8–12 slide), bắt buộc luân chuyển linh hoạt **6 kiểu bố cục hiện đại** (Split 2 cột, Lưới 2×2 4 màu phân biệt, 3 Dải thẻ ngang đánh số lớn, Sơ đồ quy trình mũi tên ngang `▶`, Bảng dải băng nhãn màu, Bảng đối chiếu & Thẻ số liệu lớn) và sử dụng ký hiệu `▸` cho mọi danh sách.
+9. **8 Kiểu Slide Chuẩn Mực Sư Phạm Có Tên Gọi (`docs/vi/tro-ly/kieu-slide.md`)**:
+   - `Học đường sáng` *(Mặc định cho KHTN, Toán)*: Nền trắng/kem nhạt, tương phản cao cho học sinh cuối lớp nhìn rõ, bo góc nhẹ, thanh lịch.
+   - `Bút dạ – sổ tay`: Nền giấy ấm, vệt bút dạ dưới từ khóa quan trọng, khung vẽ tay quanh khối nội dung, mũi tên sao vẽ tay, hợp bài ôn tập / sơ đồ tư duy.
+   - `Cắt dán giấy`: Nền giấy kem xé mép, ảnh có viền trắng dán băng dính, chấm tram nghệ thuật, đồng bộ phong cách với video Vox.
+   - `Sách tranh`: Màu sắc phấn tươi vui, khối bo tròn lớn, tranh vẽ trực quan cho học sinh nhỏ.
+   - `Ruy băng hành chính`: Ruy băng vát chéo trang trọng, thẻ số liệu gọn gàng (hợp Báo cáo, Tổng kết, Đại hội).
+   - `Lễ hội Đoàn`: Tươi vui, ruy băng cờ, dải giấy xé, hoa giấy (hợp sự kiện, cuộc thi, hoạt động Đội/Đoàn).
+   - `Học thuật – hội thảo`: Xanh đậm Navy/Teal sang trọng, biểu đồ số liệu khoa học, seminar chuyên môn.
+   - `Kính mờ CLB`: Nền tối viền sáng, thẻ kính mờ phát sáng công nghệ, hợp ngày hội STEM / CLB Tin học.
+10. **Bộ 12 Họa Tiết Vẽ Tay Native DrawingML (`tools/vi/hoa_tiet/`)**:
+   - Hỗ trợ nhúng 12 họa tiết vector nguyên bản vào slide: `bang-dinh.svg` (băng dính dán góc ảnh), `giay-xe-ngang.svg` (dải giấy xé), `ruy-bang.svg` (ruy băng tiêu đề), `gach-but-da.svg` (vệt highlight dưới từ khóa), `khung-but-da.svg` (khung vẽ tay bao quanh ghi nhớ), `sao-ve-tay.svg` (sao điểm nhấn), `mui-ten-ve-tay.svg` (mũi tên chỉ vào hình), `cham-tram.svg` (halftone), `o-ke.svg` (giấy kẻ ô cho công thức), `goc-nguech.svg`, `hoa-giay.svg`, `ngoac-kep.svg`.
+   - **Nguyên tắc vector Native**: Tất cả đều là hình khối PowerPoint `<symbol>`/`<use>` hoặc shape chuẩn, có thể đổi màu, kéo giãn to nhỏ mà không bao giờ bị vỡ hạt như hình ảnh thông thường!
 
 ---
 
-## II. LUỒNG TƯƠNG TÁC GỢI Ý (KHI GIÁO VIÊN BẮT ĐẦU VỚI "TÔI MUỐN LÀM PPTX")
+## II. LUỒNG 1: QUY TRÌNH CẦM TAY CHỈ VIỆC KHI GIÁO VIÊN YÊU CẦU "TÔI MUỐN TẠO PPTX" (CHUẨN 5 BƯỚC)
 
 Khi giáo viên gửi câu lệnh mở đầu chung chung như:
 > *"Tôi muốn làm pptx"*, *"Tôi muốn tạo pptx"*, *"Tôi muốn làm slide"*, *"Làm slide cho tôi"*, *"Tạo bài giảng pptx"*... (chưa đính kèm tài liệu cụ thể)
 
-Trợ lý **bắt buộc không được tự ý tạo bài ngay**, mà phải thực hiện đúng luồng hướng dẫn 3 bước sau:
+Trợ lý **bắt buộc không được tự ý tạo bài ngay, không hỏi các câu hỏi lý thuyết phức tạp dồn dập**, mà phải thực hiện đúng chuẩn 5 bước "Cầm tay chỉ việc":
 
-### BƯỚC 1: Phản hồi Lời chào, Hướng dẫn cách đưa File/Ảnh & Cú pháp mẫu chi tiết
-Trợ lý gửi ngay phản hồi nguyên văn, đầy đủ và chi tiết theo mẫu sau:
+---
+
+### 🔹 BƯỚC 1: Hiển thị Menu 5 loại việc & Hỏi thầy cô chọn lựa chọn nào để hướng dẫn tiếp
+Trợ lý phản hồi ngay mẫu sau:
+```markdown
+Hồ sơ hiện tại: **Trường THCS Ứng Hòe — Nguyễn Thiện**. Dùng tiếp?
+
+Dạ, thầy/cô muốn tạo bài thuyết trình PowerPoint (PPTX) cho loại việc nào dưới đây ạ?
+
+1. **Bài giảng dạy học** *(Gợi ý: bài học môn KHTN, Toán... theo phân phối chương trình)*
+2. **Báo cáo – tổng kết** *(sơ kết học kỳ, tổng kết năm học, hội nghị viên chức, thi đua...)*
+3. **Hoạt động Đoàn – Đội – sự kiện** *(Đại hội chi đoàn, lễ kỷ niệm, cuộc thi, ngoại khóa...)*
+4. **Tập huấn / workshop / sinh hoạt chuyên môn** *(chia sẻ chuyên đề, bồi dưỡng giáo viên...)*
+5. **Poster / ấn phẩm trình chiếu Zalo – Facebook**
+
+👉 **Thầy/cô chọn lựa chọn số mấy (1, 2, 3, 4 hay 5) để em đưa hướng dẫn chi tiết từng bước cho thầy/cô nhé!**
+```
+> ⚠️ **DỪNG VÀ CHỜ**: Trợ lý dừng lại chờ thầy cô chọn số, không tự ý chạy lệnh init dự án.
+
+---
+
+### 🔹 BƯỚC 2: Khi giáo viên chọn Số 1 (Bài giảng) — Đưa ngay Hướng Dẫn Cầm Tay Chỉ Việc, Hỏi Mục Đích A/B & Menu Phong Cách / Mẫu Slide
+
+Khi giáo viên gõ `1`, hoặc cung cấp tên môn học/bài dạy:
+Trợ lý gửi ngay phản hồi hướng dẫn chi tiết theo mẫu:
 
 ```markdown
-Dạ kính chào thầy/cô! Để em hỗ trợ soạn bộ slide PowerPoint (`.pptx`) đẹp mắt, chuẩn sư phạm GDPT 2018 (Font Times New Roman 22–20–18pt, không đè chữ, 6 bố cục hiện đại), thầy/cô làm theo hướng dẫn từng bước rất đơn giản dưới đây nhé:
+Dạ tuyệt vời ạ! Để em hỗ trợ Thầy/Cô thiết kế bài giảng chuẩn mực sư phạm và đúng ý nhất, Thầy/Cô làm theo 3 bước hướng dẫn ngắn gọn dưới đây nhé:
 
 ---
-### 📂 BƯỚC CHUẨN BỊ: 3 CÁCH ĐƯA FILE GIÁO ÁN / SGK / ẢNH VÀO CHO EM ĐỌC
-
-Thầy/cô có thể chọn **1 trong 3 cách** tiện nhất trên máy tính:
-1. **Cách A — Kéo thả trực tiếp vào ô chat:**
-   - Mở thư mục máy tính, giữ chuột trái vào file **Giáo án (`.docx`, `.pdf`)**, **SGK (`.pdf`)** hoặc **Ảnh chụp** rồi **kéo thả thẳng vào ô nhập tin nhắn** này (hoặc bấm nút đính kèm `📎` / `+`).
-2. **Cách B — Copy đường dẫn file trên máy tính (Nhanh nhất với file PDF/Word nặng):**
-   - **Thao tác 1:** Mở thư mục chứa file trên máy tính (ví dụ trong `Downloads` hoặc `Ổ D:`).
-   - **Thao tác 2:** Nhấp **Chuột phải** vào file cần dùng $\to$ chọn **"Copy as path"** *(Sao chép dưới dạng đường dẫn)* — hoặc bấm vào file rồi nhấn phím tắt `Ctrl + Shift + C`.
-   - **Thao tác 3:** Quay lại ô chat này, nhấn `Ctrl + V` để dán đường dẫn vào câu lệnh (Ví dụ: `"D:\GiaoAn\KHTN6_Bai17.docx"`).
-3. **Cách C — Gom ảnh vào 1 thư mục trên máy tính (Khi thầy/cô có nhiều ảnh riêng):**
-   - **Thao tác 1:** Tạo 1 thư mục mới trên ổ D (ví dụ: `D:\anh_bai17`).
-   - **Thao tác 2:** Copy (`Ctrl + C`) các ảnh chụp thí nghiệm, ảnh cắt từ SGK rồi dán (`Ctrl + V`) vào thư mục `D:\anh_bai17`.
-   - **Thao tác 3:** Nhắn đường dẫn `D:\anh_bai17` vào câu lệnh bên dưới để em tự động quét và chèn vào slide.
+### 📂 BƯỚC 1: LẤY ĐƯỜNG DẪN FILE GIÁO ÁN (WORD) HOẶC SÁCH GIÁO KHOA (PDF)
+- Mở thư mục chứa file **Giáo án (Word `.docx`)** hoặc **Sách giáo khoa (PDF)** trên máy tính.
+- Nhấp **Chuột phải** vào file ➔ chọn **"Copy as path"** *(hoặc bấm tổ hợp phím `Ctrl + Shift + C`)*.
 
 ---
-### 🎨 CHỌN PHONG CÁCH MÀU SẮC SLIDE (5 PHONG CÁCH CHUẨN STEM):
-- **Style 1:** `STEM Navy & Gold` (Header xanh đậm `#1B3A6B`, chỉ vàng cam `#E8941A` — *Mặc định cho Toán, Lí, STEM*)
-- **Style 2:** `Bio-Nature Emerald` (Xanh lục bảo `#0F5132`, vàng nắng — *Rất hợp Sinh học, Tế bào, KHTN*)
-- **Style 3:** `Chem-Lab Royal Purple` (Tím hoàng gia `#3B0764`, xanh Cyan — *Rất hợp Hóa học, Nguyên tử*)
-- **Style 4:** `Classic Academic Light` (Nền sáng thanh lịch, thẻ xanh `#1F4E79` — *Hợp bài lý thuyết nhẹ nhàng*)
-- **Style 5:** `Warm Terracotta` (Đỏ cam ấm áp `#7C2D12` — *Hợp Tiếng Anh, Khởi động, Lịch sử, Địa lí*)
+### 🎯 BƯỚC 2: CHỌN MỤC ĐÍCH SỬ DỤNG (CHỌN A HOẶC B)
+* **Lựa chọn A — Trình chiếu dạy học trên lớp (Mặc định):**
+  - Chữ to rõ (32–36pt tiêu đề, 22–24pt nội dung), khung ghi nhớ không tràn chữ, học sinh cuối lớp nhìn rõ.
+  - Tiến trình sư phạm tương tác: Quan sát kênh hình ➔ Câu hỏi phát vấn ➔ Khung "💡 Em cần ghi nhớ" chốt bài ghi vở.
+* **Lựa chọn B — Xuất thành Video bài giảng tự động:**
+  - Viết toàn văn lời bình phát thanh viên từng câu từng chữ chuẩn thời lượng (3–5 phút hoặc 8–10 phút).
+  - Tự động nạp vào Notes để xuất video MP4 có giọng đọc AI tự chạy đồng bộ.
 
 ---
-### ✨ CHỌN MỨC HIỆU ỨNG TRÌNH CHIẾU (`animations.json`):
-- **Mức `Vừa` *(Mặc định chuẩn sư phạm)***: Mở trang hiện Kênh hình $\to$ Bấm chuột lần 1 hiện **Câu hỏi thảo luận** $\to$ Bấm chuột lần 2 hiện **Em cần ghi nhớ**; Bấm nút **"Xem đáp án"** ở câu trắc nghiệm.
-- **Mức `Nhiều` *(Có hiệu ứng Morph biến hình)***: Như mức Vừa + Thêm hiệu ứng **Morph** phóng to chi tiết sơ đồ/tế bào hoặc biến đổi trước–sau thí nghiệm cực mượt.
-- **Mức `Không`**: Hiện sẵn toàn bộ nội dung trên slide.
+### 🎨 BƯỚC 3: CHỌN PHONG CÁCH & MẪU SLIDE THẦY/CÔ YÊU THÍCH (CHỌN THEO SỐ HOẶC TÊN)
+
+Em đã tích hợp sẵn kho phong cách chuẩn mực sư phạm và các mẫu hoạt cảnh đặc sắc từ kho mẫu 28 bài giảng thực tế để Thầy/Cô tùy ý chọn:
+
+#### 🌟 NHÓM 1: PHONG CÁCH BÀI GIẢNG CHUẨN SGK GDPT 2018
+* **[1] Học đường sáng** *(Mặc định cho Toán, KHTN, Lý, Hóa, Sinh)*: Nền trắng/kem sáng tinh khôi, tương phản rất cao, khối bo góc nhẹ, thanh lịch, học sinh ngồi bàn cuối nhìn cực rõ.
+* **[2] Bút dạ – sổ tay**: Nền giấy ấm, vệt bút dạ highlight màu dưới từ khóa quan trọng, khung vẽ tay bao quanh khối ghi nhớ, mũi tên sao vẽ tay sinh động (rất hợp bài ôn tập, sơ đồ tư duy).
+* **[3] Cắt dán giấy**: Nền giấy kem xé mép, ảnh dán viền trắng băng dính, nghệ thuật (rất hợp Ngữ văn, Lịch sử, Địa lí, GDCD; đồng bộ phong cách video Vox).
+* **[4] Sách tranh tiểu học**: Màu phấn tươi sáng, khối bo tròn lớn, tranh minh họa nét mực đáng yêu, ít chữ (rất hợp Tiểu học, hoạt động trải nghiệm, ngoại khóa).
+
+#### 🎮 NHÓM 2: MẪU HOẠT CẢNH ĐẶC BIỆT & TRÒ CHƠI TƯƠNG TÁC (TỪ KHO MẪU)
+* **[5] Game Show "Ai là triệu phú"**: Khung lục giác phát sáng công nghệ, 4 đáp án A-B-C-D click đổi màu (Vàng khi chọn ➔ Xanh khi đúng ➔ Đỏ khi sai), hợp phần Khởi động hoặc Củng cố.
+* **[6] Game Show "Ong non tìm mật / Hái hoa"**: Đám mây câu hỏi bo tròn, hình chú ong/hoa xinh xắn, tạo không khí học tập sôi nổi, hào hứng.
+* **[7] Game Show "Rung chuông vàng"**: Đồng hồ đếm ngược 15 giây, hộp câu hỏi trung tâm, chuông reo kịch tính.
+* **[8] Báo cáo SKKN & Thi Giáo viên dạy giỏi**: Tông Teal/Pastel sang trọng, thẻ đối chiếu Thực trạng vs Biện pháp, biểu đồ % số liệu khảo sát trước/sau áp dụng.
+
+#### 🏛️ NHÓM 3: PHONG CÁCH SỰ KIỆN, HÀNH CHÍNH & VINH DANH
+* **[9] Ruy băng hành chính / Đại hội**: Nền trắng trang nghiêm, ruy băng chéo mang tiêu đề, thẻ số liệu lớn (hợp Sơ kết, Tổng kết, Đại hội, Hội nghị viên chức).
+* **[10] Lễ hội Đoàn – Đội & Vinh danh**: Màu cờ hoa rực rỡ, khung viền mạ vàng danh dự (hợp 26/3, 20/11, tuyên dương khen thưởng, CLB STEM).
 
 ---
-### ❓ THẦY CÔ ĐANG CÓ TÀI LIỆU DẠNG NÀO? (CHỌN PHÍM 1, 2, 3 HOẶC 4):
-- **[Phím 1]** Có **File Giáo án** (Word `.docx` hoặc `.pdf`)
-- **[Phím 2]** Có **File Sách giáo khoa** (PDF SGK hoặc ảnh chụp các trang sách)
-- **[Phím 3]** Đã có sẵn **Kịch bản / Nội dung từng slide**
-- **[Phím 4]** Đã có sẵn **File PowerPoint (`.pptx`) cũ**, cần **viết lời bình/lời giảng và chuyển sang video bài giảng MP4**
+### 📋 MẪU CÂU LỆNH ĐIỀN SẴN (THẦY/CÔ CHỈ CẦN COPY, ĐIỀN VÀO & GỬI CHO EM):
 
----
-### 💬 CÁC MẪU CÂU LỆNH CHI TIẾT (THẦY/CÔ COPY & ĐIỀN THÔNG TIN DÙNG NGAY):
-
-#### 🚀 LỰA CHỌN 1: CÂU LỆNH TRỌN GÓI 1 LẦN (ALL-IN-ONE — LÀM TỪ A ĐẾN Z)
-> *Thầy/cô chỉ cần gửi 1 tin nhắn duy nhất kèm file, AI sẽ tự động đọc file → tóm tắt chuẩn 3 bước → tạo slide PPTX → soạn lời bình chi tiết → lồng tiếng phát thanh viên AI → xuất thẳng Video bài giảng MP4 hoàn chỉnh!*
-
-📌 **Mẫu Trọn Gói A-Z (Copy gửi kèm file giáo án/SGK):**
-> *"Từ file tài liệu tôi gửi `"D:\GiaoAn\Ten_Bai_Hoc.docx"` (hoặc file tôi vừa kéo thả vào):
-> 1. Đọc và tóm tắt nội dung bài học theo tiến trình 3 bước chuẩn GDPT 2018 (Quan sát hình → Thảo luận phát vấn → Khung Em cần ghi nhớ).
-> 2. Thiết kế bộ slide PowerPoint hoàn chỉnh (Font Times New Roman 22-20-18pt, Style 1 STEM, công thức chuẩn OMML).
-> 3. Tự động soạn Lời bình/Lời giảng chi tiết bám sát từng slide vào phần Notes.
-> 4. Lồng tiếng AI giọng [Cô Hoài My / Thầy Nam Minh] và xuất luôn thành Video bài giảng E-learning MP4 Full HD dài khoảng [10 phút] giúp tôi nhé!"*
-
----
-
-#### 🎯 LỰA CHỌN 2: CÁC MẪU CÂU LỆNH THEO TỪNG BƯỚC (KIỂM SOÁT TỐI ĐA NỘI DUNG)
-> *Dành cho thầy/cô muốn duyệt qua kịch bản, chỉnh sửa câu hỏi thảo luận hoặc chọn ảnh ưng ý trước khi xuất video:*
-
-📌 **Mẫu 1 — Soạn slide từ Giáo án / SGK (Duyệt kịch bản trước):**
-> *"Soạn slide bài [Tên bài], môn [Toán / KHTN / Văn...], lớp [6], bộ sách [Kết nối tri thức / Cánh Diều / Chân trời sáng tạo] từ file tôi gửi. Phong cách Style 1, Hiệu ứng mức Vừa. Lập Bản phác thảo Storyboard chi tiết từng slide (Kênh hình, Câu hỏi, Ghi nhớ, Lời giảng gợi ý) cho tôi duyệt trước nhé!"*
-
-📌 **Mẫu 2 — Dành riêng cho môn Tiếng Anh (Global Success / Smart World / Friends Plus):**
-> *"Soạn slide Tiếng Anh lớp [7] Unit [4]: [Music and Arts] - Lesson [Getting Started / A Closer Look 1], từ file SGK `"D:\English7.pdf"` trang [40-41]. Trường THCS ..., GV: ..., Phong cách Style 5. Nhớ lập bảng Vocabulary có phiên âm quốc tế IPA `/.../` kèm ảnh Flashcard, khung Grammar rõ ràng và hiệu ứng bấm nút hiện đáp án cho các Task nhé!"*
-
-📌 **Mẫu 3 — Đã có sẵn file PowerPoint (.pptx), nhờ AI viết lời bình bám sát từng slide:**
-> *"Tôi có file PowerPoint này rồi `"D:\GiaoAn\Bai12_Toan6.pptx"` (hoặc file đính kèm). Hãy đọc nội dung từng slide, viết giúp tôi Lời giảng/Lời bình chi tiết chuẩn sư phạm bám sát từng slide vào mục Notes của từng trang để tôi làm video bài giảng nhé!"*
-
-📌 **Mẫu 4 — Lồng tiếng phát thanh viên AI & Xuất Video bài giảng MP4 (5–10–15 phút):**
-> *"Em hãy lồng tiếng AI giọng [Cô Hoài My / Thầy Nam Minh] từ lời bình trong Notes của file slide này, và xuất thành Video bài giảng MP4 Full HD dài khoảng [5 / 10 / 15 phút] giúp tôi nhé!"*
-
----
-
-👉 **Thầy/cô chỉ cần gõ phím `1`, `2`, `3` hoặc `4` (hoặc copy 1 trong các mẫu câu lệnh trên) gửi cho em. Em sẽ lập tức thực hiện theo đúng yêu cầu của Thầy/Cô ạ!**
+> "Soạn bài giảng [Tên bài], môn [KHTN 6 / Toán...], lớp [6] từ file `"<Dán_đường_dẫn_file_ở_đây>"`.
+> - Mục đích: [Chọn Lựa chọn A: Dạy trên lớp / hoặc Lựa chọn B: Xuất Video bài giảng]
+> - Phong cách/Mẫu slide: [Chọn số 1 đến 10, hoặc ghi tên kiểu như: 'Học đường sáng', 'Bút dạ – sổ tay', 'Game Ai là triệu phú'...]
+> Em hãy đọc giáo án/SGK và lên Bảng kịch bản Storyboard chi tiết từng slide cho tôi duyệt trước nhé!"
 ```
 
-> ⚠️ **BẮT BUỘC DỪNG VÀ CHỜ**: Sau khi gửi tin nhắn trên, trợ lý phải dừng lại và chờ giáo viên chọn 1, 2, 3 (hoặc gửi câu lệnh kèm đường dẫn file). Không chạy bất kỳ lệnh `project_manager.py init` hay tạo file nào lúc này.
+> ⚠️ **DỪNG VÀ CHỜ**: Trợ lý dừng lại và chờ Thầy/Cô gửi đường dẫn file, lựa chọn mục đích (A hoặc B) và phong cách/mẫu slide đã chọn. **Tuyệt đối không tự ý viết bảng kịch bản dàn ý ngay khi chưa có phản hồi này**, vì kịch bản cho Trình chiếu (A) và kịch bản cho Video (B) có cấu trúc và dung lượng lời bình hoàn toàn khác nhau.
+
+---
+
+### 🔹 BƯỚC 3: Dựa trên lựa chọn A hoặc B, lập Bản phác thảo Kịch bản (Storyboard) gửi thầy cô duyệt trước
+Sau khi thầy cô phản hồi thông tin bài dạy và chọn A hoặc B:
+- **Nếu chọn A (Trình chiếu trên lớp)**: Lập kịch bản dàn ý tập trung vào tiến trình tổ chức hoạt động dạy học 3 bước (Kênh hình trực quan $\to$ Câu hỏi thảo luận $\to$ Khung "💡 Em cần ghi nhớ" chốt bài ghi vở), lời giảng gợi ý ngắn gọn.
+- **Nếu chọn B (Video bài giảng)**: Lập kịch bản chi tiết gồm Kênh hình + Toàn văn lời bình lồng tiếng AI từng câu, tính toán tổng số từ khớp với thời lượng video thầy cô đã chọn (khoảng 120–140 từ/phút).
+- **DỪNG VÀ HỎI**: *"Thầy cô xem lại kịch bản dàn ý trên, nếu thầy cô đồng ý (hoặc cần chỉnh sửa slide nào) thì nhắn em để em bắt đầu thiết kế PPTX nhé!"*
+
+---
+
+### 🔹 BƯỚC 4: Thầy cô đồng ý mới tiến hành vẽ SVG & Xuất file PowerPoint Native PPTX
+- Khi thầy cô phản hồi "đồng ý", "OK", "tiến hành đi": AI mới bắt đầu khởi tạo dự án, thiết kế SVG chuẩn DrawingML, chạy bộ kiểm chất lượng và xuất file `.pptx` Native DrawingML trực tiếp chỉnh sửa được.
+
+---
+
+### 🔹 BƯỚC 5: Bàn giao file PPTX & Đề xuất xuất Video bài giảng
+- Gửi đường dẫn mở file PPTX hoàn chỉnh.
+- Đề xuất: *"File PPTX bài giảng của thầy cô đã sẵn sàng. Thầy cô có muốn xuất luôn thành **Video bài giảng** (định dạng MP4 Full HD có lồng tiếng AI phát thanh viên và hiệu ứng tự chạy) không ạ?"*
+
+---
 
 ---
 
@@ -281,47 +329,102 @@ Dạ tuyệt vời! Với **Kịch bản có sẵn**, thầy/cô toàn quyền l
 
 ---
 
-## II.B LUỒNG TƯƠNG TÁC KHI GIÁO VIÊN YÊU CẦU: "VIẾT CHO TÔI LỜI BÌNH FILE PPTX NHÉ"
+## II.B LUỒNG 2: KHI GIÁO VIÊN ĐÃ CÓ FILE PPTX VÀ YÊU CẦU: "TÔI CÓ FILE PPTX RỒI TÔI MUỐN VIẾT LỜI BÌNH"
 
 Khi giáo viên gửi câu lệnh như:
-> *"viết cho tôi lời bình file pptx nhé"*, *"viết lời bình pptx"*, *"soạn lời giảng cho file pptx"*, *"tạo lời bình cho slide có sẵn"*, *"viết kịch bản thuyết trình slide"*... (mà chưa gửi file kèm theo)
+> *"Tôi có file pptx rồi tôi muốn viết lời bình"*, *"Tôi có file pptx rồi"*, *"Tôi muốn viết lời bình cho slide"*, *"Viết cho tôi lời bình file pptx nhé"*, *"Viết lời bình pptx"*, *"Soạn lời giảng cho file pptx"*, *"Thêm lời bình vào powerpoint"*, *"Lời bình bài giảng pptx"*... (chưa đính kèm file cụ thể hoặc chưa chọn mục đích)
 
-Trợ lý **bắt buộc không được trả lời chung chung**, mà phải gửi ngay **Bản Hướng Dẫn Cầm Tay Chỉ Việc** theo mẫu sau:
+Trợ lý **bắt buộc không được trả lời chung chung**, không tự ý viết lời bình khi chưa biết mục đích, mà thực hiện đúng chuẩn 4 bước "Cầm tay chỉ việc":
 
+---
+
+### 🔹 BƯỚC 1: Hướng Dẫn Copy As Path File PPTX, Hỏi Mục Đích A/B & Menu Phong Cách Lời Bình / Thể Loại Bài
+Trợ lý phản hồi ngay bản hướng dẫn:
 ```markdown
-Dạ kính chào Thầy/Cô! Để em hỗ trợ soạn bộ Lời bình / Lời giảng chi tiết bám sát 100% từng slide cho bài giảng PowerPoint của Thầy/Cô (chuẩn mực sư phạm, tự nhiên, sinh động để lên lớp hoặc xuất video bài giảng), Thầy/Cô làm theo 2 bước cực kỳ đơn giản dưới đây nhé:
+Hồ sơ hiện tại: **Trường THCS Ứng Hòe — Nguyễn Thiện**. Dùng tiếp?
+
+Dạ kính chào Thầy/Cô! Để em hỗ trợ đọc toàn bộ slide trong file PowerPoint có sẵn của Thầy/Cô và soạn bộ Lời bình / Lời giảng bám sát từng trang đúng giọng văn mong muốn, Thầy/Cô làm theo 3 bước cực kỳ đơn giản dưới đây nhé:
 
 ---
-### 📂 BƯỚC 1: ĐƯA FILE POWERPOINT (.pptx) VÀO CHO EM ĐỌC
+### 📂 BƯỚC 1: LẤY ĐƯỜNG DẪN FILE POWERPOINT (.pptx)
 Thầy/Cô chọn **1 trong 2 cách** tiện nhất trên máy tính:
-- **Cách 1 (Kéo thả chuột - Dễ nhất):** Mở thư mục chứa file slide trên máy tính, giữ chuột trái vào file `.pptx` rồi **KÉO SANG VÀ THẢ VÀO Ô CHAT NÀY** (hoặc bấm nút đính kèm `📎` / `+`).
-- **Cách 2 (Copy đường dẫn - Rất nhanh):**
-  + Tìm file `.pptx` trên máy tính (trong thư mục `Downloads` hoặc `Ổ D:`).
-  + Giữ phím `Shift` + nhấp **Chuột phải** vào file $\to$ Chọn **"Copy as path"** *(Sao chép dưới dạng đường dẫn)*.
-  + Quay lại đây, nhấn `Ctrl + V` để dán đường dẫn vào ô tin nhắn.
+- **Cách 1 (Kéo thả chuột - Dễ nhất):** Mở thư mục chứa file `.pptx` trên máy tính $\to$ kéo thả trực tiếp file vào khung chat này.
+- **Cách 2 (Copy as path - Rất nhanh):** Tìm file `.pptx` trên máy tính $\to$ giữ phím `Shift` + nhấp **Chuột phải** vào file $\to$ chọn **"Copy as path"** *(hoặc bấm tổ hợp `Ctrl + Shift + C`)*.
 
 ---
-### 🎙️ BƯỚC 2: CHỌN PHONG CÁCH GIẢNG BẠI MONG MUỐN (TÙY CHỌN)
-Thầy/Cô có thể nhắn thêm mong muốn giảng bài của mình (hoặc để em tự tối ưu chuẩn mực GDPT 2018):
-1. **Đối tượng học sinh:** [Lớp 6, 7, 8, 9, THPT, học sinh đại trà hay ôn thi HSG...]
-2. **Phong cách giọng giảng:**
-   - 🌟 *Gợi mở, truyền cảm, gần gũi* (xưng Thầy/Cô - các em, nhiều câu hỏi tương tác).
-   - 🌟 *Dõng dạc, trang trọng, mạch lạc* (phù hợp bài giảng thi giáo viên giỏi hoặc chuyên đề).
-   - 🌟 *Tỉ mỉ, chi tiết từng bước* (phù hợp bài tập Toán, Khoa học khó, giải thích cặn kẽ).
-   - 🌟 *Ngắn gọn, súc tích* (mỗi slide 30–45 giây để làm video bài giảng ngắn gọn gửi Zalo học sinh).
-3. **Mục đích sử dụng:**
-   - [ ] Để Thầy/Cô tự ghi âm (lời bình hiện sẵn trên màn hình PowerPoint để đọc theo như máy nhắc chữ).
-   - [ ] Để lồng tiếng AI tự động xuất video bài giảng MP4.
+### 🎯 BƯỚC 2: CHỌN MỤC ĐÍCH SỬ DỤNG LỜI BÌNH (CHỌN A HOẶC B)
+Thầy/Cô dự định dùng lời bình này cho mục đích nào dưới đây ạ?
+
+* **Lựa chọn A — Lời bình giảng bài trên lớp (Ghi chú Notes cho Thầy/Cô):**
+  - Viết các ý gợi mở tự nhiên, câu hỏi phát vấn học sinh, hướng dẫn quan sát sơ đồ/hình ảnh và chốt kiến thức trọng tâm.
+  - Phù hợp để Thầy/Cô bật chế độ **Presenter View** trên máy tính khi dạy học, nhìn vào màn hình phụ để giảng bài lưu loát mà không sợ quên ý.
+
+* **Lựa chọn B — Toàn văn kịch bản lồng tiếng thu âm / Xuất Video bài giảng tự động:**
+  - Viết đầy đủ trọn vẹn từng câu từng chữ chuẩn phát thanh viên (không viết tắt ký hiệu công thức).
+  - Canh chuẩn thời lượng video (Thầy/Cô có thể chọn: video tóm tắt 3–5 phút hay bài giảng đầy đủ 8–10 phút; trung bình 60–120 từ/slide).
+  - Tự động nạp vào mục Notes để xuất thành Video bài giảng MP4 có giọng đọc AI phát thanh viên tự động chạy.
+
+---
+### 🎙️ BƯỚC 3: CHỌN PHONG CÁCH LỜI BÌNH & THỂ LOẠI BÀI (CHỌN THEO SỐ HOẶC TÊN)
+
+Em đã tích hợp sẵn các phong cách lời bình chuyên nghiệp cho từng thể loại bài để Thầy/Cô tùy ý lựa chọn:
+
+#### 🌟 NHÓM 1: BÀI GIẢNG DẠY HỌC CHUẨN SGK GDPT 2018
+* **[1] Giảng bài truyền cảm, gợi mở** *(Mặc định cho Toán, KHTN)*: Dẫn dắt học sinh quan sát kênh hình/sơ đồ, đặt câu hỏi phát vấn, giải thích dễ hiểu, chốt ghi nhớ.
+* **[2] Ôn tập & Sơ đồ tư duy (Bút dạ – sổ tay)**: Nhấn mạnh từ khóa trọng tâm, hệ thống hóa kiến thức logic, lời dẫn ngắn gọn, đọng lại ý cốt lõi.
+* **[3] Kể chuyện & Khám phá (Cắt dán / Xã hội)**: Giọng văn truyền cảm, liên hệ thực tế đời sống sinh động (rất hợp Ngữ văn, Lịch sử, Địa lí, GDCD).
+* **[4] Dịu dàng, vui tươi (Sách tranh tiểu học)**: Nhẹ nhàng, gần gũi, khích lệ và tương tác ấm áp với học sinh lứa tuổi nhỏ.
+
+#### 🎮 NHÓM 2: DẪN DẮT HOẠT CẢNH TRÒ CHƠI HỌC TẬP (GAME SHOW)
+* **[5] MC Game Show "Ai là triệu phú"**: Sôi nổi, hồi hộp, kịch tính, lôi cuốn học sinh tham gia chọn đáp án A-B-C-D.
+* **[6] Dẫn dắt Game "Ong tìm mật / Hái hoa / Rung chuông vàng"**: Hào hứng, cổ vũ, chúc mừng học sinh trả lời đúng, giải thích ngắn gọn câu trả lời.
+
+#### 🏛️ NHÓM 3: BÁO CÁO CHUYÊN ĐỀ, HỘI THI & SỰ KIỆN
+* **[7] Báo cáo SKKN & Thi Giáo viên dạy giỏi**: Đĩnh đạc, mạch lạc, lập luận sư phạm vững vàng, thuyết minh rõ nét số liệu khảo sát % hiệu quả biện pháp.
+* **[8] Thuyết trình Đại hội / Hội nghị viên chức**: Trang nghiêm, chuẩn mực hành chính công vụ, dõng dạc, mạch lạc từng mục báo cáo và phương hướng.
+* **[9] Lễ Vinh danh & Tuyên dương thành tích**: Hào hùng, truyền cảm hứng, tôn vinh trang trọng các cá nhân và tập thể tiêu biểu.
 
 ---
 ### 📋 MẪU CÂU LỆNH ĐIỀN SẴN (THẦY/CÔ CHỈ CẦN COPY & GỬI CHO EM):
-
-> *"Em hãy viết lời bình chi tiết bám sát từng slide cho file PowerPoint này của tôi: `"D:\GiaoAn\Ten_Bai_Giang.pptx"` (hoặc file tôi vừa kéo thả vào). Môn [Toán / KHTN / Văn / Sử / Anh...], lớp [6], phong cách truyền cảm gợi mở, bám sát các kênh hình, câu hỏi và công thức trên slide để tôi làm video bài giảng nhé!"*
-
-👉 **Ngay khi nhận được file `.pptx`, em sẽ đọc từng trang slide và lập BẢNG LỜI BÌNH CHI TIẾT TỪNG SLIDE cho Thầy/Cô duyệt trước khi nạp thẳng vào mục Notes của PowerPoint ạ!**
+> *"Tôi có file PowerPoint bài giảng: `"<Dán_đường_dẫn_file_pptx_ở_đây>"`. 
+> - Môn: [KHTN 6 / Toán...], Lớp: [6].
+> - Mục đích: [Chọn Lựa chọn A: Dạy trên lớp / hoặc Lựa chọn B: Xuất Video bài giảng - thời lượng ... phút]
+> - Phong cách lời bình: [Chọn số 1 đến 9, hoặc ghi tên kiểu như: 'Giảng bài truyền cảm', 'MC Ai là triệu phú', 'Báo cáo SKKN'...]
+> Em hãy đọc từng slide và lên Bảng kịch bản lời bình cho tôi duyệt trước nhé!"*
 ```
 
-> ⚠️ **BẮT BUỘC DỪNG VÀ CHỜ**: Trợ lý dừng lại chờ giáo viên gửi file `.pptx` hoặc dán đường dẫn file kèm thông tin.
+> ⚠️ **DỪNG VÀ CHỜ**: Trợ lý dừng lại chờ giáo viên gửi file `.pptx` (hoặc đường dẫn), chọn **Lựa chọn A hay B** và phong cách lời bình. **Tuyệt đối không tự ý viết lời bình trước khi có phản hồi này**, vì phong cách giảng trực tiếp trên lớp (A) và kịch bản đọc video lồng tiếng AI (B) có yêu cầu câu từ, độ dài và cấu trúc hoàn toàn khác nhau.
+
+---
+
+### 🔹 BƯỚC 2: Trích Xuất Nội Dung PPTX & Lập Bảng Kịch Bản Lời Bình Storyboard Gửi Thầy Cô Duyệt
+Sau khi giáo viên gửi file và lựa chọn A hoặc B:
+1. Trợ lý chạy script trích xuất dữ liệu slide:
+   `python "<ĐƯỜNG_DẪN_SKILL>/scripts/them_loi_binh_pptx.py" "<file.pptx>" --extract`
+2. Biên soạn lời bình chi tiết theo đúng lựa chọn (A hoặc B) và tuân thủ 6 nguyên tắc vàng (bám sát hình ảnh/công thức/câu hỏi trên slide, tự nhiên, có câu nối chuyển slide).
+3. Trình bày Bảng Lời Bình Storyboard rõ ràng:
+   `| Slide | Tiêu đề slide | Nội dung chính trên slide | Lời bình chi tiết (Từng câu từng chữ) | Thời lượng dự kiến |`
+4. **DỪNG VÀ HỎI**: 
+   > *"Thầy/Cô xem lại Bảng kịch bản lời bình từng slide trên. Nếu Thầy/Cô đồng ý (hoặc cần chỉnh sửa câu chữ ở slide nào), xin nhắn cho em để em nạp thẳng vào mục Notes của file PowerPoint nhé!"*
+
+---
+
+### 🔹 BƯỚC 3: Giáo Viên Đồng Ý $\to$ Tự Động Nạp (Inject) Lời Bình Vào Mục Notes Của PowerPoint
+- Khi giáo viên nhắn *"Đồng ý"*, *"OK"*, *"Nạp vào slide đi"*:
+  1. Trợ lý lưu nội dung lời bình ra file JSON tạm.
+  2. Chạy lệnh:
+     `python "<ĐƯỜNG_DẪN_SKILL>/scripts/them_loi_binh_pptx.py" "<file.pptx>" --inject-json "<file_notes.json>"`
+  3. Lệnh tạo ra file mới an toàn: `[Tên_File_Gốc]_CoLoiBinh.pptx` (giữ nguyên 100% định dạng, hình ảnh, font chữ gốc, chỉ thêm văn bản vào phần Notes chân slide).
+
+---
+
+### 🔹 BƯỚC 4: Bàn Giao File & Đề Xuất Bước Tiếp Theo
+- Bàn giao đường dẫn mở file `[Tên_File_Gốc]_CoLoiBinh.pptx`.
+- Hướng dẫn Thầy/Cô cách xem lời bình trong PowerPoint (bấm vào tab **Notes** dưới chân slide hoặc bật **Slide Show $\to$ Use Presenter View** khi cắm máy chiếu).
+- **Đặc biệt nếu giáo viên đã chọn Lựa chọn B (hoặc có nhu cầu làm video)**:
+  > *"Em đã nạp toàn văn lời bình phát thanh viên vào từng slide. Thầy/Cô có muốn xuất luôn thành **Video bài giảng MP4** (có giọng đọc AI tự động đọc khớp từng slide và chuyển cảnh) không ạ?"*
+
+---
 
 ---
 
@@ -570,87 +673,84 @@ Trình bày đầy đủ Bản phác thảo Storyboard chi tiết từng slide g
 
 ---
 
-## V. HỆ THỐNG 5 PHONG CÁCH CHỦ ĐỀ (THEME STYLES) & 6 KIỂU BỐ CỤC (LAYOUT PATTERNS) CHUẨN STEM_MHHTH_v6
+## V. HỆ THỐNG 7 PHONG CÁCH CHỦ ĐỀ (THEME STYLES) & 12 KIỂU BỐ CỤC HOẠT CẢNH (SCENE LAYOUT PATTERNS)
 
-Để bài giảng luôn mới mẻ, cuốn hút và phù hợp với từng môn học/chủ đề, trợ lý hỗ trợ **5 Phong cách bảng màu (Theme Styles)** và **6 Kiểu bố cục (Layout Patterns)** kế thừa tinh hoa thiết kế từ bộ slide mẫu `STEM_MHHTH_v6.pptx`. Giáo viên có thể chỉ định phong cách yêu thích hoặc trợ lý tự động chọn phong cách phù hợp nhất với môn học:
+Để bài giảng luôn mới mẻ, cuốn hút và phù hợp với từng môn học, hoạt cảnh sư phạm và thuyết trình, hệ thống kế thừa tinh hoa từ 28 bộ slide mẫu chuyên nghiệp (`MẪU SLIDE` và `STEM_MHHTH_v6`), cung cấp **7 Phong cách bảng màu (Theme Styles)** và **12 Kiểu bố cục hoạt cảnh (Scene Layout Patterns)**. Giáo viên có thể chỉ định hoặc trợ lý tự động điều phối:
 
-### 🎨 1. BẢNG 5 PHONG CÁCH CHỦ ĐỀ MÀU SẮC (5 THEME STYLES)
+### 🎨 1. BẢNG 7 PHONG CÁCH CHỦ ĐỀ MÀU SẮC (7 THEME STYLES)
 
-| Mã Phong Cách | Tên Phong Cách | Nền Slide | Màu Header Đặc & Footer | Đường Chỉ Điểm Nhấn (6px) | 4 Màu Thẻ Phân Nhóm (Đậm / Nền Nhạt) | Phù Hợp Nhất Cho |
+| Mã Phong Cách | Tên Phong Cách | Nền Slide | Màu Header & Footer | Đường Chỉ / Viền Nhấn | 4 Màu Thẻ Phân Nhóm (Đậm / Nền Nhạt) | Phù Hợp Nhất Cho |
 |:---:|:---|:---:|:---:|:---:|:---|:---|
-| **Style 1** | **STEM Modern Navy & Gold** *(Chuẩn STEM_v6)* | `#F0F5FB` | `#1B3A6B` *(Xanh Navy)* | `#E8941A` *(Vàng cam)* | 1. Đỏ `#C0392B` / `#FDEDEC`<br>2. Cam `#E8941A` / `#FFF3DB`<br>3. Ngọc `#16A085` / `#E8F8F5`<br>4. Lam `#1B3A6B` / `#E8EFF8` | Toán học, Vật lí, Hoạt động STEM, Báo cáo sáng kiến |
-| **Style 2** | **Bio-Nature Emerald** *(Xanh Sinh Học)* | `#F2F9F6` | `#0F5132` *(Lục bảo đậm)* | `#F59E0B` *(Vàng nắng)* | 1. Lá `#198754` / `#E8F5E9`<br>2. Cam `#D97706` / `#FEF3C7`<br>3. Biển `#0284C7` / `#E0F2FE`<br>4. Tím `#7C3AED` / `#F3E8FF` | Sinh học, KHTN (Tế bào, Đa dạng sinh học, Sinh thái) |
-| **Style 3** | **Chem-Lab Royal Purple** *(Tím Hoá Học)* | `#F5F3FF` | `#3B0764` *(Tím hoàng gia)* | `#06B6D4` *(Xanh Cyan)* | 1. Tím `#6D28D9` / `#EDE9FE`<br>2. Cyan `#0891B2` / `#CFFAFE`<br>3. Hồng `#BE185D` / `#FCE7F3`<br>4. Cam `#EA580C` / `#FFEDD5` | Hóa học, KHTN (Chất, Nguyên tử, Bảng tuần hoàn) |
-| **Style 4** | **Classic Academic Light** *(Học Thuật Sáng)* | `#F8FAFC` | Nền sáng + Badge `#EBF3FA` | `#3B82F6` *(Line mảnh)* | 1. Xanh `#1F4E79` / `#EFF6FF`<br>2. Vàng `#F59E0B` / `#FFFBEB`<br>3. Lục `#10B981` / `#ECFDF5`<br>4. Tím `#6366F1` / `#EEF2FF` | Bài giảng lý thuyết truyền thống, Ôn tập nhẹ nhàng |
-| **Style 5** | **Warm Terracotta** *(Năng Động Ấm Áp)* | `#FFFDF9` | `#7C2D12` *(Đỏ nâu ấm)* | `#FBBF24` *(Vàng tươi)* | 1. Cam `#EA580C` / `#FFEDD5`<br>2. Rêu `#15803D` / `#DCFCE7`<br>3. Lam `#1D4ED8` / `#DBEAFE`<br>4. Đỏ `#B91C1C` / `#FEE2E2` | Hoạt động Khởi động, Trò chơi, Lịch sử, Địa lí |
-
-> 💡 **Quy tắc chọn Style**: Nếu giáo viên không chỉ định, trợ lý tự động chọn **Style 1 (STEM Navy & Gold)** cho Toán/Lí/STEM, **Style 2 (Bio-Nature Emerald)** cho Sinh học/Tế bào, **Style 3 (Chem-Lab)** cho Hóa học, hoặc luân chuyển khi giáo viên yêu cầu *"Đổi sang phong cách..."*.
+| **Style 1** | **STEM Modern Navy & Gold** | `#F0F5FB` | `#1B3A6B` *(Navy)* | `#E8941A` *(Vàng cam)* | 1. Đỏ `#C0392B` / `#FDEDEC`<br>2. Cam `#E8941A` / `#FFF3DB`<br>3. Ngọc `#16A085` / `#E8F8F5`<br>4. Lam `#1B3A6B` / `#E8EFF8` | Toán học, Vật lí, Tin học, STEM, Báo cáo kỹ thuật |
+| **Style 2** | **Bio-Nature Emerald** | `#F2F9F6` | `#0F5132` *(Lục bảo)* | `#F59E0B` *(Vàng nắng)* | 1. Lá `#198754` / `#E8F5E9`<br>2. Cam `#D97706` / `#FEF3C7`<br>3. Biển `#0284C7` / `#E0F2FE`<br>4. Tím `#7C3AED` / `#F3E8FF` | Sinh học, KHTN (Tế bào, Đa dạng sinh học, Môi trường) |
+| **Style 3** | **Chem-Lab Royal Purple** | `#F5F3FF` | `#3B0764` *(Tím đậm)* | `#06B6D4` *(Xanh Cyan)* | 1. Tím `#6D28D9` / `#EDE9FE`<br>2. Cyan `#0891B2` / `#CFFAFE`<br>3. Hồng `#BE185D` / `#FCE7F3`<br>4. Cam `#EA580C` / `#FFEDD5` | Hóa học, KHTN (Chất, Nguyên tử, Bảng tuần hoàn) |
+| **Style 4** | **Academic Contest & SKKN Pastel** | `#F8FAFC` | `#1F4E79` / `#298771` | `#B5C115` *(Mù tạt)* | 1. Teal `#298771` / `#E6F4F1`<br>2. Lam `#1F4E79` / `#EFF6FF`<br>3. Mù tạt `#B5C115` / `#F7F8E8`<br>4. Mận `#8C213E` / `#FDE8EE` | Báo cáo SKKN, Thi Giáo viên dạy giỏi, Hội nghị chuyên môn |
+| **Style 5** | **Interactive Game Show Neon** | `#0A1128` | `#001F3F` *(Xanh thẫm)* | `#00F0FF` / `#FFFF00` | 1. Cyan `#00F0FF` / `#002840`<br>2. Vàng `#FFFF00` / `#333000`<br>3. Xanh lá `#22C55E` / `#052E16`<br>4. Đỏ `#EF4444` / `#380D0D` | Trò chơi Ai là triệu phú, Rung chuông vàng, Khởi động sôi động |
+| **Style 6** | **Party Congress & Governance Red-Gold** | `#FFFDF9` | `#990000` *(Đỏ cờ)* | `#FFC000` *(Vàng Gold)* | 1. Đỏ cờ `#990000` / `#FEE2E2`<br>2. Vàng `#D97706` / `#FEF3C7`<br>3. Xanh `#1E3A8A` / `#DBEAFE`<br>4. Nâu `#78350F` / `#FEF2F2` | Đại hội Đảng, Hội nghị CBVC, Báo cáo nhiệm vụ UBND |
+| **Style 7** | **Hall of Fame & Honor Metallic** | `#0D1B2A` / `#7A0C0C` | `#1B263B` / `#5A0000` | `#D4AF37` *(Gold kim loại)* | 1. Vàng Gold `#D4AF37` / `#2A2415`<br>2. Đỏ nhung `#B91C1C` / `#2D0A0A`<br>3. Lam sẫm `#1E3A8A` / `#0F172A`<br>4. Bạc `#94A3B8` / `#1E293B` | Lễ Vinh danh, Tuyên dương Gia đình Văn hóa, Khen thưởng thi đua |
 
 ---
 
-### 📐 2. SÁU KIỂU BỐ CỤC HIỆN ĐẠI (6 LAYOUT PATTERNS TỪ STEM_MHHTH_v6)
+### 📐 2. MƯỜI HAI KIỂU BỐ CỤC HOẠT CẢNH (12 SCENE LAYOUT PATTERNS TOÀN DIỆN)
 
-Tuyệt đối **không dùng 1 bố cục lặp đi lặp lại cho cả bài**. Trong một bài giảng (8–12 slide), trợ lý phải phối hợp linh hoạt 6 kiểu bố cục sau và luôn dùng ký hiệu `▸` cho các dòng liệt kê:
+Tuyệt đối **không dùng 1 bố cục lặp đi lặp lại**. Trong một bài thuyết trình hay bài giảng (8–16 slide), trợ lý phải luân chuyển linh hoạt các bố cục theo đúng từng hoạt cảnh:
 
 #### 🔹 Layout 1: `Split Visual-Pedagogy` (Trái Kênh Hình 45% – Phải Hỏi & Ghi Nhớ 55%)
-- **Ứng dụng**: Slide hình thành kiến thức có ảnh SGK, ảnh hiển vi thực tế hoặc sơ đồ thí nghiệm.
-- **Cấu trúc**: Cột trái (`x=40..590`) đặt khung ảnh lớn bo góc kèm chú thích; Cột phải (`x=620..1240`) chia 2 hộp: Hộp trên là `❓ CÂU HỎI THẢO LUẬN` (nền vàng nhạt `#FFF3DB`, thanh tiêu đề cam `#E8941A`), hộp dưới là `💡 EM CẦN GHI NHỚ` (nền xanh nhạt `#E8EFF8`, thanh tiêu đề `#1B3A6B`).
+- **Hoạt cảnh**: Slide hình thành kiến thức có ảnh SGK, ảnh hiển vi thực tế hoặc sơ đồ thí nghiệm.
+- **Cấu trúc**: Cột trái (`x=40..590`) đặt khung ảnh lớn bo góc kèm chú thích; Cột phải (`x=620..1240`) chia 2 hộp: Hộp trên là `❓ CÂU HỎI THẢO LUẬN` (nền vàng nhạt `#FFF3DB`, thanh cam `#E8941A`), hộp dưới là `💡 EM CẦN GHI NHỚ` (nền xanh nhạt `#E8EFF8`, thanh `#1B3A6B`).
 
-#### 🔹 Layout 2: `2x2 Color-Coded Grid` (Lưới 4 Ô Đa Sắc — Chuẩn Slide 10, 18, 19 STEM_v6)
-- **Ứng dụng**: Khi bài học có **4 phần, 4 thành phần, 4 vai trò, 4 tính chất** hoặc **4 câu hỏi luyện tập**.
-- **Cấu trúc SVG mẫu**:
-```xml
-<!-- Ô 1 (Trái Trên - Đỏ San Hô) -->
-<rect x="40" y="125" width="585" height="255" rx="10" fill="#FDEDEC" stroke="#F5B7B1" stroke-width="1"/>
-<rect x="40" y="125" width="585" height="52" rx="10" fill="#C0392B"/>
-<text x="60" y="159" font-size="26.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">1. [TIÊU ĐỀ Ô 1]</text>
-<text x="60" y="205" font-size="24.0" fill="#1E293B" font-family="Times New Roman, serif">▸ [Nội dung ý 1...]</text>
+#### 🔹 Layout 2: `2x2 Color-Coded Grid` (Lưới 4 Ô Đa Sắc)
+- **Hoạt cảnh**: Bài học có **4 phần, 4 vai trò, 4 tính chất, 4 nhóm sinh vật** hoặc **4 câu hỏi luyện tập**.
+- **Cấu trúc SVG**: 4 ô chữ nhật bo góc `rx="10"` với 4 cặp màu đậm/nhạt tương phản (`#C0392B`, `#E8941A`, `#16A085`, `#1B3A6B`), thanh tiêu đề cao `52px` in chữ trắng đậm 20pt, thân hộp chứa danh sách gạch đầu dòng `▸`.
 
-<!-- Ô 2 (Phải Trên - Cam Vàng) -->
-<rect x="655" y="125" width="585" height="255" rx="10" fill="#FFF3DB" stroke="#FAD7A0" stroke-width="1"/>
-<rect x="655" y="125" width="585" height="52" rx="10" fill="#E8941A"/>
-<text x="675" y="159" font-size="26.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">2. [TIÊU ĐỀ Ô 2]</text>
+#### 🔹 Layout 3: `3-Row Numbered Cards` (3 Dải Thẻ Ngang Đánh Số Lớn)
+- **Hoạt cảnh**: Trình bày **3 thành phần chính**, **3 định luật**, hoặc **3 bước cốt lõi**.
+- **Cấu trúc SVG**: 3 dải thẻ nằm ngang (`y=130, 310, 490`, `height="160"`). Đầu dải thẻ bên trái có khối màu đậm (`width="85"`) in số thứ tự `1`, `2`, `3` cỡ lớn `42pt` trắng tinh; bên phải in tiêu đề đậm và 2 dòng mô tả.
 
-<!-- Ô 3 (Trái Dưới - Xanh Ngọc) -->
-<rect x="40" y="400" width="585" height="255" rx="10" fill="#E8F8F5" stroke="#A3E4D7" stroke-width="1"/>
-<rect x="40" y="400" width="585" height="52" rx="10" fill="#16A085"/>
-<text x="60" y="434" font-size="26.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">3. [TIÊU ĐỀ Ô 3]</text>
+#### 🔹 Layout 4: `Horizontal Process Flow` (Sơ Đồ Quy Trình Mũi Tên Ngang `▶`)
+- **Hoạt cảnh**: **Quy trình thí nghiệm, Chu trình sinh học, Các bước giải bài toán thực tế**.
+- **Cấu trúc**: Hộp định nghĩa ở trên, chuỗi 4–6 khối quy trình nối tiếp nhau bằng mũi tên `▶` ở giữa, khung chốt ghi nhớ/tiêu chuẩn ở đáy.
 
-<!-- Ô 4 (Phải Dưới - Xanh Navy) -->
-<rect x="655" y="400" width="585" height="255" rx="10" fill="#E8EFF8" stroke="#AED6F1" stroke-width="1"/>
-<rect x="655" y="400" width="585" height="52" rx="10" fill="#1B3A6B"/>
-<text x="675" y="434" font-size="26.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">4. [TIÊU ĐỀ Ô 4]</text>
-```
+#### 🔹 Layout 5: `Concept Label Stripes` (Bảng Dải Băng Nhãn Màu)
+- **Hoạt cảnh**: Bảng tổng hợp thuật ngữ, phân lớp số học, chức năng các bộ phận/bào quan, bảng từ vựng.
+- **Cấu trúc**: 4–6 hàng ngang (`height="72"`). Cột trái (`width="320"`) là hộp nhãn màu đặc in chữ trắng đậm; Cột phải (`width="880"`) là hộp nền trắng ghi chức năng và ví dụ.
 
-#### 🔹 Layout 3: `3-Row Numbered Cards` (3 Dải Thẻ Ngang Đánh Số Lớn — Chuẩn Slide 8 STEM_v6)
-- **Ứng dụng**: Khi trình bày **3 thành phần chính** (ví dụ: Màng tế bào, Chất tế bào, Nhân tế bào), **3 định luật**, hoặc **3 bước trọng tâm**.
-- **Cấu trúc SVG mẫu**:
-```xml
-<!-- Dải thẻ 1 -->
-<rect x="40" y="130" width="1200" height="160" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-<rect x="40" y="130" width="85" height="160" rx="10" fill="#C0392B"/>
-<text x="82" y="225" font-size="42.0" font-weight="bold" fill="#FFFFFF" text-anchor="middle" font-family="Times New Roman, serif">1</text>
-<text x="150" y="172" font-size="26.67" font-weight="bold" fill="#C0392B" font-family="Times New Roman, serif">[Tên thành phần / Bước 1]</text>
-<text x="150" y="212" font-size="24.0" fill="#1E293B" font-family="Times New Roman, serif">▸ [Mô tả chi tiết ngắn gọn, súc tích dòng 1]</text>
-<!-- Dải thẻ 2 (y=310, màu #16A085) và Dải thẻ 3 (y=490, màu #1B3A6B) tương tự -->
-```
+#### 🔹 Layout 6: `Comparison Table & Big Stat Cards` (Bảng Đối Chiếu & Thẻ Số Liệu Lớn)
+- **Hoạt cảnh**: So sánh 2 đối tượng (Nhân sơ vs Nhân thực; Thực vật vs Động vật; Trước vs Sau áp dụng).
+- **Cấu trúc**: Bảng so sánh 3 cột (Tiêu chí - Đối tượng A - Đối tượng B nổi bật) kết hợp các thẻ số liệu lớn `44pt` (`font-size="58.67"`).
 
-#### 🔹 Layout 4: `Horizontal Process Flow` (Sơ Đồ Quy Trình Mũi Tên Ngang `▶` — Chuẩn Slide 9 STEM_v6)
-- **Ứng dụng**: Dạy về **Quy trình thí nghiệm, Chu trình sinh học, Các bước giải bài toán thực tế**.
+#### 🔹 Layout 7: `Status Quo Split Cards` (Thẻ Kép Đối Đầu Thuận Lợi vs Khó Khăn — Chuẩn SKKN mau1, mau7, mau11)
+- **Hoạt cảnh**: Phân tích thực trạng, bối cảnh thực tế trong báo cáo SKKN, thi GVG, hội nghị.
+- **Cấu trúc SVG**:
+  - Cột trái (`x=40..620`): Khung `🟢 THUẬN LỢI` (nền xanh lá nhạt `#E8F5E9`, viền `#2E7D32`), thanh header xanh in chữ trắng, liệt kê các điểm tựa chuyên môn.
+  - Cột phải (`x=660..1240`): Khung `🔴 KHÓ KHĂN` (nền đỏ nhạt `#FDEDEC`, viền `#C0392B`), thanh header đỏ gạch in chữ trắng, liệt kê các trở ngại cần tháo gỡ.
+
+#### 🔹 Layout 8: `Interactive Quiz & Game Show Chamber` (Đấu Trường 4 Đáp Án Tương Tác — Chuẩn Ai là triệu phú, Ong non học việc)
+- **Hoạt cảnh**: Khởi động, Trò chơi củng cố tiết học, Đố vui có thưởng.
+- **Cấu trúc SVG**:
+  - Hộp câu hỏi trung tâm (`y=120..240`, `width="1160"`) vát góc lục giác hoặc đám mây hoạt hình.
+  - 4 ô đáp án A, B, C, D xếp lưới 2x2 (`y=270` và `y=440`, mỗi ô `width="560"`, `height="140"`).
+  - Khai báo nút bấm `id="nut_dap_an_A"`, `id="nut_dap_an_B"`... trong `animations.json` để khi click sẽ đổi sang màu Xanh lá (`#22C55E` - Đúng) hoặc Đỏ (`#EF4444` - Sai).
+
+#### 🔹 Layout 9: `Before-After Survey & Stat Growth` (Khảo Sát Số Liệu & Tăng Trưởng Trước - Sau — Chuẩn mau7, mau22)
+- **Hoạt cảnh**: Minh chứng hiệu quả sáng kiến, đánh giá chất lượng học sinh trước và sau khi áp dụng giải pháp.
 - **Cấu trúc**:
-  - Phần trên (`y=125..245`): Hộp định nghĩa/Khái niệm nền `#E8EFF8`.
-  - Phần giữa (`y=290..430`): Chuỗi 4–6 hộp bước quy trình (`fill="#C0392B"`, `#E8941A`, `#16A085`, `#2980B9`, `#1B3A6B`) xếp ngang, ngăn cách bởi ký hiệu mũi tên `▶` cỡ lớn.
-  - Phần dưới (`y=465..655`): Khung `💡 EM CẦN GHI NHỚ` hoặc các tiêu chí kiểm chứng.
+  - 2 Bảng số liệu song song: Cột 1 "Trước khi áp dụng" (tỉ lệ chưa đạt cao) vs Cột 2 "Sau khi áp dụng" (tỉ lệ Tốt/Xuất sắc tăng vọt).
+  - Dưới chân bảng là 2 Thẻ phần trăm lớn `44pt` màu xanh ngọc: `▲ +35.2% Mức độ tích cực` và `▼ -28.4% Học sinh yếu kém`.
 
-#### 🔹 Layout 5: `Concept Label Stripes` (Bảng Dải Băng Nhãn Màu — Chuẩn Slide 12 STEM_v6)
-- **Ứng dụng**: Bảng tổng hợp thuật ngữ, chức năng các bộ phận/bào quan, hoặc phân công nhiệm vụ nhóm.
-- **Cấu trúc**: 4–6 hàng ngang (`height="72"` mỗi hàng). Cột trái (`width="320"`) là hộp màu đặc (`#C0392B`, `#E8941A`, `#16A085`, `#2980B9`...) in chữ trắng đậm tên bộ phận; Cột phải (`width="880"`) là hộp nền trắng ghi chức năng tương ứng.
-
-#### 🔹 Layout 6: `Comparison Table & Big Stat Cards` (Bảng Đối Chiếu Màu & Thẻ Số Liệu Lớn — Chuẩn Slide 4, 26 STEM_v6)
-- **Ứng dụng**: So sánh 2 đối tượng (Tế bào nhân sơ vs Nhân thực; Thực vật vs Động vật; Trước vs Sau) hoặc nhấn mạnh các con số khoa học ấn tượng.
+#### 🔹 Layout 10: `Hall of Fame & Honor Card` (Vinh Danh Cá Nhân / Gia Đình Văn Hóa / SKKN — Chuẩn P.Cửa Nam, PPT Vinh danh TQT)
+- **Hoạt cảnh**: Lễ tuyên dương khen thưởng, vinh danh sáng kiến kinh nghiệm, hội nghị người tốt việc tốt.
 - **Cấu trúc**:
-  - Bảng so sánh 3 cột: Cột 1 (Tiêu chí - Header `#1B3A6B`), Cột 2 (Đối tượng A - Header `#1B3A6B`, nền `#E8EFF8`), Cột 3 (Đối tượng B nổi bật - Header `#1E8A44`, nền xanh lá dịu `#D4EDDA`).
-  - Hoặc đặt 3 **Thẻ Số Liệu Lớn (Big Stat Cards)** bên phải: Số liệu in cỡ `44pt` (`font-size="58.67"`) màu đậm nổi bật phía trên, lời giải thích 2 dòng phía dưới.
+  - Cột trái (`x=60..480`): Khung ảnh chân dung bo viền mạ vàng kép (`stroke="#D4AF37"` `stroke-width="4"`), phía dưới là dải tên và chức vụ/đơn vị.
+  - Cột phải (`x=520..1220`): Khung danh hiệu tuyên dương lớn màu vàng gold, bên dưới là 3 khối thẻ mạ viền vàng tóm tắt 3 thành tích xuất sắc nhất.
+
+#### 🔹 Layout 11: `KPI Metric Quad-Cards` (4 Thẻ Chỉ Tiêu Số Liệu Lớn — Chuẩn BC Thực hiện nhiệm vụ, mau28)
+- **Hoạt cảnh**: Báo cáo tổng kết 6 tháng / năm học, phương hướng nhiệm vụ trọng tâm, chỉ tiêu thi đua.
+- **Cấu trúc**: Lưới 4 thẻ số liệu (`width="585"`, `height="250"`). Mỗi thẻ hiển thị con số ấn tượng cỡ `44pt` (`font-size="58.67"`), nhãn chỉ tiêu 18pt đậm nét và thanh tiến độ hoàn thành % ở đáy thẻ.
+
+#### 🔹 Layout 12: `Agenda Multi-Block Grid` (Mục Lục & Đề Cương 4 Khối Đa Năng — Chuẩn mau4, mau8, mau16)
+- **Hoạt cảnh**: Trang Cấu trúc báo cáo, Đề cương bài học, Lộ trình nghiên cứu.
+- **Cấu trúc**: 4 khối thẻ độc lập có huy hiệu tròn đánh số `01`, `02`, `03`, `04` phối màu đồng bộ với Style chủ đề, kèm icon gợi mở và 2 dòng tóm lược từng phần.
 
 ---
 

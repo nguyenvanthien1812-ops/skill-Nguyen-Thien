@@ -1,9 +1,15 @@
 {
   "name": "tao-slide-bai-giang",
-  "version": "1.0.0",
-  "updated": "2026-10-15",
+  "version": "1.1.0",
+  "updated": "2026-10-20",
   "author": "Nguyễn Văn Thiện",
   "changelog": {
+    "1.1.0": [
+      "Tích hợp Luồng 1 (Tạo PPTX mới) chuẩn 5 bước cầm tay chỉ việc kèm Menu 10 phong cách & mẫu slide GDPT 2018",
+      "Tích hợp Luồng 2 (Viết lời bình cho PPTX có sẵn) chuẩn 4 bước kèm Menu 9 phong cách lời bình chuyên nghiệp",
+      "Nâng cấp bảng cỡ chữ trình chiếu lớp học (Tiêu đề 32–36pt, Nội dung 20–24pt) rõ nét từ cuối lớp",
+      "Thiết lập công thức chống tràn chữ khỏi khung (H >= 70 + số dòng * dy, ngắt dòng an toàn tspan)"
+    ],
     "1.0.0": [
       "Phát hành chính thức Skill Soạn Slide Bài Giảng Chuẩn Mực Sư Phạm",
       "Tích hợp Native OMML Formula - Công thức toán vector sắc nét 100%, nhấp đúp chỉnh sửa trực tiếp",
