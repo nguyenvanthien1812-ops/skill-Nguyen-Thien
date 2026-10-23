@@ -1,9 +1,17 @@
 {
   "name": "tao-slide-bai-giang",
-  "version": "1.1.0",
-  "updated": "2026-10-20",
+  "version": "1.2.0",
+  "updated": "2026-10-23",
   "author": "Nguyễn Văn Thiện",
   "changelog": {
+    "1.2.0": [
+      "Đồng bộ bảng cỡ chữ chuẩn mực toàn cục (Tiêu đề 32–36px, Thân bài 20–24px, Chú thích 16px) chống lỗi tràn khung của svg_quality_checker",
+      "Chuẩn hóa 5 quy tắc kỹ thuật vượt qua kiểm định SVG 100% ngay lần đầu (data-pptx-page-role, data-pptx-role, clipPath khớp ảnh, đường dẫn tương đối ../images/)",
+      "Tích hợp Nguồn ảnh số 4: Tự động tạo ảnh minh họa AI qua subagent image-generator đồng bộ design_spec.md & spec_lock.md",
+      "Bổ sung Luồng rút gọn cho Slide lẻ / Bài toán cụ thể (1–2 slide): Tự động lấy Hồ sơ đơn vị, lập Storyboard và xác nhận nhanh 1 câu",
+      "Hoàn thiện quy tắc công thức Native OMML nội dòng đặt trong thẻ <text> đơn dòng độc lập chống cảnh báo geometry",
+      "Chuẩn hóa đường dẫn thực thi patch_fonts.py và môi trường Python venv trên Windows"
+    ],
     "1.1.0": [
       "Tích hợp Luồng 1 (Tạo PPTX mới) chuẩn 5 bước cầm tay chỉ việc kèm Menu 10 phong cách & mẫu slide GDPT 2018",
       "Tích hợp Luồng 2 (Viết lời bình cho PPTX có sẵn) chuẩn 4 bước kèm Menu 9 phong cách lời bình chuyên nghiệp",

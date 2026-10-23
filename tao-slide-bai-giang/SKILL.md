@@ -100,7 +100,7 @@ Skill này được thiết kế chuyên biệt và tối ưu riêng cho **Thầ
      `Trang bìa` $\to$ `Khởi động` $\to$ `Hình thành kiến thức` $\to$ `Luyện tập` $\to$ `Vận dụng & Dặn dò`.
 2. **Không để dòng chữ bé dưới đề mục slide**:
    - Dưới tiêu đề slide/đề mục **không thêm bất kỳ dòng chữ phụ nhỏ (subtitle)** nào.
-   - Tiêu đề slide phải to rõ (22pt), đậm nét, trang trọng, có đường phân cách thanh mảnh và để không gian thoáng đãng cho bài học phía dưới.
+   - Tiêu đề slide phải to rõ (`font-size="32"` đến `"36"`, tức 24pt–27pt), đậm nét, trang trọng, có đường phân cách thanh mảnh và để không gian thoáng đãng cho bài học phía dưới.
 3. **Ngôn ngữ sư phạm lớp học tự nhiên (Chuẩn SGK GDPT 2018)**:
    - **Cấm dùng** các từ ngữ lý luận sư phạm nội bộ giáo viên:
      - ❌ *Kênh hình 11.1* $\to$ Thay bằng: ✅ `HÌNH 11.1: [TÊN HÌNH]` hoặc `QUAN SÁT HÌNH 11.1 (SGK)`.
@@ -113,30 +113,46 @@ Skill này được thiết kế chuyên biệt và tối ưu riêng cho **Thầ
 5. **Kỹ thuật chống lỗi đè chữ DrawingML (PowerPoint Engine)**:
    - Trong định dạng DrawingML PPTX, **không bao giờ** đặt 2 thẻ `<text>` ở tọa độ cố định cạnh nhau để giả lập inline label + value.
    - **Bắt buộc** hợp nhất vào 1 thẻ `<text>` chứa các `<tspan>` tuần tự.
-6. **Quy chuẩn Cỡ Chữ Chiếu Lớp Học Chuẩn Mực (Chống Chữ Nhỏ Khi Chiếu Máy Chiếu)**:
-   - **Font chữ toàn bài**: **Times New Roman** (`Times New Roman, serif`).
-   - **Quy đổi DPI bắt buộc (PowerPoint Display Engine)**: `1 px = 0.75 pt` $\implies$ `px = pt / 0.75` (hoặc `pt = px * 0.75`).
-   - **Nâng toàn bộ cỡ chữ lên chuẩn Trình chiếu lớp học (Presentation Mode)** để học sinh ngồi cuối lớp (khoảng cách 8–10m) nhìn rõ từng nét:
-     - 🌟 **Tiêu đề của bài, tên slide (Slide Title)**: **32pt – 36pt** (rực rỡ, to rõ) $\to$ SVG ghi `font-size="42.67"` đến `48.0` (`sz="3200"` đến `"3600"`).
-     - 🌟 **Tiêu đề các phần / thẻ / khung ghi nhớ (Section / Box Header)**: **24pt – 26pt** $\to$ SVG ghi `font-size="32.0"` đến `34.67` (`sz="2400"` đến `"2600"`).
-     - 🌟 **Nội dung bài học / câu hỏi thảo luận / chốt kiến thức (Body text)**: **20pt – 24pt** (tối thiểu 20pt, chuẩn mực là 22pt–24pt) $\to$ SVG ghi `font-size="26.67"` đến `32.0` (`sz="2000"` đến `"2400"`). Tuyệt đối **không** để 18pt vì quá nhỏ trên máy chiếu.
-     - 🌟 **Chú thích ảnh, số trang, chân trang (Caption/Footer)**: **16pt – 18pt** $\to$ SVG ghi `font-size="21.33"` đến `24.0` (`sz="1600"` đến `"1800"`).
-   - Sau khi xuất PPTX, chạy script vá theme và run element để đảm bảo DrawingML ribbon hiển thị chuẩn xác 100% `Times New Roman`.
+6. **Quy chuẩn Cỡ Chữ Chiếu Lớp Học & Tương Thích Bộ Kiểm Định (`svg_quality_checker.py`)**:
+   - **Font chữ toàn bài**: **Times New Roman** (`Times New Roman, serif`). Khai báo trực tiếp `font-family="Times New Roman, serif"` ngay trên thẻ gốc `<svg>`.
+   - **Bảng cỡ chữ chuẩn hóa (Vừa to rõ trên máy chiếu – Vừa vượt qua trình kiểm tra 100% ngay lần đầu)**:
+     - 🌟 **Tiêu đề của bài, tên slide (`title`)**: `font-size="32"` đến `"36"` (tối đa **42–44 ký tự** trên 1 dòng để không bao giờ tràn ngang khung `1280px`).
+     - 🌟 **Tiêu đề các phần / thanh header của thẻ (`subtitle`)**: `font-size="20"` đến `"24"` (chữ trắng in đậm trên nền màu đậm; ngắn gọn **≤ 26–28 ký tự**, ví dụ: `💡 EM CẦN GHI NHỚ (KẾT LUẬN)` hoặc `❓ BÀI TOÁN THỰC TẾ & THẢO LUẬN`).
+     - 🌟 **Nội dung bài học / câu hỏi thảo luận / chốt kiến thức (`body` / `annotation`)**: `font-size="20"` đến `"24"`.
+     - 🌟 **Chú thích ảnh, số trang, chân trang (`caption`)**: `font-size="16"` đến `"18"`. **Bắt buộc** khai báo `- caption: 16` trong mục `## typography` của `spec_lock.md` (và `Caption | 16` trong `design_spec.md`) để không bị lỗi `undeclared font-size recurrence`.
+   - Sau khi xuất PPTX, chạy script vá theme và run element (`<ĐƯỜNG_DẪN_SKILL>/scripts/patch_fonts.py`) để đảm bảo DrawingML ribbon hiển thị chuẩn xác 100% `Times New Roman`.
 
 6.B. **Quy Tắc Tuyệt Đối Chống Tràn Chữ Khỏi Khung (Frame Text Overflow Prevention)**:
    - **Quy tắc 1: Công thức tính chiều cao khung (`height`)**:
      Khi vẽ khung chữ nhật (`<rect>`) hoặc khung vẽ tay (`<use href="#ht-khung-but-da">`), chiều cao khung phải được tính toán đủ cho toàn bộ các dòng chữ:
      `Chiều cao khung (H) >= Padding trên (35px) + Padding dưới (35px) + (Số dòng * khoảng cách dòng dy)`
-     *Ví dụ: Khung có tiêu đề + 3 dòng ghi nhớ (tổng 4 dòng text), mỗi dòng cách nhau `dy="38"`, thì chiều cao khung tối thiểu phải là: `35 + 35 + (4 * 38) = 222px` $\to$ Đặt `height="230"` đến `240` để có khoảng thở.*
+     *Ví dụ: Khung có tiêu đề + 4 dòng ghi nhớ (tổng 5 dòng text), mỗi dòng cách nhau `dy="30"`, thì chiều cao khung tối thiểu phải là: `35 + 35 + (5 * 30) = 220px` $\to$ Đặt `height="230"` đến `250` để có khoảng thở.*
    - **Quy tắc 2: Chống tràn mép phải (Bắt buộc ngắt dòng `<tspan>`)**:
-     Một dòng text trong khung chỉ chứa tối đa **10 – 12 từ** (khoảng 40 – 48 ký tự tiếng Việt). Vượt quá độ dài này, **bắt buộc phải ngắt sang dòng mới** bằng `<tspan x="[tọa độ lề trái khung + 40]" dy="38">`. Tuyệt đối không để một câu dài tuột chạy thẳng sang mép phải khung.
+     Trong cột rộng `560px–590px`, một dòng text ở `font-size="20"` chỉ chứa tối đa **8 – 10 từ** (khoảng **36 – 42 ký tự tiếng Việt**). Vượt quá độ dài này, **bắt buộc phải ngắt sang dòng mới** bằng `<tspan x="[tọa độ lề trái khung + 25]" dy="28">`. Tuyệt đối không để một câu dài tuột chạy thẳng sang mép phải khung.
    - **Quy tắc 3: Tối đa số lượng dòng trong một khung**:
      Mỗi khung "Em cần ghi nhớ" hoặc "Thảo luận" chỉ chứa tối đa **3 – 4 ý gạch đầu dòng ngắn gọn**, cô đọng. Không bao giờ đưa cả đoạn văn dài vào khung.
    - **Quy tắc 4: Khoảng đệm an toàn với khung vẽ tay (`ht-khung-but-da`)**:
      Vì khung vẽ tay có đường viền lượn sóng và góc nghiêng, vị trí đặt chữ `x` phải cách mép trái khung tối thiểu **40px**, mép trên tối thiểu **35px**, và mép phải cách ít nhất **40px** để chữ không bao giờ đè lên hoặc vượt qua nét vẽ viền.
+
+6.C. **5 Quy Tắc Kỹ Thuật Vượt Qua `svg_quality_checker.py` Ngay Lần Chạy Đầu Tiên (Zero-Error First Pass)**:
+   1. **Đường dẫn ảnh `<image href>` & `<clipPath>`**:
+      - Vì file SVG nằm ở `svg_output/slide_XX.svg`, đường dẫn ảnh **bắt buộc** phải dùng đường dẫn tương đối lùi 1 cấp: `href="../images/<tên_file>"` (không viết `href="images/..."` và không dùng `xlink:href`).
+      - Khi dùng `<clipPath id="...">` để bo góc cho `<image>`, thẻ `<rect>` bên trong `<clipPath>` **bắt buộc phải có tọa độ `x`, `y`, `width`, `height` trùng khớp 100%** với thẻ `<image>`.
+   2. **Thuộc tính ngữ nghĩa `data-pptx-page-role` & `data-pptx-role`**:
+      - Trên thẻ `<svg>` gốc (chế độ `flat`): Luôn ghi `data-pptx-page-role="content"` (hoặc `"cover"`, `"section"`, `"ending"`) và `font-family="Times New Roman, serif"`.
+      - Chỉ dùng `data-pptx-role` với các giá trị hợp lệ của trình biên dịch: `"header"`, `"footer"`, `"background"`, `"decoration"`, `"page-number"`. **Tuyệt đối không** tự gắn `data-pptx-role="card"`, `"figure"`, `"diagram"`, `"section"`, `"takeaway"` (sẽ sinh cảnh báo `unknown data-pptx-role`).
+   3. **Cấu trúc nhóm `<g>` cho Hiệu ứng (`animations.json`)**:
+      - Mọi khối nội dung cần gán hiệu ứng xuất hiện (`on-click`) như `left-column`, `card-problem`, `card-takeaway` **phải là thẻ `<g id="..." data-pptx-bounds="x y w h">` con trực tiếp (direct child) của `<svg>`** và có tọa độ `data-pptx-bounds` tách rời, không chồng lấn nhau. Không bọc các thẻ này bên trong một thẻ `<g id="right-column">` cha, vì `animation_config.py list-groups` chỉ nhận diện các nhóm ở cấp gốc.
+   4. **Đồng bộ `design_spec.md` & `spec_lock.md`**:
+      - Khi tạo ảnh bằng AI (`image-generator` subagent): Lưu hoặc copy ảnh vào `<project>/images/<tên_file>.jpg`, chạy `analyze_images.py`. Trong `design_spec.md §VIII`, nếu `Acquire Via` là `ai` thì cột `Status` **bắt buộc** phải ghi là `Generated` (không ghi `Sourced`). Giá trị `pattern=...` trong `spec_lock.md` phải khớp chính xác với cột `Image pattern` trong `design_spec.md §VIII` (ví dụ: `pattern=card`).
+      - Trong `spec_lock.md`, mục `## icons` phải ghi danh sách icon trên **cùng 1 dòng**: `- inventory: home, bolt, bulb, help` (hoặc `- inventory: []` nếu `library: none`), không viết thành danh sách gạch đầu dòng nhiều dòng.
+   5. **Chuẩn hóa Style tự động trước khi kiểm tra**:
+      - Chạy `venv\Scripts\python.exe skills/ppt-master/scripts/compact_svg_styles.py <project_path>/svg_output --inplace` trước khi chạy `svg_quality_checker.py` để tự động gom thuộc tính thừa và đạt chuẩn `Fully passed: 100% (0 warnings, 0 errors)`.
+
 7. **Bắt buộc lập Bản phác thảo chi tiết (Storyboard) từng slide duyệt trước khi tạo PPTX**:
    - Khi có file giáo án, file SGK hoặc tài liệu giảng dạy, trợ lý **bắt buộc** phải lập bản phác thảo chi tiết từng slide (mô tả rõ Kênh hình, Kênh chữ/Câu hỏi, Khung ghi nhớ, Lời giảng GV) để thầy Nguyễn Thiện duyệt.
    - **Tuyệt đối không chạy lệnh tạo slide hay init project** khi chưa có sự phản hồi đồng ý của thầy.
+   - **Nhánh rút gọn cho Slide lẻ / Bài toán thực tế cụ thể (1–2 slide)**: Khi thầy cô đã gửi trực tiếp đề bài một bài toán hoặc nội dung cụ thể và yêu cầu tạo 1–2 slide lẻ, trợ lý tự động lấy thông tin mặc định trong Hồ sơ đơn vị (`Trường THCS Ứng Hòe — Nguyễn Thiện`, khổ `16:9`, kiểu `Học đường sáng`), lập ngay **Bản phác thảo Storyboard trực quan của slide đó** kèm 1 câu hỏi xác nhận ngắn gọn (không bắt thầy cô trả lời 7 câu hỏi hành chính của cả tiết học 45 phút).
 8. **Cơ chế linh hoạt tiếp nhận & xử lý 3 nguồn hình ảnh**:
    - Bài giảng không làm bài toàn chữ, nhưng không chèn ảnh trang trí vô nghĩa.
    - Xử lý mượt mà cả 3 nguồn ảnh: (1) Bóc tách trực tiếp từ PDF SGK/ảnh chụp điện thoại; (2) Lấy ảnh từ thư mục riêng trên máy giáo viên; (3) Tự động tìm kiếm ảnh thực tế/hiển vi khoa học chất lượng cao từ web (Openverse & Wikimedia).
@@ -617,14 +633,14 @@ Trình bày đầy đủ Bản phác thảo Storyboard chi tiết từng slide g
 
 #### Nguyên tắc thiết kế theo kịch bản:
 - **Giữ nguyên 100% nội dung** giáo viên đã viết — không tự ý thêm bớt ý tưởng.
-- Tự động tối ưu layout, màu sắc, cỡ chữ chuẩn (22-20-18pt Times New Roman), tạo ảnh minh hoạ sắc nét.
+- Tự động tối ưu layout, màu sắc, cỡ chữ chuẩn (Tiêu đề `32–36px`, Khung/Thân bài `20–24px`, Chú thích `16px`, font `Times New Roman`), tạo ảnh minh hoạ sắc nét.
 - Nếu nội dung 1 slide quá dài, tự động tách đôi thành 2 slide phụ và báo cho giáo viên biết.
 
 ---
 
-## IV. QUY CHUẨN XỬ LÝ 3 NGUỒN HÌNH ẢNH (SGK, THỰC TẾ, THƯ MỤC CÓ SẴN)
+## IV. QUY CHUẨN XỬ LÝ 4 NGUỒN HÌNH ẢNH (SGK, THỰC TẾ, THƯ MỤC CÓ SẴN, ẢNH AI)
 
-Để bài giảng đạt chất lượng sư phạm cao nhất, slide **không được toàn chữ** và **không chèn ảnh minh họa vô nghĩa/hoạt hình thiếu khoa học**. Trợ lý hỗ trợ và xử lý mượt mà cả 3 nguồn hình ảnh:
+Để bài giảng đạt chất lượng sư phạm cao nhất, slide **không được toàn chữ** và **không chèn ảnh minh họa vô nghĩa/hoạt hình thiếu khoa học**. Trợ lý hỗ trợ và xử lý mượt mà cả 4 nguồn hình ảnh:
 
 ### 1. NGUỒN 1: Bóc tách trực tiếp từ File PDF SGK, Word Giáo án hoặc Ảnh chụp điện thoại
 - **Khi nào áp dụng**: Giáo viên gửi kèm file SGK (PDF), file Giáo án (DOCX có chèn ảnh) hoặc ảnh chụp các trang sách từ điện thoại.
@@ -632,16 +648,19 @@ Trình bày đầy đủ Bản phác thảo Storyboard chi tiết từng slide g
 - **Quy trình kỹ thuật**:
   1. Trích xuất toàn bộ ảnh gốc:
      ```bash
-     python3 skills/ppt-master/scripts/source_to_md.py <đường_dẫn_file_pdf_hoặc_docx>
+     venv\Scripts\python.exe skills/ppt-master/scripts/source_to_md.py <đường_dẫn_file_pdf_hoặc_docx>
      ```
      Script sẽ tự động giải nén toàn bộ hình ảnh độ phân giải gốc vào thư mục con `extracted_images/` hoặc `images/`.
   2. Phân loại và định danh ảnh theo số hiệu hình SGK (ví dụ: `hinh_17_1_cau_tao_te_bao.png`, `hinh_17_2_te_bao_thuc_vat.png`).
-  3. Chèn vào slide với cơ chế khóa tỉ lệ (chống méo hình/móp hình):
+  3. Chèn vào slide trong `svg_output/` với đường dẫn tương đối `../images/...` và `<clipPath>` khớp 100% tọa độ `x, y, width, height`:
      ```xml
-     <image xlink:href="images/hinh_17_1.png" x="60" y="112" width="550" height="420" preserveAspectRatio="xMidYMid meet"/>
+     <defs>
+       <clipPath id="clip_img_1"><rect x="60" y="112" width="550" height="420" rx="8"/></clipPath>
+     </defs>
+     <image href="../images/hinh_17_1.png" x="60" y="112" width="550" height="420" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip_img_1)"/>
      ```
   4. Luôn ghi chú thích ảnh chuẩn mực phía dưới:
-     `<text ... font-size="18.67" fill="#64748B">Hình 17.1: Cấu tạo tế bào nhân thực (SGK KHTN 6)</text>`
+     `<text ... font-size="16" fill="#64748B">Hình 17.1: Cấu tạo tế bào nhân thực (SGK KHTN 6)</text>`
 
 ### 2. NGUỒN 2: Sử dụng kho ảnh có sẵn trong thư mục trên máy tính của giáo viên
 - **Khi nào áp dụng**: Giáo viên đã có sẵn thư mục ảnh tư liệu (ảnh chụp thí nghiệm thực tế tại trường, ảnh scan chất lượng cao, ảnh do tổ bộ môn sưu tầm) lưu trên ổ đĩa máy tính (ví dụ: `D:\tai_lieu_giang_day\anh_khtn6_bai17\`).
@@ -652,8 +671,8 @@ Trình bày đầy đủ Bản phác thảo Storyboard chi tiết từng slide g
 - **Quy trình kỹ thuật**:
   1. Trợ lý liệt kê toàn bộ file ảnh trong thư mục (`.jpg`, `.png`, `.jpeg`, `.webp`).
   2. Đối chiếu tên file hoặc nội dung ảnh với từng slide trong Bản phác thảo Storyboard.
-  3. Tự động sao chép hoặc trỏ đường dẫn ảnh vào thư mục `images/` của dự án.
-  4. Đặt ảnh vào khung hình chữ nhật bo góc mềm mại, hiển thị rõ ràng cho học sinh.
+  3. Tự động sao chép vào thư mục `images/` của dự án và tham chiếu qua `href="../images/<tên_file>"`.
+  4. Đặt ảnh vào khung hình chữ nhật bo góc mềm mại (có `<clipPath>` khớp 100% kích thước `<image>`), hiển thị rõ ràng cho học sinh.
 
 ### 3. NGUỒN 3: Tự động tìm kiếm ảnh thực tế / ảnh hiển vi / ảnh khoa học chất lượng cao từ Web
 - **Khi nào áp dụng**:
@@ -662,7 +681,7 @@ Trình bày đầy đủ Bản phác thảo Storyboard chi tiết từng slide g
 - **Công cụ thực hiện**:
   - Dùng script tích hợp sẵn:
     ```bash
-    python3 skills/ppt-master/scripts/image_search.py "<từ khóa tiếng Anh>" -o images/<tên_file>.jpg
+    venv\Scripts\python.exe skills/ppt-master/scripts/image_search.py "<từ khóa tiếng Anh>" -o <project_path>/images/<tên_file>.jpg
     ```
   - Tìm kiếm trực tiếp từ kho ảnh khoa học mở khổng lồ: **Openverse** và **Wikimedia Commons**.
 - **Đặc điểm & Tiêu chuẩn**:
@@ -670,6 +689,19 @@ Trình bày đầy đủ Bản phác thảo Storyboard chi tiết từng slide g
   - **Không cần API key**: Chạy trực tiếp, không phụ thuộc tài khoản dịch vụ ngoài.
   - **Độ phân giải cực cao (2000px – 4000px)**: Ảnh gốc siêu nét, chiếu lên màn hình lớn không vỡ hạt.
   - **Dịch thuật ngữ khoa học chính xác**: Trợ lý tự động dịch từ khóa tiếng Việt sang thuật ngữ tiếng Anh chuyên ngành (ví dụ: *"tế bào vảy hành kính hiển vi"* $\to$ `"onion epidermal cells light microscope"`) để lấy đúng ảnh chụp hiển vi thật chuẩn xác của các viện nghiên cứu.
+
+### 4. NGUỒN 4: Tự động tạo ảnh minh họa AI chất lượng cao qua Subagent `image-generator`
+- **Khi nào áp dụng**:
+  - Giáo viên yêu cầu tạo ảnh minh họa đẹp (ví dụ: *"tạo cho tôi ảnh ngôi nhà đẹp"*, *"vẽ ảnh minh họa tình huống bài toán thực tế"*), hoặc bài toán thực tế cần hình ảnh trực quan, thẩm mỹ, không chứa chữ rác.
+- **Quy trình kỹ thuật & Đồng bộ kiểm định (`svg_quality_checker.py`)**:
+  1. Gọi subagent `image-generator` với mô tả chi tiết (yêu cầu rõ: ánh sáng tự nhiên, học đường, **tuyệt đối không có chữ trên ảnh**).
+  2. Sao chép file ảnh từ Artifact sang `<project_path>/images/<tên_file>.jpg`.
+  3. Chạy `venv\Scripts\python.exe skills/ppt-master/scripts/analyze_images.py <project_path>/images` để lấy kích thước thật.
+  4. Trong `design_spec.md` (Mục VIII — Image Asset Plan), khai báo:
+     - `Acquire Via`: `ai`
+     - `Status`: `Generated` *(tuyệt đối không ghi `Ready` khi `Acquire Via: ai`)*
+     - `Slot Archetype`: `card`
+  5. Trong `spec_lock.md`, trang chứa ảnh phải có `pattern=card` để khớp với `Slot Archetype: card`.
 
 ---
 
@@ -758,22 +790,22 @@ Tuyệt đối **không dùng 1 bố cục lặp đi lặp lại**. Trong một 
 
 ### Bước kỹ thuật 1: Khởi tạo dự án
 ```bash
-python3 skills/ppt-master/scripts/project_manager.py init <tên_dự_án>
-python3 skills/ppt-master/scripts/project_manager.py import-sources <project_path> <file_nguồn>
+venv\Scripts\python.exe skills/ppt-master/scripts/project_manager.py init <tên_dự_án>
+venv\Scripts\python.exe skills/ppt-master/scripts/project_manager.py import-sources <project_path> <file_nguồn>
 ```
 
 ### Bước kỹ thuật 2: Chuẩn bị kênh hình
 - Ảnh thực tế đời sống / hiển vi khoa học:
   ```bash
-  python3 skills/ppt-master/scripts/image_search.py "<từ khóa tiếng Anh>" -o images/<tên_file>.jpg
+  venv\Scripts\python.exe skills/ppt-master/scripts/image_search.py "<từ khóa tiếng Anh>" -o <project_path>/images/<tên_file>.jpg
   ```
 - Sơ đồ thí nghiệm / cấu tạo khoa học:
-  Vẽ trực tiếp bằng hình học SVG vector (ống nghiệm, ngọn lửa nến, biểu đồ quạt donut).
+  Vẽ trực tiếp bằng hình học SVG vector (ống nghiệm, ngọn lửa nến, biểu đồ quạt donut, tam giác hình học).
 
 ### Bước kỹ thuật 3: Quy chuẩn Header & Footer SVG (Hỗ trợ cả 2 Kiểu Header)
 
 #### Kiểu Header A — `Solid Top Banner` (Chuẩn STEM_MHHTH_v6 cho Style 1, 2, 3, 5):
-Thanh Header màu đậm tràn viền (`height="100"`) kèm đường chỉ vàng cam `#E8941A` (`height="6"`) cực kỳ sang trọng và nổi bật:
+Thanh Header màu đậm tràn viền (`height="100"`) kèm đường chỉ vàng cam `#E8941A` (`height="6"`) cực kỳ sang trọng và nổi bật (cỡ chữ đồng bộ 100% với `spec_lock.md`):
 ```python
 header_banner_svg = f"""
     <!-- Solid Top Banner Header (Chuẩn STEM_v6) -->
@@ -781,9 +813,9 @@ header_banner_svg = f"""
         <rect x="0" y="0" width="1280" height="100" fill="{theme_primary}"/>
         <rect x="0" y="100" width="1280" height="6" fill="{theme_accent}"/>
         <rect x="40" y="14" width="260" height="26" rx="5" fill="{theme_accent}"/>
-        <text x="52" y="33" font-size="18.67" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">{tag}</text>
-        <text x="40" y="80" font-size="29.33" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">{title}</text>
-        <text x="1240" y="80" font-size="18.67" font-weight="bold" fill="#E2E8F0" text-anchor="end" font-family="Times New Roman, serif">{page_num:02d} / {total_pages:02d}</text>
+        <text x="52" y="33" font-size="16" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">{tag}</text>
+        <text x="40" y="80" font-size="32" font-weight="bold" fill="#FFFFFF" font-family="Times New Roman, serif">{title}</text>
+        <text x="1240" y="80" font-size="16" font-weight="bold" fill="#E2E8F0" text-anchor="end" font-family="Times New Roman, serif">{page_num:02d} / {total_pages:02d}</text>
     </g>
 """
 ```
@@ -794,8 +826,8 @@ header_clean_svg = f"""
     <!-- Clean Academic Header -->
     <g id="page_header" data-pptx-role="header" data-pptx-bounds="60 20 1160 78">
         <rect x="60" y="24" width="280" height="28" rx="6" fill="#EBF3FA"/>
-        <text x="70" y="44" font-size="18.67" font-weight="bold" fill="#1F4E79" font-family="Times New Roman, serif">{tag}</text>
-        <text x="60" y="80" font-size="29.33" font-weight="bold" fill="#1F4E79" font-family="Times New Roman, serif">{title}</text>
+        <text x="70" y="44" font-size="16" font-weight="bold" fill="#1F4E79" font-family="Times New Roman, serif">{tag}</text>
+        <text x="60" y="80" font-size="32" font-weight="bold" fill="#1F4E79" font-family="Times New Roman, serif">{title}</text>
         <line x1="60" y1="96" x2="1220" y2="96" stroke="#E2E8F0" stroke-width="1.5"/>
     </g>
 """
@@ -807,8 +839,8 @@ footer_svg = f"""
     <!-- Footer -->
     <g id="page_footer" data-pptx-role="footer" data-pptx-bounds="0 688 1280 32">
         <rect x="0" y="688" width="1280" height="32" fill="{theme_primary}"/>
-        <text x="40" y="710" font-size="18.67" fill="#FFFFFF" font-family="Times New Roman, serif">{ten_truong} • GV: {ten_gv} • {ten_bai}</text>
-        <text x="1240" y="710" font-size="18.67" font-weight="bold" fill="{theme_accent}" text-anchor="end" font-family="Times New Roman, serif">Trang {page_num:02d}/{total_pages:02d}</text>
+        <text x="40" y="710" font-size="16" fill="#FFFFFF" font-family="Times New Roman, serif">{ten_truong} • GV: {ten_gv} • {ten_bai}</text>
+        <text x="1240" y="710" font-size="16" font-weight="bold" fill="{theme_accent}" text-anchor="end" font-family="Times New Roman, serif">Trang {page_num:02d}/{total_pages:02d}</text>
     </g>
 """
 ```
@@ -905,7 +937,8 @@ Hệ thống tích hợp bộ biên dịch LaTeX sang **Office Math (OMML)** ngu
 
 **Dạng A — Công thức nội dòng (Inline Formula):**
 - Đặt thuộc tính `data-pptx-inline-formula="[Mã_LaTeX]"` trên thẻ `<tspan>` lá (không lồng thẻ con, không chứa tọa độ x/y riêng, không chứa `$` bao quanh).
-- Cỡ chữ khuyến nghị: **22pt – 24pt** (để phân số hoặc số mũ trong dòng không bị bé).
+- **Quy tắc chống cảnh báo geometry của `svg_quality_checker.py`**: Dòng văn bản chứa `<tspan data-pptx-inline-formula="...">` **bắt buộc đặt trong một thẻ `<text x="..." y="...">` đơn dòng độc lập**, tuyệt đối không gộp chung vào khối `<text>` nhiều dòng có `<tspan x="..." dy="...">`.
+- Cỡ chữ khuyến nghị: **20px – 24px** (để phân số hoặc số mũ trong dòng to rõ).
 
 ```xml
 <text x="80" y="320" font-size="24" fill="#1B3A6B" font-family="Times New Roman, serif">
@@ -992,28 +1025,30 @@ Khi bài học cần kèm theo **sơ đồ cấu trúc hóa hữu cơ (vòng Ben
 Trợ lý kiểm tra môi trường hiện tại và thực hiện xuất file PPTX theo 1 trong 2 cơ chế:
 
 #### Cơ chế 1 — Môi trường Studio Đầy đủ (Khi có thư mục `skills/ppt-master`):
-1. **Kiểm tra chất lượng SVG**:
+1. **Rút gọn style lặp (nếu nhiều thẻ `<text>` dùng chung font/fill) & Kiểm tra chất lượng SVG**:
    ```bash
-   python3 skills/ppt-master/scripts/svg_quality_checker.py <project_path> --canonical-authoring --stage final --json
+   venv\Scripts\python.exe skills/ppt-master/scripts/compact_svg_styles.py <project_path>
+   venv\Scripts\python.exe skills/ppt-master/scripts/svg_quality_checker.py <project_path> --canonical-authoring --stage final --json
    ```
-2. **Xuất PowerPoint Native (tự động đọc `animations.json` & OMML)**:
+2. **Hoàn tất SVG & Xuất PowerPoint Native (tự động đọc `animations.json`, `notes/total.md` & OMML)**:
    ```bash
-   python3 skills/ppt-master/scripts/svg_to_pptx.py <project_path>
+   venv\Scripts\python.exe skills/ppt-master/scripts/finalize_svg.py <project_path>
+   venv\Scripts\python.exe skills/ppt-master/scripts/svg_to_pptx.py <project_path>
    ```
-3. **Vá font Times New Roman**:
+3. **Vá font Times New Roman (dùng script trong thư mục của skill `tao-slide-bai-giang`)**:
    ```bash
-   python3 skills/ppt-master/scripts/patch_fonts.py <đường_dẫn_file.pptx>
+   venv\Scripts\python.exe "$env:USERPROFILE\.gemini\config\skills\tao-slide-bai-giang\scripts\patch_fonts.py" <đường_dẫn_file.pptx>
    ```
 4. **Kiểm tra hiệu ứng sư phạm**:
    ```bash
-   python3 tools/vi/kiem_hieu_ung.py <duong_dan_file.pptx> --muc vua
+   venv\Scripts\python.exe tools/vi/kiem_hieu_ung.py <duong_dan_file.pptx> --muc vua
    ```
 
 #### Cơ chế 2 — Môi trường Độc lập trên máy Giáo viên (Khi không có `skills/ppt-master`):
 Trợ lý AI **tự động viết script Python sử dụng thư viện `python-pptx`** (đã được cài đặt sẵn qua `cai_dat_tu_dong.bat`) để tạo trực tiếp file `.pptx` bài giảng với đầy đủ các tiêu chuẩn sư phạm vàng:
 - Tỉ lệ màn hình 16:9 (`slide_width = Inches(13.333)`, `slide_height = Inches(7.5)`).
 - Font chữ toàn bài chuẩn 100% `Times New Roman`.
-- Cỡ chữ to rõ: Tiêu đề 22pt, Đề mục 20pt, Thân bài/Câu hỏi 18pt, Ghi chú 14pt.
+- Cỡ chữ to rõ: Tiêu đề `24–27pt` (`32–36px`), Khung/Thân bài/Câu hỏi `15–18pt` (`20–24px`), Ghi chú `12pt` (`16px`).
 - Bố cục 3 bước trực quan: Khung Kênh hình (ảnh SGK/thực tế), Khung Câu hỏi thảo luận phát vấn, Khung Nổi bật Em cần ghi nhớ.
 - Tự động ghi lời giảng chi tiết của giáo viên vào phần **Notes** (Ghi chú) của từng slide để hỗ trợ giảng dạy hoặc đọc lồng tiếng.
 
@@ -1077,7 +1112,7 @@ Khi giáo viên yêu cầu trong khung chat: *"Em viết lời bình và xuất 
 | **Phát vấn** | `Câu hỏi phát vấn`, `Phát vấn học sinh` | `CÂU HỎI THẢO LUẬN`, `❓ THẢO LUẬN NHÓM` | `💬 LET'S TALK`, `❓ WORK IN PAIRS / GROUPS` |
 | **Ghi vở** | `Kết luận học sinh ghi vào vở`, `Chốt bài ghi vở` | `💡 EM CẦN GHI NHỚ`, `💡 KIẾN THỨC TRỌNG TÂM` | `💡 REMEMBER!`, `🔤 NEW VOCABULARY`, `📐 GRAMMAR FOCUS` |
 | **Thí nghiệm / Thực hành** | `Mô phỏng kênh hình thí nghiệm` | `THÍ NGHIỆM: [TÊN THÍ NGHIỆM]` | `🎯 PRACTICE — TASK 1, 2, 3` |
-| **Đề mục** | Có dòng chữ nhỏ chú thích dưới đề mục | **Bỏ hoàn toàn**, chỉ để tiêu đề to rõ (22pt) | **Bỏ hoàn toàn**, chỉ để Unit / Lesson Title to rõ (22pt) |
+| **Đề mục** | Có dòng chữ nhỏ chú thích dưới đề mục | **Bỏ hoàn toàn**, chỉ để tiêu đề to rõ (`32–36px`) | **Bỏ hoàn toàn**, chỉ để Unit / Lesson Title to rõ (`32–36px`) |
 | **Ký hiệu liệt kê** | Dấu gạch ngang `-` đơn điệu | Dùng ký hiệu tam giác `▸` sắc nét, hiện đại | Dùng ký hiệu `▸` sắc nét, hiện đại |
 
 ---
