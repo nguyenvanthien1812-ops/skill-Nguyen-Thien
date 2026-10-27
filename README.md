@@ -9,7 +9,8 @@
 
 Kho lưu trữ các Skill chuyên biệt dành cho giáo viên và trợ lý AI Antigravity / Gemini / Claude:
 
-1. **`tao-slide-bai-giang`**: Soạn slide PowerPoint (PPTX) bài giảng chuẩn mực sư phạm từ file Giáo án (Word, PDF) hoặc Sách giáo khoa (SGK). 100% Native DrawingML không đè chữ, chuẩn GDPT 2018, bắt buộc duyệt bản phác thảo Storyboard trước khi tạo PPTX, hỗ trợ 3 nguồn hình ảnh.
+1. **`soan-giao-an-tich-hop-nls`**: Soạn Kế hoạch bài dạy chuẩn CV 5512 (THCS, THPT) hoặc CV 2345 (Tiểu học) tích hợp Năng lực số (TT 02/2025), Năng lực AI (QĐ 3439), HSKT và Tiếng Anh chuyên ngành. Bảo toàn 100% công thức MathType OLE và bảng biểu 2 cột.
+2. **`tao-slide-bai-giang`**: Soạn slide PowerPoint (PPTX) bài giảng chuẩn mực sư phạm từ file Giáo án (Word, PDF) hoặc Sách giáo khoa (SGK). 100% Native DrawingML không đè chữ, chuẩn GDPT 2018, bắt buộc duyệt bản phác thảo Storyboard trước khi tạo PPTX, hỗ trợ 3 nguồn hình ảnh.
 2. **`tao-video-khoi-dong-bai-hoc`**: Lên kịch bản và trọn bộ Prompt Veo 3 cho video khởi động bài học (warm-up video) 60–80 giây. Đồng nhất nhân vật thầy/cô giáo, loại bỏ hoàn toàn chữ trong video tránh lỗi font AI, an toàn chính sách kiểm duyệt 100% và không spoil đáp án trước.
 
 ---
