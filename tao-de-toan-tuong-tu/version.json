@@ -1,0 +1,209 @@
+{
+  "name": "tao-de-toan-tuong-tu",
+  "version": "5.8.0",
+  "release_date": "2026-10-26",
+  "description": "Skill tạo đề thi 8 MÔN (Toán, Vật Lý, Hóa Học, Sinh Học, KHTN, Địa Lý, KTPL, Ngữ Văn) lớp 6-12 chuẩn GDPT 2018. Thẩm định & rà soát đề thi theo 44 tiêu chí (xuất biên bản Word & Dashboard Excel + Auto-fix). Tạo đề từ ma trận đặc tả. Chấm tự luận bằng AI Gemini Vision. Xuất MathType OLE 14pt, PDF đẹp qua Chrome/Edge, kiểm định tự động GDPT 2018.",
+  "author": "Antigravity Assistant & Thầy Cô Giáo",
+  "github_repo": "nguyenvanthien1812-ops/skill-tao-de-tuong-tu",
+  "changelog": {
+    "5.8.0": [
+      "BỔ SUNG TIÊU CHÍ E03 & E04 VÀO BỘ THẨM ĐỊNH ĐỀ THI (44 TIÊU CHÍ CHUẨN GDPT 2018): E03 kiểm tra đồng bộ cỡ chữ công thức MathType OLE (chuẩn 13pt-14pt, phát hiện lệch cỡ do copy từ nhiều nguồn); E04 kiểm tra chuẩn hiển thị phân số và biểu thức tầng (phát hiện phân số bị co nhỏ kiểu inline \\frac). Tích hợp cơ chế Auto-fix tự động đồng bộ cỡ chữ và phân số khi giáo viên duyệt Đồng ý.",
+      "TÍCH HỢP BỘ CHUẨN HÓA ĐỒNG BỘ CỠ CHỮ MATHTYPE OLE VÀ PHÓNG TO PHÂN SỐ (1-CLICK TRONG WORD): Giải quyết triệt để hiện tượng công thức to nhỏ không đều và phân số bị thu nhỏ tí hon so với văn bản.",
+      "BỘ CẤU HÌNH EQP CHUẨN GDPT 2018 (PHÂN SỐ TO RÕ 75%): Tích hợp sẵn Times_14pt_Chuan_BGD.eqp (14pt), Times_13pt_Chuan_BGD.eqp (13pt), Times_12pt_Chuan_BGD.eqp (12pt). Tự động sao chép ra Desktop và thư mục xuất file mỗi khi xuất Word.",
+      "HƯỚNG DẪN 2 CÁCH KÈM HÌNH ẢNH TRỰC QUAN: Bổ sung Cách 1 (Click Desktop) và Cách 2 (Dán trực tiếp đường dẫn siêu nhanh) kèm 2 hình ảnh minh họa thực tế vào cẩm nang giáo viên, menu bàn giao sau task và tài liệu tham chiếu UX.",
+      "NÂNG CẤP BACKEND EXPORT & STANDARDIZE: scripts/docx_math_builder.py và scripts/standardize_word_mathtype.py tự động gọi deploy_mathtype_pref_files() và in hướng dẫn chuẩn hóa ra terminal."
+    ],
+    "5.7.0": [
+      "TÍCH HỢP BỘ CÔNG CỤ THẨM ĐỊNH & RÀ SOÁT ĐỀ KIỂM TRA (42 TIÊU CHÍ CHUẨN GDPT 2018): Xây dựng trọn gói 5 module lõi (exam_extractor, exam_validator, report_generator, auto_fixer, exam_reviewer_cli). Tự động đối chiếu chéo 100% giữa Ma trận - Đề thi - Hướng dẫn chấm, kiểm tra vượt chương trình, bám sát Yêu cầu cần đạt, nghiệm đẹp, đáp án duy nhất đúng, phân bổ đáp án A/B/C/D, 100% công thức MathType OLE 14pt và bảng biểu liền nét.",
+      "TỰ ĐỘNG XUẤT 2 BÁO CÁO CHUYÊN NGHIỆP: Biên bản thẩm định Word (.docx) chuẩn mẫu Hội đồng thẩm định có bảng biểu chữ ký và Dashboard thống kê Excel (.xlsx) trực quan.",
+      "CƠ CHẾ KẾ HOẠCH SỬA CHỮA & AUTO-FIX TỰ ĐỘNG: Trình Correction Plan lên chat, chờ giáo viên duyệt Đồng ý / OK thì tự động sửa các lỗi cấu trúc (mã đề HDC, bổ sung dấu HẾT, thêm lưu ý chấm) và xuất file _FIXED.docx.",
+      "BỔ SUNG LAUNCHER 1-CLICK THAM_DINH_DE_THI.bat & KỊCH BẢN PHẢN HỒI MẪU: Hỗ trợ giáo viên kéo thả file để thẩm định tự động, bổ sung mục 11 trong references/onboarding_prompts.md và tài liệu kỹ thuật references/tham_dinh_de_thi.md."
+    ],
+    "5.6.0": [
+      "CHUẨN HÓA TOÀN DIỆN MA TRẬN & BẢN ĐẶC TẢ WORD (matrix_to_docx.py & exam_from_matrix.py): Tách riêng cột Mức độ đánh giá và cột Yêu cầu cần đạt; mỗi mức độ nhận thức (Nhận biết, Thông hiểu, Vận dụng, Vận dụng cao) nằm trên 1 dòng riêng biệt kèm số câu và mã câu hỏi (C1, C2, C17a...) ở ngay cùng dòng đó; bắt buộc có đầy đủ bộ dòng Tổng kết cuối bảng ở cả Bảng 1 (Ma trận) và Bảng 2 (Bản đặc tả).",
+      "KHẮC PHỤC TRIỆT ĐỂ LỖI MẤT NÉT VIỀN & LẶP CHỮ Ô GỘP DỌC TRONG PYTHON-DOCX (enforce_perfect_table_borders & _dedupe_merged_cell_paragraphs): Tự động gắn w:tblBorders toàn bảng, quét toàn bộ thẻ XML w:tc (kể cả ô ẩn vMerge) để đóng khung đủ 4 cạnh, kế thừa màu nền w:shd, sắp xếp chuẩn thứ tự thẻ con OOXML (tcPr/tblPr) và khử sạch đoạn văn lặp trong các ô gộp dọc.",
+      "TÁI CẤU TRÚC MÔ-ĐUN HÓA SKILL.md (từ 187 KB xuống 47.6 KB, giữ nguyên 100% quy tắc vào 12 file chuyên đề trong references/*.md): Sửa lỗi dính heading Bước 4, bổ sung Bản đồ Tài liệu điều hướng nhanh, ghim Bộ 6 Chú ý bắt buộc ngay đầu SKILL.md.",
+      "ĐỒNG BỘ & KIỂM ĐỊNH TỰ ĐỘNG (sync_skill.py): Tự động kiểm định biên dịch 21 script, kiểm tra cấu trúc Markdown, kiểm định 1396 ô bảng Ma trận mẫu, chặn license_manager.py tự nhân bản license.key vào thư mục làm việc bất kỳ (include_cwd=False khi ghi), và đồng bộ 100% giữa bản Workspace và Global."
+    ],
+    "5.5.3": [
+      "TÍCH HỢP TÍNH NĂNG TẠO THÍ NGHIỆM ẢO & MÔ PHỎNG 3D TƯƠNG TÁC (TỪ ẢNH CHỤP SGK HOẶC MÔ TẢ): Bổ sung kịch bản phản hồi 'cầm tay chỉ việc' cho giáo viên (Mục 10 SKILL.md và Nhóm 6 Cẩm nang), hỗ trợ bóc tách dụng cụ/hóa chất/tiến trình thực hành từ ảnh chụp SGK GDPT 2018 bằng AI Vision và xuất file HTML5 tương tác 60 FPS chạy Offline 100% không cần mạng.",
+      "KHÓA CODE & BẢO VỆ CHỐNG HỒI QUY (LOCKED & FROZEN v2.5): Niêm phong toàn diện bộ lọc LaTeX Sanitizer (xử lý triệt để ký hiệu song song \\parallel & // chuẩn SGK Việt Nam, dọn sạch 100% rác raw text, không lọt $), cỡ chữ 13pt nội dung, công thức MathType OLE 14pt và tự động thu dọn file tạm sau khi biên dịch."
+    ],
+    "5.5.2": [
+      "CHUẨN HÓA TOÀN DIỆN KÝ HIỆU HÌNH HỌC SGK GDPT 2018 (docx_math_builder & standardize_word_mathtype): Tự động khử triệt để lỗi MathType in text thô \\wideparen{...} sang \\text{cung } ..., chuẩn hóa \\parallel sang // (hai gạch xiên chuẩn SGK Việt Nam), đệm dấu nhân \\cdot trước góc \\widehat khi có hệ số số học (chống MathType gom số vào mũ góc).",
+      "PHÂN TÁCH DISPLAY MATH ĐỘC LẬP (add_display_eq): Tách các công thức biến đổi trọng tâm thành paragraph riêng căn giữa độc lập, loại bỏ 100% tình trạng sót chuỗi LaTeX thô $...$ trong văn bản.",
+      "CƠ CHẾ TỰ ĐỘNG CHỐNG XUNG ĐỘT KHÓA FILE WORD (PermissionError Windows Lock): Tự động phát hiện khi file Word đang mở bởi người dùng, tự động lưu sang <ten_file>_moi.docx an toàn 100% không gián đoạn."
+    ],
+    "5.5.1": [
+      "TÍCH HỢP HỆ THỐNG KỊCH BẢN PHẢN HỒI 'CẦM TAY CHỈ VIỆC' KHI GIÁO VIÊN GÕ LỆNH NGẮN: Tự động hướng dẫn chi tiết 3 cách đưa file (Kéo thả chuột 1 giây, Copy vào thư mục làm việc, phím tắt Shift+Chuột phải lấy đường dẫn) và cung cấp sẵn câu lệnh mẫu copy-paste cho 9 tác vụ: Tạo đề tương tự (3 mức độ khó Tương đương/Dễ hơn/Khó hơn), Chuyển PDF sang Word, Chuẩn hóa MathType OLE, Trộn 4 mã đề, Dịch tiếng Anh song ngữ, Tạo ma trận đặc tả, Trích xuất ma trận từ đề, Nhận diện ảnh đề thi OCR, và Lập trình vẽ hình kỹ thuật 300 DPI.",
+      "BỘ HẬU XỬ LÝ NHỊ PHÂN MTEF TỰ ĐỘNG (postprocess_ole_docx_fix_delimiters): Quét và chuẩn hóa trực tiếp các đối tượng OLE .bin trong file Word để triệt tiêu vĩnh viễn cả lỗi kim cương đen (◆ do U+2223) và lỗi dấu ngoặc đơn mở ('(' do MT Extra 0x7c), bảo đảm 100% vạch đứng | thẳng tắp chuẩn MathType 14pt khi kích đúp."
+    ],
+    "5.5.0": [
+      "KHẮC PHỤC TRIỆT ĐỂ LỖI KÍCH ĐÚP MATHTYPE BIẾN DẤU GIÁ TRỊ TUYỆT ĐỐI |...| THÀNH DẤU NGOẶC ĐƠN MỞ '(': Phát hiện và xử lý tận gốc cơ chế xung đột font nhị phân MTEF. Khi dùng \\left|...\\right| hoặc |...|, bộ biên dịch sinh ra Fence Template tmBAR với mã 0x7C trỏ vào font MT Extra (mtextra.ttf), trong đó glyph 0x7C là 'verticalbracketright' (hình vòng cung ngoặc đơn mở '('). Trong Word nhìn bình thường (nhờ ảnh WMF cache), nhưng khi kích đúp MathType.exe để sửa thì lập tức bị đổi thành '(x - 2('!",
+      "Giải pháp toàn diện: Tự động chuẩn hóa dấu gạch đứng / giá trị tuyệt đối sang \\mid ... \\mid trong cả 2 quy trình tạo đề mới và chuẩn hóa file cũ (docx_math_builder.py & standardize_word_mathtype.py). Ký tự được ánh xạ chuẩn xác sang mã Unicode 0x2223 (Symbol font thẳng đứng), giữ nguyên vạch đứng | 100%, kích đúp MathType sửa mượt mà không bao giờ bị biến dạng.",
+      "Nâng cấp thư viện lõi omml_converter (omml_to_mathml.py & mathml_to_mtef.py): Bổ sung toán tử U+2223 vào _OPS và ánh xạ sang mã Symbol 0x2223, bảo đảm tính nhất quán trên cả luồng OMML Word Equation và MathType OLE."
+    ],
+    "5.4.0": [
+      "QUY CHUẨN TOÀN DIỆN MÔN HÓA HỌC CHUẨN GDPT 2018 & IUPAC (100% MathType OLE): Khóa cứng quy định font chữ nguyên tố/hợp chất bắt buộc in THẲNG ĐỨNG \\mathrm{...} theo danh pháp quốc tế IUPAC, tuyệt đối không in nghiêng như biến số Toán.",
+      "KHẮC PHỤC TRIỆT ĐỂ LỖI MŨI TÊN PHẢN ỨNG HÓA HỌC BỊ NGẮN NGỦN: Tự động chuyển đổi \\overset/\\underset trên \\rightleftharpoons thành mũi tên co giãn hai chiều \\xrightleftharpoons[dưới]{trên} (và \\xrightarrow) tự động dãn dài theo đúng độ rộng của chữ điều kiện bên trên (như H2SO4 đặc, t°).",
+      "Chuẩn hóa 100% hệ thống ký hiệu Hóa học: Mũi tên 1 chiều có điều kiện (\\xrightarrow{t^\\circ, \\text{xt}}), mũi tên thuận nghịch cân bằng (\\rightleftharpoons), ký hiệu kết tủa/bay hơi (\\downarrow, \\uparrow), trạng thái chất ((s), (l), (g), (aq)).",
+      "Hỗ trợ chuẩn xác Nhiệt hóa học (\\Delta_r H_{298}^\\circ, \\Delta_f H_{298}^\\circ), điện tích ion chuẩn mới (số trước dấu sau: SO_4^{2-}, Al^{3+}), phức chất ([Cu(NH_3)_4]^{2+}) và pin điện hóa Galvanic (\\mid, \\parallel).",
+      "Nâng cấp bộ tự động Sanitize LaTeX trong docx_math_builder.py: Tự động chuyển đổi \\rightleftarrows -> \\rightleftharpoons và hỗ trợ gói mhchem \\ce{...} -> \\mathrm{...} bảo đảm 100% hiển thị hoàn mỹ trong MathType OLE.",
+      "Tích hợp phương pháp giải Sơ đồ bảo toàn (khối lượng, nguyên tố, electron, điện tích) và tư duy Hóa học xanh vào bộ kiểm định tự động gdpt2018_validator.py."
+    ],
+    "5.3.0": [
+      "NÂNG CẤP HƯỚNG DẪN ĐỘ KHÓ ĐỀ TƯƠNG TỰ (3 mức: Dễ hơn / Tương đương / Khó hơn): Bổ sung đầy đủ 3 câu lệnh mẫu copy-paste cho giáo viên trong Bước 0.1 (Mức A — Tương đương, Mức B — Dễ hơn, Mức C — Khó hơn) với hướng dẫn ngôn ngữ giáo viên cụ thể, rõ ràng.",
+      "BỔ SUNG BẢNG ĐIỀU CHỈNH TỶ LỆ NB/TH/VD/VDC THEO ĐỘ KHÓ (Bước 2.0): Khi easier → NB:TH:VD:VDC = 40:40:15:5%; khi equivalent → 30:40:20:10%; khi harder → 20:30:25:25%. Agent PHẢI phân bổ lại số câu thực sự — không chỉ thay số liệu.",
+      "Bổ sung bảng ví dụ minh họa số câu cụ thể (45 câu, 90 phút) cho từng mức độ easier/equivalent/harder.",
+      "Cập nhật quy tắc thiết kế câu hỏi Bước 2.0: Ưu tiên điều chỉnh phân phối NB/TH/VD/VDC trước (Bước 1), sau đó mới thay số liệu (Bước 2–4).",
+      "Hướng dẫn giáo viên cả 2 cách đưa file kết hợp với lựa chọn mức độ khó (workspace local + Copy as path từ bất kỳ đâu), kèm ví dụ câu lệnh đầy đủ Mức B (dễ hơn) cho Cách 2."
+    ],
+    "5.2.0": [
+      "NÂNG CẤP HỆ THỐNG BẢN QUYỀN PHÂN QUYỀN THEO TIỆN ÍCH (Modular Feature Licensing): Cho phép Tác giả cấp mã License Key mở khóa trọn bộ 8 tiện ích (FULL VIP) hoặc bán lẻ từng tiện ích riêng biệt (PDF sang Word, Tạo đề tương tự, Chuẩn hóa MathType, Trộn 4 mã đề, Dịch tiếng Anh/Song ngữ, Ma trận đặc tả, Chấm tự luận AI, Nhận diện ảnh đề OCR).",
+      "Bảo mật chữ ký số RSA-PSS cho danh sách tiện ích trong Key; tương thích ngược 100% với toàn bộ các mã License Key đã cấp trước đây.",
+      "Tích hợp cổng kiểm tra phân quyền tiện ích kép (Dual-Gate): Kiểm soát ở cả Bước 0 của AI Agent (SKILL.md) và bên trong từng script Python chuyên biệt.",
+      "Bổ sung công cụ Xuất Bộ Cài Lẻ Từng Tiện Ích (5_XUAT_BO_CAI_LE_TUNG_TIEN_ICH.bat / xuat_bo_cai_le.py) tự động đóng gói 8 file .zip độc lập cho từng tiện ích."
+    ],
+    "5.1.1": [
+      "Khắc phục triệt để lỗi hiển thị ký hiệu song song (// và \\parallel) và vuông góc (\\perp): Tự động chuẩn hóa đệm khoảng cách toán học đối xứng, chống dính sát chữ cái và đoạn thẳng.",
+      "Hỗ trợ 100% chuẩn ký hiệu hai gạch xiên song song (// hoặc ⫽) của SGK GDPT 2018 Toán cấp 2 và 3 trong cả MathType OLE và Word Equation (OMML).",
+      "Sửa lỗi bộ chuyển đổi MathType (omml_converter): Phân loại chuẩn xác ∥ (U+2225), ⫽ (U+2AFD), ⊥ (U+22A5) thành toán tử quan hệ <mo> mang font TF_SYMBOL (Typeface 6), chấm dứt hoàn toàn hiện tượng biến thành ô vuông rỗng □ hoặc dấu chấm hỏi ? trong MathType OLE.",
+      "Tự động chuẩn hóa dấu giá trị tuyệt đối |...| sang \\left| ... \\right| chuẩn template tmFENCE của MathType, ngăn ngừa triệt để lỗi mất dấu gạch đứng khi nhấp đúp mở chỉnh sửa."
+    ],
+    "5.1.0": [
+      "NÂNG CẤP BƯỚC 0.1: Bộ điều hướng & prompt mẫu chuẩn vàng đồng bộ cho tất cả 8 tính năng cốt lõi (PDF sang Word, Tạo đề tương tự, Chuẩn hóa công thức Word, Trộn 4 mã đề hoán vị, Dịch tiếng Anh/Song ngữ, Tạo ma trận đặc tả, Trích xuất ma trận từ đề, Nhận diện ảnh đề thi OCR).",
+      "Hướng dẫn trực quan 2 cách đưa file: Cách 1 (Copy vào workspace kèm đường dẫn thực tế) và Cách 2 (Shift + chuột phải Copy as path) kèm prompt mẫu 3 Tiêu chí vàng copy-paste ngay.",
+      "Tích hợp hệ thống thu hồi bản quyền đa tầng từ xa (Remote License Revocation) với cơ chế cache buster.",
+      "Tích hợp bộ xem trước ma trận trực quan (8 môn) và xuất bảng ma trận đặc tả chuẩn Table Grid ra Word."
+    ],
+    "5.0.0": [
+      "TÍNH NĂNG MỚI: Tạo đề từ ma trận đặc tả (scripts/exam_from_matrix.py) — không cần đề gốc. GV nhập ma trận bất kỳ (bảng chat, Excel, Word, nói tự nhiên), AI sinh từng câu hỏi theo ô ma trận, GV review + nút Sinh lại câu này trước khi xuất.",
+      "TÍNH NĂNG MỚI: Chấm bài tự luận bằng AI (scripts/essay_grader.py) — GV chụp ảnh bài làm HS → OCR Gemini Vision → chấm theo rubric GDPT 2018 → AI gợi ý điểm từng tiêu chí → GV xác nhận điểm cuối cùng.",
+      "TÍNH NĂNG MỚI: Xuất báo cáo chấm (scripts/grading_report.py) — Word feedback cho HS, Excel bảng điểm cả lớp, PDF báo cáo.",
+      "DỮ LIỆU MỚI: references/default_matrices.json — 8 ma trận đặc tả mặc định GDPT 2018 (Toán/Lý/Hóa 11&12/Sinh/KHTN 8/Địa/Văn 12).",
+      "DỮ LIỆU MỚI: references/rubric_templates.json — Rubric chấm tự luận cho 8 môn × nhiều loại câu (nghị luận, nhận xét biểu đồ, tình huống pháp luật, sơ đồ lai, thí nghiệm...).",
+      "CẬP NHẬT SKILL.md: Bước 0.5 (Tạo đề từ ma trận), Bước 7 (Chấm tự luận AI). Help menu cập nhật đầy đủ."
+    ],
+    "4.1.1": [
+      "Chuyển phương thức xuất PDF từ LaTeX sang Chrome/Edge headless làm mặc định — giáo viên không cần cài MikTeX.",
+      "Edge/Chrome tự động phát hiện (100% Windows 10/11 có sẵn Edge), LaTeX giữ làm fallback.",
+      "Giữ LaTeX fallback nếu xelatex/pdflatex có trong PATH.",
+      "Bỏ thông tin cá nhân khỏi test data (contact_info = rỗng)."
+    ],
+    "4.1.0": [
+      "Tích hợp chuẩn GDPT 2018 toàn diện cho 8 môn (Toán, Vật Lý, Hóa Học, Sinh Học, KHTN, Địa Lý, KTPL, Ngữ Văn) lớp 6-12.",
+      "Thêm Bước 2bis: Checklist Kiểm Định Tự Động GDPT 2018 bắt buộc trước khi xuất đề.",
+      "Tích hợp phương pháp giải chuẩn mới: Mô hình hóa Toán 4 bước, Thực nghiệm Vật Lý 6 bước, Sơ đồ bảo toàn Hóa Học, Quy trình khoa học Sinh Học, Tình huống Pháp Luật 5 bước, Phân tích biểu đồ Địa Lý 4 bước, Đọc hiểu & Nghị luận Ngữ Văn.",
+      "Tạo script mới scripts/gdpt2018_validator.py: 8 loại kiểm tra (cấu trúc, NB/TH/VD/VDC, Đúng/Sai 4 ý, trả lời ngắn số gọn, ngữ cảnh thực tiễn, tự luận phiên giải, đặc thù môn, KHTN tích hợp), báo cáo trực quan, xuất JSON.",
+      "Bổ sung GDPT2018_STRUCTURE_GLOSSARY (60+ thuật ngữ) vào exam_translator.py: 8 môn, cấu trúc 3 phần Part I/II/III, mức độ NB/TH/VD/VDC, hóa học xanh, sơ đồ lai, biểu đồ địa lý, tình huống pháp luật, nghị luận văn học.",
+      "Cập nhật references/quy_chuan_de_thi_2025.md: template câu hỏi Đúng/Sai cho 6 môn, thang điểm chuẩn, bảng phân phối NB/TH/VD/VDC.",
+      "Tạo mới references/gdpt2018_methods.md: phương pháp giải đầy đủ 8 môn + ma trận đặc tả chuẩn."
+    ],
+    "3.0.0": [
+      "Tích hợp cơ chế tự động Sanitize cú pháp LaTeX (sanitize_latex_for_mathtype) trong docx_math_builder.py: tự động thay \\implies -> \\Rightarrow và \\iff -> \\Leftrightarrow, loại trừ triệt để lỗi MathType nuốt mất mũi tên suy ra hoặc dính biểu thức toán học.",
+      "Quy chuẩn hóa bắt buộc: 100% tài liệu xuất Word (giải bài tập, tạo đề tương tự, dịch đề, chuyển PDF sang Word) đều tự động xuất bản đối tượng MathType OLE nguyên bản (Equation.DSMT4, 14pt) và kiểm định Integrity Audit đạt 0 ký tự $ sót lại.",
+      "Bổ sung Module Biên Dịch Đề Thi Sang Tiếng Anh Học Thuật Chuẩn Quốc Tế (scripts/exam_translator.py): Hỗ trợ xuất đồng thời bản tiếng Anh 100% (English-Only Exam) và bản Song ngữ Anh - Việt (Bilingual Exam) chuẩn phong cách khảo thí quốc tế (Cambridge IGCSE/A-Level, IB, SAT, AP, AMC, Kangaroo).",
+      "Tích hợp bộ từ điển chuyên ngành Toán - Lý - Hóa Anh - Việt chuẩn mực hơn 250 thuật ngữ và các mẫu câu mệnh lệnh sư phạm quốc tế (Prove that, Calculate, Find the maximum value...).",
+      "Bảo toàn 100% hình vẽ kỹ thuật 450 DPI và hệ thống công thức MathType OLE khi biên dịch đa ngôn ngữ."
+    ],
+    "2.9.1": [
+      "Khắc phục triệt để ký hiệu véc-tơ chuẩn SGK: mũi tên dài bao phủ trọn vẹn bề ngang 2+ chữ cái (AB, BC, AS...), nâng cao 0.22*h chống dính chữ, tích hợp 3 tầng fallback đo text bbox (renderer -> canvas.renderer -> ước lượng hình học), mutation_scale tính theo pixel độc lập dữ liệu",
+      "Khắc phục 100% chuyển đổi MathType OLE: bổ sung cơ chế thử lại 3 cấp (chuyển trực tiếp -> chuẩn hóa LaTeX -> log kiểm toán), bảo đảm residual $ = 0, đạt 100% Integrity Audit Gate",
+      "Nâng cấp độ phân giải hình học 450 DPI toàn diện (khắc phục 55 hàm vẽ hardcode 300 DPI), bổ sung 6 thông số rcParams chống mờ nét vẽ, khử răng cưa khi in ấn A4",
+      "Bổ sung hệ thống hàm chuẩn hóa ký hiệu toán học sắc nét: đạo hàm to đậm chuẩn in ấn fmt_derivative, tích phân chuẩn SGK fmt_integral, góc đỉnh rộng fmt_angle, nhãn độ đen tuyền add_degree_label",
+      "Tích hợp cơ chế kiểm soát độ khó đề thi (difficulty_level: easier / equivalent / harder) trong Bước 2 của SKILL.md, đảm bảo 100% giữ nguyên dạng bài, kiểu bài và ma trận đặc tả từ đề gốc"
+    ],
+    "2.9.0": [
+      "Áp dụng chuẩn hóa Quy trình Xuất Bản Word MathType OLE 100% nguyên bản (Equation.DSMT4) cho TOÀN BỘ CÁC MODULE TRONG SKILL",
+      "Tích hợp cổng kiểm định tính toàn vẹn bắt buộc (Integrity Audit Gate): tự động đếm số đối tượng OLE nhúng thực tế và quét sạch 100% ký tự $ sót lại (residual_count == 0)",
+      "Nâng cấp docx_math_builder.py: hỗ trợ toàn diện các dạng câu hỏi GDPT 2018 (Phần I, II, III, IV / tự luận / chuyên đề thực tế), bảng biểu Table Grid viền sắc nét, chèn hình kỹ thuật 300-400 DPI",
+      "Nâng cấp exam_shuffler.py: tự động xuất đồng thời trọn bộ file Word MathType OLE cho từng mã đề hoán vị (bản Học sinh + bản Giáo viên) kèm phiếu trắc nghiệm bong bóng và file Excel",
+      "Nâng cấp pdf_to_math_docx.py: đồng bộ hoàn toàn với bộ máy chuyển đổi MathType OLE có kiểm định tự động",
+      "Cung cấp hàm API cấp cao export_exam_to_word_mathtype 1-click cho giáo viên và AI Agent"
+    ],
+    "2.8.1": [
+      "Khắc phục triệt để lỗi Antigravity không tìm thấy file license.key: Tích hợp cơ chế quét và đồng bộ bản quyền đa đường dẫn (Multi-path auto-sync)",
+      "Tự động đồng bộ hai chiều giữa thư mục giải nén, thư mục Antigravity global (%USERPROFILE%/.gemini/config/skills/tao-de-toan-tuong-tu) và thư mục người dùng (%USERPROFILE%/.gemini/license.key)",
+      "Tự động nạp toàn bộ skill vào Google Antigravity ngay sau khi kích hoạt hoặc cài đặt 1-Click thành công",
+      "Tối ưu tốc độ kiểm tra bản quyền (timeout 1.5s non-blocking, tránh trễ kết nối mạng)",
+      "Bổ sung cơ chế cho phép dán mã License Key trực tiếp trong khung chat Antigravity để kích hoạt tức thì"
+    ],
+    "2.8.0": [
+      "Mở rộng toàn diện hệ thống vẽ hình Toán & Vật lý (Lớp 6 - 12) đạt độ bao phủ >=98% tất cả dạng bài có hình",
+      "Bổ sung 16 hàm Python Matplotlib mới (tổng 37 hàm): hàm mũ/log, biến đổi |f(x)| & f(|x|), biểu đồ thống kê (cột tần số, quạt tròn), trục số nghiệm BPT, hệ vectơ Oxy, so sánh 2 hàm tích phân, giao thoa sóng, phân rã hạt nhân, conic sections (elip/hypebol), ném xiên parabol, tổng Riemann tích phân, đường sức điện trường 2 điện tích, lực Lorentz bàn tay trái, đồ thị cực r=f(theta), thiết diện 3D hình chóp",
+      "Chuẩn hóa mỹ thuật đồ họa 450 DPI (Times New Roman, STIX Math), nâng cao mũi tên véc-tơ (0.18*h) chống dính chữ, chống đè nét vẽ (anti-collision) tuyệt đối",
+      "Đậm hóa ký hiệu Đạo hàm (y', f'(x), y'') và Tích phân (\\mathbf{\\int}_a^b) sắc nét tuyệt đối chuẩn in ấn A4",
+      "Xây dựng Thư Viện Mẫu TikZ 80 mẫu chuẩn hóa (references/tikz_templates.md, 3676 dòng): hình học phẳng Thales/Pythagore/phân giác, đường tròn góc nội tiếp/tâm, hình không gian thiết diện/Oxyz, mạch điện (nối tiếp, song song, Wheatstone), quang học (thấu kính, kính hiển vi), cơ học (ròng rọc, đòn bẩy), nguyên tử Bohr, đồ thị semi-log",
+      "Tích hợp bộ đọc đề đa nguồn (scripts/docx_reader.py) chuyển đổi MathType cũ và OCR ảnh chụp đề thi thành LaTeX",
+      "Bộ kiểm thử tự động (test_figures.py) đạt 54/54 PASS (100% thành công)"
+    ],
+    "2.7.0": [
+      "Tích hợp Bộ máy Render Mã TikZ & LaTeX 300 DPI chuyên sâu (scripts/tikz_renderer.py) với cơ chế Dual-Engine (Local TeX Engine + Cloud Fallback)",
+      "Hỗ trợ đầy đủ các gói đồ họa giáo dục Việt Nam: tkz-tab (Bảng biến thiên THPT Quốc Gia), tkz-euclide (Hình học phẳng), circuitikz (Mạch điện Vật lý), chemfig (Cấu tạo Hóa học), pgfplots (Đồ thị Oxy)",
+      "Tự động nhận diện cú pháp snippet, chuẩn hóa khoảng trắng tkz-tab, bọc node chemfig và standalone template",
+      "Tự động cắt sạch viền trắng (trim whitespace), hỗ trợ xuất trực tiếp vào file Word (MathType OLE và Word Equation) với bố cục 2 cột thông minh",
+      "Bổ sung PyMuPDF (fitz) vào script chẩn đoán cài đặt tự động 1-Click (check_and_setup_env.py và cai_dat_tu_dong.bat)"
+    ],
+    "2.6.0": [
+      "Mở rộng hỗ trợ toàn diện môn HÓA HỌC (Lớp 10 - 12 & KHTN): Công thức phân tử, ion, phức chất, phương trình 1 chiều và thuận nghịch, nhiệt hóa học, hữu cơ",
+      "Chuẩn hóa tên nguyên tố theo chuẩn quốc tế IUPAC GDPT 2018 (font chữ đứng chuẩn, không bị in nghiêng như biến số)",
+      "Bổ sung thư viện vẽ đồ thị & thí nghiệm Hóa học 300 DPI: Giản đồ năng lượng phản ứng (Ea, Delta H), đường cong chuẩn độ pH",
+      "Bổ sung công cụ dựng hình học không gian 3D (Khối chóp S.ABCD, lăng trụ, nón, trụ, cầu) với nét liền/khuất sắc nét",
+      "Chuẩn hóa 100% Bảng biểu đa môn (Table Grid nguyên bản): Bảng biến thiên full khung viền, bảng đo đạc thực nghiệm vật lý, bảng nhận biết & thuốc thử hóa học, bảng số liệu thống kê"
+    ],
+    "2.5.0": [
+      "Bổ sung tính năng Chuyển đổi PDF đề thi sang Word chuẩn toán học & sư phạm (PDF to Math Word Converter)",
+      "Giải quyết triệt để 100% các lỗi kinh điển khi convert PDF thông thường: vỡ/lỗi công thức toán, mờ hình vẽ, vỡ bảng số liệu",
+      "Tự động trích xuất toàn bộ hình minh họa kỹ thuật độ phân giải cao 300 DPI từ PDF và tự động cắt viền trắng thừa thông minh",
+      "Chuyển đổi 100% công thức toán học sang đối tượng MathType OLE nguyên bản (Equation.DSMT4) mở click đúp sửa ngay, cỡ chữ 14pt chuẩn in ấn",
+      "Kèm cơ chế Smart Fallback sang bản Word Equation (OMML) chuẩn SGK không cần cài MathType",
+      "Tự động dựng bảng số liệu thống kê (Table Grid) với khung viền hoàn chỉnh, căn giữa chuẩn sư phạm",
+      "Ứng dụng công nghệ Bố cục 2 cột thông minh (Smart Side-by-Side) cho các câu có hình vẽ để tiết kiệm tối đa giấy in",
+      "Xuất đồng thời bản Đề Học Sinh và bản Lời Giải Chi Tiết (khớp đáp án chính thức từ Sở GD&ĐT)"
+    ],
+    "2.4.0": [
+      "Bổ sung tính năng Bố cục 2 cột thông minh tiết kiệm giấy in (Smart Side-by-Side Layout): Câu hỏi + đáp án bên trái, hình vẽ bên phải",
+      "Tiết kiệm từ 35% đến 45% diện tích trang in A4, thu gọn tối đa số trang tài liệu phát cho học sinh",
+      "Thiết lập Bộ Tiêu Chí Xét Tính Phù Hợp (Suitability Decision Matrix):",
+      "- Phù hợp: Đồ thị hàm số Oxy (bậc ba, phân thức, bậc bốn, đoạn kín), hình học không gian dạng đứng, sơ đồ lực (Câu 1, 2, 4, 8, 10 Phần I; Câu 1 Phần II; Câu 2, 3 Phần III)",
+      "- Không ép hẹp: Bảng biến thiên (BBT) rộng (Câu 11, 12 Phần I; Câu 1 Phần III) và hình ghép ngang phức hợp (Câu 3 Tự luận) luôn giữ toàn dòng để đảm bảo tính sư phạm rõ ràng",
+      "Hỗ trợ xuất trực tiếp bảng ẩn không viền tích hợp trọn vẹn cả 2 định dạng: MathType OLE và Word Equation OMML"
+    ],
+    "2.3.0": [
+      "Khắc phục triệt để lỗi hình vẽ không khớp với câu hỏi hoặc số liệu đề bài",
+      "Triển khai 4 Quy Tắc Vàng Khớp Tuyệt Đối Giữa Hình Vẽ & Đề Bài (Visual & Mathematical Consistency Protocol)",
+      "Quy tắc Miền xác định và 2 đầu mút đoạn kín [a; b]: Khóa cứng 2 đầu mút và cực trị bằng CubicHermiteSpline, có chấm tròn to nổi bật và đường gióng nét đứt",
+      "Quy tắc Gióng nhãn trục đối xứng (Opposite Semi-Axis Projection Rule) kết hợp white bounding box (w_box) triệt tiêu 100% tình trạng nhãn số bị đường nét đứt, trục hay đường cong cắt ngang thân",
+      "Chuẩn hóa tọa độ nguyên sạch cho giao điểm trục Ox, Oy và các điểm cực trị (Câu 2, Câu 8, Câu 10, Phần III Câu 3)",
+      "Hàm phân thức bậc 1/1 và bậc 2/1: Tiệm cận nét đứt chuẩn xác, giao điểm cách xa gốc O chống va chạm chữ"
+    ],
+    "2.2.0": [
+      "Nâng cấp chuẩn hiển thị in ấn: Cỡ chữ 14pt cho toàn bộ văn bản và công thức MathType OLE",
+      "Đồ thị hình vẽ siêu nét 300 DPI: Đường nét đậm rõ (lw=2.2 - 2.4), nhãn x, y đặt sát mũi tên trục tọa độ, font số tọa độ 12-13pt in ra không bị mờ",
+      "Bảng biến thiên đóng khung full viền 100% chuẩn SGK và đề thi quốc gia",
+      "Nâng cấp thiết kế phương án bẫy trắc nghiệm câu hỏi (tính toán cực trị và giao điểm chuẩn xác)",
+      "Cơ chế Tự Động Cập Nhật (cap_nhat_tu_dong.bat) bảo vệ vĩnh viễn license.key bản quyền của giáo viên",
+      "Bộ cài đặt 1-Click tự động tải và cài ngầm Python 3.12 nếu máy tính chưa có"
+    ],
+    "2.1.0": [
+      "Mở rộng hỗ trợ toàn diện môn VẬT LÝ (cấp THCS 6-9 và THPT 10-12)",
+      "Tích hợp thư viện vẽ hình vật lý 300 DPI: Thấu kính quang học, đồ thị dao động x-t, sơ đồ mạch điện, phân tích vectơ lực",
+      "Kiểm định định luật vật lý (bảo toàn cơ năng, khúc xạ ánh sáng, định luật Ohm, p-V)",
+      "Dùng chung hệ thống bản quyền License Key RSA 2048 offline và bộ cài 1-Click"
+    ],
+    "2.0.0": [
+      "Xuất đồng thời bản Đề Học Sinh và Lời Giải Chi Tiết riêng biệt",
+      "Tạo bộ 4 mã đề hoán vị + phiếu trả lời bong bóng (bubble sheet) chụp ảnh chấm thi",
+      "Xuất Excel tổng hợp đáp án 4 mã đề có tô màu",
+      "Tích hợp cơ chế Self-Healing tự động cài thư viện khi thiếu",
+      "Thêm openpyxl vào danh sách thư viện bắt buộc",
+      "Xóa toàn bộ file nháp temp sau khi xuất OLE"
+    ],
+    "1.0.0": [
+      "Phát hành lần đầu",
+      "Hỗ trợ xuất MathType OLE qua Backend API Cloud",
+      "Vẽ hình kỹ thuật 300 DPI bằng Matplotlib",
+      "Smart Fallback sang Word Equation OMML"
+    ]
+  }
+}
